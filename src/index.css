@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hardware acceleration for smooth parallax */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+html {
+  scroll-behavior: auto;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+body {
+  overscroll-behavior: none;
+  transform-style: preserve-3d;
+}
+
+section {
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Brick Red - Primary luxury accent */
+    --primary: 10 48% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Pastel Pine Green - Secondary natural tone */
+    --secondary: 116 32% 58%;
+    --secondary-foreground: 30 10% 15%;
+
+    --muted: 116 20% 95%;
+    --muted-foreground: 30 8% 45%;
+
+    --accent: 10 48% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 10 48% 48%;
+
+    --radius: 1.5rem;
+    
+    /* Custom luxury hotel design tokens */
+    --hero-overlay: 30 15% 10%;
+    --section-bg-light: 116 25% 96%;
+    --section-bg-green: 116 32% 58%;
+    --gradient-luxury: linear-gradient(135deg, hsl(10 48% 48% / 0.95), hsl(10 48% 35% / 0.95));
+    --gradient-nature: linear-gradient(180deg, hsl(116 32% 58% / 0.1), hsl(116 32% 58% / 0.3));
+    --shadow-luxury: 0 20px 60px -15px hsl(10 48% 48% / 0.3);
+    --shadow-soft: 0 10px 40px -10px hsl(30 10% 15% / 0.1);
+    --transition-smooth: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    --transition-elegant: all 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 12% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 30 12% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 30 12% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 10 48% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 116 28% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 12% 15%;
+    --muted-foreground: 30 8% 65%;
+
+    --accent: 10 48% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 10 48% 55%;
+    
+    --hero-overlay: 30 15% 5%;
+    --section-bg-light: 30 12% 12%;
+    --section-bg-green: 116 28% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
