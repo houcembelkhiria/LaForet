@@ -1,0 +1,112 @@
+{
+    "notFound": {
+        "title": "Room Not Found",
+        "backButton": "Back to Rooms"
+    },
+    "rooms": {
+        "deluxe-forest": {
+            "name": "Deluxe Forest View",
+            "tagline": "Immerse yourself in nature's embrace",
+            "description": "Experience the perfect blend of comfort and natural beauty in our Deluxe Forest View room. Wake up to panoramic views of lush forests and enjoy modern amenities in an elegantly designed space.",
+            "price": 350,
+            "specs": {
+                "bed": {
+                    "label": "King Bed",
+                    "value": "1 King"
+                },
+                "occupancy": {
+                    "label": "Occupancy",
+                    "value": "2 Adults"
+                },
+                "size": {
+                    "label": "Room Size",
+                    "value": "45 m²"
+                },
+                "view": {
+                    "label": "View",
+                    "value": "Forest"
+                }
+            },
+            "amenities": [
+                "High-Speed WiFi",
+                "Coffee Maker",
+                "Climate Control",
+                "55\" Smart TV",
+                "Luxury Bathroom",
+                "Safe Deposit Box",
+                "Daily Housekeeping",
+                "Private Balcony"
+            ],
+            "features": [
+                "Premium Egyptian cotton linens",
+                "Rainfall shower with designer toiletries",
+                "Mini bar and tea/coffee facilities",
+                "Work desk with ergonomic chair",
+                "Blackout curtains for restful sleep",
+                "In-room dining available 24/7"
+            ]
+        },
+        "mountain-suite": {
+            "name": "Mountain Suite",
+            "tagline": "Luxury elevated to new heights",
+            "description": "Indulge in our spacious Mountain Suite featuring a separate living area, breathtaking mountain vistas, and premium amenities. Perfect for those seeking the ultimate luxury experience.",
+            "price": 550,
+            "specs": {
+                "bed": {
+                    "label": "King Bed",
+                    "value": "1 King"
+                },
+                "occupancy": {
+                    "label": "Occupancy",
+                    "value": "2-4 Adults"
+                },
+                "size": {
+                    "label": "Suite Size",
+                    "value": "75 m²"
+                },
+                "view": {
+                    "label": "View",
+                    "value": "Mountain"
+                }
+            },
+            "amenities": [
+                "High-Speed WiFi",
+                "Espresso Machine",
+                "Climate Control",
+                "65\" Smart TV",
+                "Premium Spa Bath",
+                "Safe Deposit Box",
+                "Twice Daily Housekeeping",
+                "Private Terrace"
+            ],
+            "features": [
+                "Separate living and sleeping areas",
+                "Premium Italian marble bathroom",
+                "Complimentary champagne on arrival",
+                "Luxury bath products and plush robes",
+                "Dedicated workspace with city views",
+                "Priority room service and concierge"
+            ]
+        }
+    },
+    "labels": {
+        "pricePerNight": "From ${price}/night",
+        "aboutTitle": "About This Room",
+        "featuresTitle": "Room Features",
+        "amenitiesTitle": "Amenities",
+        "galleryTitle": "Room Gallery",
+        "reserveTitle": "Reserve This Room",
+        "reserveSubtitle": "Book your stay and experience luxury at La Foret",
+        "priceLabel": "Price per night",
+        "bookNow": "Book Now - ${price}/night",
+        "form": {
+            "checkin": "Check-in Date",
+            "checkout": "Check-out Date",
+            "guests": "Number of Guests",
+            "name": "Full Name",
+            "namePlaceholder": "John Doe",
+            "email": "Email",
+            "emailPlaceholder": "john@example.com"
+        }
+    }
+}

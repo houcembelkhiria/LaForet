@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import aboutImage from "@/assets/about-hotel.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.3,
   });
+
+  const { t } = useLanguage();
+  const content = t("about");
 
   return (
     <section ref={ref} className="relative min-h-screen w-full overflow-hidden bg-background py-20">
@@ -25,23 +29,20 @@ const About = () => {
               transition={{ duration: 1, delay: 0.2 }}
             >
               <span className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                Welcome to La Foret
+                {content.content.welcome}
               </span>
             </motion.div>
 
             <h2 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              Where Luxury Meets Nature
+              {content.content.title}
             </h2>
 
             <p className="text-lg leading-relaxed text-muted-foreground">
-              Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape 
-              from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, 
-              creating an experience that rejuvenates both body and soul.
+              {content.content.description1}
             </p>
 
             <p className="text-lg leading-relaxed text-muted-foreground">
-              With breathtaking mountain views, world-class amenities, and personalized service, 
-              every moment at La Foret is designed to exceed your expectations.
+              {content.content.description2}
             </p>
 
             <motion.div
@@ -52,18 +53,18 @@ const About = () => {
             >
               <div className="flex items-center gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-primary">20+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                  <div className="text-4xl font-bold text-primary">{content.content.stats.experience.value}</div>
+                  <div className="text-sm text-muted-foreground">{content.content.stats.experience.label}</div>
                 </div>
                 <div className="h-12 w-px bg-border" />
                 <div>
-                  <div className="text-4xl font-bold text-primary">45</div>
-                  <div className="text-sm text-muted-foreground">Luxury Rooms</div>
+                  <div className="text-4xl font-bold text-primary">{content.content.stats.rooms.value}</div>
+                  <div className="text-sm text-muted-foreground">{content.content.stats.rooms.label}</div>
                 </div>
                 <div className="h-12 w-px bg-border" />
                 <div>
-                  <div className="text-4xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-muted-foreground">Guest Satisfaction</div>
+                  <div className="text-4xl font-bold text-primary">{content.content.stats.satisfaction.value}</div>
+                  <div className="text-sm text-muted-foreground">{content.content.stats.satisfaction.label}</div>
                 </div>
               </div>
             </motion.div>
@@ -81,11 +82,16 @@ const About = () => {
                 src={aboutImage}
                 alt="La Foret Architecture"
                 className="h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="auto"
+                width={800}
+                height={600}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
               />
             </div>
-            
+
             {/* Decorative Element */}
             <motion.div
               className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-3xl bg-secondary/30 blur-3xl"

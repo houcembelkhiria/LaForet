@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import heroImage from "@/assets/hero-hotel.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,9 @@ const HeroParallax = () => {
   const midLayerRef = useRef<HTMLDivElement>(null);
   const fgLayerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const { t } = useLanguage();
+  const content = t("index");
 
   const titleVariants = {
     hidden: { opacity: 0 },
@@ -33,7 +37,7 @@ const HeroParallax = () => {
     },
   };
 
-  const title = "La Foret: A Stay Beyond Ordinary";
+  const title = content?.hero?.title || "La Foret: A Stay Beyond Ordinary";
   const words = title.split(" ");
 
   useEffect(() => {
@@ -120,12 +124,18 @@ const HeroParallax = () => {
           transformStyle: "preserve-3d",
         }}
       >
-        <div
-          className="h-full w-full bg-cover bg-center"
+        <img
+          src={heroImage}
+          alt="La Foret Hotel"
+          className="h-full w-full object-cover"
           style={{
-            backgroundImage: `url(${heroImage})`,
             filter: "brightness(0.7) blur(0.5px)",
           }}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1080}
         />
       </div>
 
@@ -187,7 +197,7 @@ const HeroParallax = () => {
             textShadow: "0 2px 10px rgba(0,0,0,0.5)",
           }}
         >
-          Discover timeless comfort surrounded by nature
+          {content.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -200,14 +210,14 @@ const HeroParallax = () => {
             size="lg"
             className="bg-primary text-primary-foreground shadow-[0_8px_30px_rgba(184,76,59,0.4)] transition-all duration-500 hover:scale-105 hover:shadow-[0_12px_40px_rgba(184,76,59,0.6)]"
           >
-            Book Now
+            {content.hero.bookNow}
           </Button>
           <Button
             size="lg"
             variant="outline"
             className="border-2 border-secondary bg-secondary/20 text-white backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-secondary hover:text-secondary-foreground"
           >
-            Explore Rooms
+            {content.hero.exploreRooms}
           </Button>
         </motion.div>
       </div>

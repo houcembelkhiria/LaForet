@@ -1,0 +1,56 @@
+{
+    "navigation": {
+        "brand": "La Foret",
+        "links": [
+            {
+                "name": "Home",
+                "path": "/"
+            },
+            {
+                "name": "About Us",
+                "path": "/about"
+            },
+            {
+                "name": "Rooms",
+                "path": "/rooms"
+            },
+            {
+                "name": "Gallery",
+                "path": "/gallery"
+            }
+        ],
+        "bookNow": "Book Now"
+    },
+    "footer": {
+        "brand": "La Foret",
+        "description": "Your sanctuary in the heart of nature. Experience luxury surrounded by pristine wilderness.",
+        "social": {
+            "facebook": "Facebook",
+            "instagram": "Instagram",
+            "twitter": "Twitter"
+        },
+        "quickLinks": {
+            "title": "Quick Links",
+            "links": [
+                "Rooms",
+                "Experiences",
+                "Dining",
+                "Spa",
+                "Gallery",
+                "About Us"
+            ]
+        },
+        "contact": {
+            "title": "Contact Us",
+            "address": "123 Mountain View Drive, Wilderness Valley",
+            "phone": "+1 (234) 567-890",
+            "email": "hello@laforet.com"
+        },
+        "copyright": "© {year} La Foret. All rights reserved. Crafted with passion for luxury hospitality."
+    },
+    "notFound": {
+        "title": "404",
+        "message": "Oops! Page not found",
+        "backHome": "Return to Home"
+    }
+}

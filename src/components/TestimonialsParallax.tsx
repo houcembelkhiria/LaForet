@@ -3,31 +3,14 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const testimonials = [
-  {
-    name: "Sarah Mitchell",
-    location: "New York, USA",
-    text: "An absolutely magical experience. The blend of luxury and nature created the perfect escape. Every detail was thoughtfully curated, and the staff went above and beyond.",
-    rating: 5,
-  },
-  {
-    name: "James Chen",
-    location: "Singapore",
-    text: "Serenity Lodge exceeded all expectations. The views were breathtaking, the rooms were pristine, and the dining experience was world-class. A true hidden gem.",
-    rating: 5,
-  },
-  {
-    name: "Emma Rodriguez",
-    location: "Barcelona, Spain",
-    text: "The perfect place to disconnect and recharge. The spa treatments were divine, and waking up to mountain views every morning was pure bliss. Cannot recommend enough.",
-    rating: 5,
-  },
-];
-
 const TestimonialsParallax = () => {
+  const { t } = useLanguage();
+  const content = t("index");
+  const testimonials = content?.testimonials?.items || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -100,7 +83,7 @@ const TestimonialsParallax = () => {
         if (card) {
           const offsetX = index === 0 ? -50 : index === 1 ? 0 : 50;
           const offsetY = index === 1 ? 40 : 20;
-          
+
           gsap.fromTo(
             card,
             {
@@ -154,16 +137,16 @@ const TestimonialsParallax = () => {
 
       <div className="container relative z-10 mx-auto px-6">
         {/* Section Header */}
-        <div 
-          ref={headerRef} 
+        <div
+          ref={headerRef}
           className="mb-16 text-center text-white will-change-transform"
           style={{ transformStyle: "preserve-3d" }}
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-[0.2em] text-white/80">
-            Guest Stories
+            {content.testimonials.subtitle}
           </span>
           <h2 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-            What Our Guests Say
+            {content.testimonials.title}
           </h2>
         </div>
 

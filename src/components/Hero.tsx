@@ -34,9 +34,15 @@ const Hero = () => {
         whileInView={{ scale: 1.1 }}
         transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
       >
-        <div
-          className="h-full w-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+        <img
+          src={heroImage}
+          alt="La Foret Hotel"
+          className="h-full w-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
       </motion.div>

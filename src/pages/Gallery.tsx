@@ -9,27 +9,25 @@ import roomSuite from "@/assets/room-suite.jpg";
 import expSpa from "@/assets/experience-spa.jpg";
 import expDining from "@/assets/experience-dining.jpg";
 import expNature from "@/assets/experience-nature.jpg";
-
-const galleryImages = [
-  { id: 1, src: heroImage, title: "La Foret Exterior", category: "Hotel" },
-  { id: 2, src: aboutImage, title: "Architecture", category: "Hotel" },
-  { id: 3, src: roomDeluxe, title: "Deluxe Forest View", category: "Rooms" },
-  { id: 4, src: roomSuite, title: "Mountain Suite", category: "Rooms" },
-  { id: 5, src: expSpa, title: "Spa Experience", category: "Experiences" },
-  { id: 6, src: expDining, title: "Fine Dining", category: "Experiences" },
-  { id: 7, src: expNature, title: "Nature Trails", category: "Experiences" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Gallery = () => {
+  const { t } = useLanguage();
+  const content = t("gallery");
+
+  const galleryImages = content?.images?.map((img: any) => ({
+    ...img,
+    src: img.id === 1 ? heroImage : img.id === 2 ? aboutImage : img.id === 3 ? roomDeluxe : img.id === 4 ? roomSuite : img.id === 5 ? expSpa : img.id === 6 ? expDining : expNature,
+  })) || [];
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.1,
   });
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Page Header */}
       <motion.section
         className="relative flex h-[50vh] items-center justify-center bg-gradient-to-b from-secondary/30 to-background"
@@ -44,7 +42,7 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Gallery
+            {content.header.title}
           </motion.h1>
           <motion.p
             className="text-lg text-muted-foreground md:text-xl"
@@ -52,7 +50,7 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Explore the beauty of La Foret
+            {content.header.subtitle}
           </motion.p>
         </div>
       </motion.section>
@@ -78,11 +76,16 @@ const Gallery = () => {
                     src={image.src}
                     alt={image.title}
                     className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="auto"
+                    width={800}
+                    height={600}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  
+
                   {/* Overlay Text */}
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 p-6 text-white"

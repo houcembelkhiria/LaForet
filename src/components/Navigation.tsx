@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { memo, useState, useMemo, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
-const Navigation = () => {
+const Navigation = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
+  const content = t("common");
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Rooms", path: "/rooms" },
-    { name: "Gallery", path: "/gallery" },
-  ];
+  const navLinks = useMemo(
+    () => content?.navigation?.links || [],
+    [content]
+  );
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = useCallback(
+    (path: string) => location.pathname === path,
+    [location.pathname]
+  );
+
+  const toggleMenu = useCallback(() => setIsOpen((prev) => !prev), []);
+  const closeMenu = useCallback(() => setIsOpen(false), []);
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-lg border-b border-border">
@@ -23,18 +31,17 @@ const Navigation = () => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold tracking-wider">
-            <span className="font-serif text-primary">La Foret</span>
+            <span className="font-serif text-primary">{content.navigation.brand}</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-4 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative text-sm font-medium tracking-wide transition-colors hover:text-primary ${
-                  isActive(link.path) ? "text-primary" : "text-foreground"
-                }`}
+                className={`relative text-sm font-medium tracking-wide transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-foreground"
+                  }`}
               >
                 {link.name}
                 {isActive(link.path) && (
@@ -47,14 +54,15 @@ const Navigation = () => {
                 )}
               </Link>
             ))}
+            <LanguageToggle />
             <Button className="bg-primary text-primary-foreground hover:scale-105">
-              Book Now
+              {content?.navigation?.bookNow}
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggleMenu}
             className="md:hidden"
             aria-label="Toggle menu"
           >
@@ -78,16 +86,15 @@ const Navigation = () => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-lg font-medium transition-colors hover:text-primary ${
-                      isActive(link.path) ? "text-primary" : "text-foreground"
-                    }`}
+                    onClick={closeMenu}
+                    className={`text-lg font-medium transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-foreground"
+                      }`}
                   >
                     {link.name}
                   </Link>
                 ))}
                 <Button className="bg-primary text-primary-foreground">
-                  Book Now
+                  {content.navigation.bookNow}
                 </Button>
               </div>
             </div>
@@ -96,6 +103,8 @@ const Navigation = () => {
       </AnimatePresence>
     </nav>
   );
-};
+});
+
+Navigation.displayName = "Navigation";
 
 export default Navigation;

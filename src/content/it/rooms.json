@@ -1,0 +1,39 @@
+{
+    "header": {
+        "title": "Rooms & Suites",
+        "subtitle": "Discover your perfect sanctuary"
+    },
+    "content": {
+        "subtitle": "Rooms & Suites",
+        "title": "Your Perfect Sanctuary",
+        "viewDetails": "View Details",
+        "rooms": [
+            {
+                "id": 1,
+                "slug": "deluxe-forest",
+                "name": "Deluxe Forest View",
+                "description": "Spacious room with panoramic forest views and modern amenities",
+                "price": "From $350/night",
+                "features": [
+                    "King Bed",
+                    "Forest View",
+                    "45 m²",
+                    "Modern Bath"
+                ]
+            },
+            {
+                "id": 2,
+                "slug": "mountain-suite",
+                "name": "Mountain Suite",
+                "description": "Luxurious suite with living area and breathtaking mountain vistas",
+                "price": "From $550/night",
+                "features": [
+                    "Living Area",
+                    "Mountain View",
+                    "75 m²",
+                    "Premium Bath"
+                ]
+            }
+        ]
+    }
+}

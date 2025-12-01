@@ -1,0 +1,26 @@
+{
+    "header": {
+        "title": "About La Foret",
+        "subtitle": "Your sanctuary in the heart of nature"
+    },
+    "content": {
+        "welcome": "Welcome to La Foret",
+        "title": "Where Luxury Meets Nature",
+        "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
+        "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
+        "stats": {
+            "experience": {
+                "value": "20+",
+                "label": "Years Experience"
+            },
+            "rooms": {
+                "value": "45",
+                "label": "Luxury Rooms"
+            },
+            "satisfaction": {
+                "value": "98%",
+                "label": "Guest Satisfaction"
+            }
+        }
+    }
+}

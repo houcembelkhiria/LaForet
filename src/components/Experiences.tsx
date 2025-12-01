@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Sparkles, UtensilsCrossed, Mountain } from "lucide-react";
@@ -5,32 +6,39 @@ import spaImage from "@/assets/experience-spa.jpg";
 import diningImage from "@/assets/experience-dining.jpg";
 import natureImage from "@/assets/experience-nature.jpg";
 
-const experiences = [
-  {
-    icon: Sparkles,
-    title: "Wellness & Spa",
-    description: "Rejuvenate your senses with our world-class spa treatments and wellness programs",
-    image: spaImage,
-  },
-  {
-    icon: UtensilsCrossed,
-    title: "Fine Dining",
-    description: "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients",
-    image: diningImage,
-  },
-  {
-    icon: Mountain,
-    title: "Nature Activities",
-    description: "Explore pristine trails, meditation spots, and breathtaking viewpoints",
-    image: natureImage,
-  },
-];
 
-const Experiences = () => {
+const Experiences = memo(() => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.2,
   });
+
+  const experiences = useMemo(
+    () => [
+      {
+        id: 1,
+        icon: Sparkles,
+        title: "Wellness & Spa",
+        description: "Rejuvenate your senses with our world-class spa treatments and wellness programs",
+        image: spaImage,
+      },
+      {
+        id: 2,
+        icon: UtensilsCrossed,
+        title: "Fine Dining",
+        description: "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients",
+        image: diningImage,
+      },
+      {
+        id: 3,
+        icon: Mountain,
+        title: "Nature Activities",
+        description: "Explore pristine trails, meditation spots, and breathtaking viewpoints",
+        image: natureImage,
+      },
+    ],
+    []
+  );
 
   return (
     <section
@@ -62,7 +70,7 @@ const Experiences = () => {
             const Icon = experience.icon;
             return (
               <motion.div
-                key={index}
+                key={experience.id}
                 className="group relative overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:shadow-[var(--shadow-luxury)]"
                 initial={{ opacity: 0, y: 100, scale: 0.9 }}
                 animate={
@@ -83,6 +91,11 @@ const Experiences = () => {
                     src={experience.image}
                     alt={experience.title}
                     className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="auto"
+                    width={600}
+                    height={400}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
                   />
@@ -132,6 +145,8 @@ const Experiences = () => {
       />
     </section>
   );
-};
+});
+
+Experiences.displayName = "Experiences";
 
 export default Experiences;

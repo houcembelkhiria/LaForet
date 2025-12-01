@@ -1,36 +1,29 @@
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import roomDeluxe from "@/assets/room-deluxe.jpg";
 import roomSuite from "@/assets/room-suite.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const rooms = [
-  {
-    id: 1,
-    slug: "deluxe-forest",
-    name: "Deluxe Forest View",
-    description: "Spacious room with panoramic forest views and modern amenities",
-    image: roomDeluxe,
-    price: "From $350/night",
-    features: ["King Bed", "Forest View", "45 m²", "Modern Bath"],
-  },
-  {
-    id: 2,
-    slug: "mountain-suite",
-    name: "Mountain Suite",
-    description: "Luxurious suite with living area and breathtaking mountain vistas",
-    image: roomSuite,
-    price: "From $550/night",
-    features: ["Living Area", "Mountain View", "75 m²", "Premium Bath"],
-  },
-];
 
-const Rooms = () => {
+const Rooms = memo(() => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.2,
   });
+
+  const { t } = useLanguage();
+  const content = t("rooms");
+
+  const rooms = useMemo(
+    () => content?.content?.rooms?.map((room: any) => ({
+      ...room,
+      image: room.id === 1 ? roomDeluxe : roomSuite,
+    })) || [],
+    [content]
+  );
 
   return (
     <section ref={ref} className="relative min-h-screen w-full overflow-hidden bg-muted py-20">
@@ -43,10 +36,10 @@ const Rooms = () => {
           transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Rooms & Suites
+            {content.content.subtitle}
           </span>
           <h2 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-            Your Perfect Sanctuary
+            {content.content.title}
           </h2>
         </motion.div>
 
@@ -70,11 +63,16 @@ const Rooms = () => {
                   src={room.image}
                   alt={room.name}
                   className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="auto"
+                  width={800}
+                  height={600}
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                
+
                 {/* Hover Overlay Text */}
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 p-6 text-white"
@@ -112,7 +110,7 @@ const Rooms = () => {
                     className="w-full bg-primary text-primary-foreground transition-all duration-500 hover:scale-105"
                     size="lg"
                   >
-                    View Details
+                    {content.content.viewDetails}
                   </Button>
                 </Link>
               </div>
@@ -122,6 +120,8 @@ const Rooms = () => {
       </div>
     </section>
   );
-};
+});
+
+Rooms.displayName = "Rooms";
 
 export default Rooms;

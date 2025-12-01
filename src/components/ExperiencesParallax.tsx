@@ -6,31 +6,19 @@ import { Sparkles, UtensilsCrossed, Mountain } from "lucide-react";
 import spaImage from "@/assets/experience-spa.jpg";
 import diningImage from "@/assets/experience-dining.jpg";
 import natureImage from "@/assets/experience-nature.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const experiences = [
-  {
-    icon: Sparkles,
-    title: "Wellness & Spa",
-    description: "Rejuvenate your senses with our world-class spa treatments and wellness programs",
-    image: spaImage,
-  },
-  {
-    icon: UtensilsCrossed,
-    title: "Fine Dining",
-    description: "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients",
-    image: diningImage,
-  },
-  {
-    icon: Mountain,
-    title: "Nature Activities",
-    description: "Explore pristine trails, meditation spots, and breathtaking viewpoints",
-    image: natureImage,
-  },
-];
-
 const ExperiencesParallax = () => {
+  const { t } = useLanguage();
+  const content = t("index");
+
+  const experiences = content?.experiences?.items?.map((item: any, index: number) => ({
+    ...item,
+    icon: index === 0 ? Sparkles : index === 1 ? UtensilsCrossed : Mountain,
+    image: index === 0 ? spaImage : index === 1 ? diningImage : natureImage,
+  })) || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -95,7 +83,7 @@ const ExperiencesParallax = () => {
         if (card) {
           const direction = index % 3 === 0 ? 1 : index % 3 === 1 ? -1 : 0;
           const verticalOffset = index % 3 === 2;
-          
+
           gsap.fromTo(
             card,
             {
@@ -149,16 +137,16 @@ const ExperiencesParallax = () => {
 
       <div className="container relative z-10 mx-auto px-6">
         {/* Section Header */}
-        <div 
-          ref={headerRef} 
+        <div
+          ref={headerRef}
           className="mb-16 text-center will-change-transform"
           style={{ transformStyle: "preserve-3d" }}
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Curated Experiences
+            {content.experiences.subtitle}
           </span>
           <h2 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-            Discover Your Journey
+            {content.experiences.title}
           </h2>
         </div>
 
@@ -180,6 +168,11 @@ const ExperiencesParallax = () => {
                       src={experience.image}
                       alt={experience.title}
                       className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      fetchPriority="auto"
+                      width={600}
+                      height={400}
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
                     />

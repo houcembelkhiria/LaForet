@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,11 +15,14 @@ const BookingCTAParallax = () => {
   const formRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
+  const { t } = useLanguage();
+  const content = t("index");
+
   const formFields = [
-    { id: "name", label: "Full Name", type: "text", placeholder: "John Doe" },
-    { id: "email", label: "Email", type: "email", placeholder: "john@example.com" },
-    { id: "checkin", label: "Check-in Date", type: "date", placeholder: "" },
-    { id: "checkout", label: "Check-out Date", type: "date", placeholder: "" },
+    { id: "name", label: content?.booking?.form?.name?.label || "Full Name", type: "text", placeholder: content?.booking?.form?.name?.placeholder || "John Doe" },
+    { id: "email", label: content?.booking?.form?.email?.label || "Email", type: "email", placeholder: content?.booking?.form?.email?.placeholder || "john@example.com" },
+    { id: "checkin", label: content?.booking?.form?.checkin?.label || "Check-in Date", type: "date", placeholder: "" },
+    { id: "checkout", label: content?.booking?.form?.checkout?.label || "Check-out Date", type: "date", placeholder: "" },
   ];
 
   useEffect(() => {
@@ -108,8 +112,8 @@ const BookingCTAParallax = () => {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden py-32"
       style={{ transformStyle: "preserve-3d" }}
     >
@@ -132,13 +136,13 @@ const BookingCTAParallax = () => {
             style={{ transformStyle: "preserve-3d" }}
           >
             <span className="mb-4 inline-block text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Reserve Your Experience
+              {content.booking.subtitle}
             </span>
             <h2 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
-              Book Your Stay at La Foret
+              {content.booking.title}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Begin your journey to tranquility. Our team will contact you to finalize your reservation.
+              {content.booking.description}
             </p>
           </div>
 
@@ -186,12 +190,12 @@ const BookingCTAParallax = () => {
                 }}
               >
                 <Label htmlFor="guests" className="text-base">
-                  Number of Guests
+                  {content.booking.form.guests.label}
                 </Label>
                 <Input
                   id="guests"
                   type="number"
-                  placeholder="2"
+                  placeholder={content.booking.form.guests.placeholder}
                   min="1"
                   className="mt-2 h-12 rounded-2xl border-2 transition-all duration-300 focus:border-primary"
                 />
@@ -208,12 +212,12 @@ const BookingCTAParallax = () => {
                 }}
               >
                 <Label htmlFor="message" className="text-base">
-                  Special Requests (Optional)
+                  {content.booking.form.message.label}
                 </Label>
                 <textarea
                   id="message"
                   rows={4}
-                  placeholder="Let us know if you have any special requirements..."
+                  placeholder={content.booking.form.message.placeholder}
                   className="mt-2 w-full rounded-2xl border-2 border-input bg-background px-4 py-3 text-sm transition-all duration-300 focus:border-primary focus:outline-none"
                 />
               </motion.div>
@@ -233,7 +237,7 @@ const BookingCTAParallax = () => {
                   size="lg"
                   className="w-full bg-primary text-lg text-primary-foreground transition-all duration-500 hover:scale-105 hover:shadow-[var(--shadow-luxury)]"
                 >
-                  Reserve Your Stay
+                  {content.booking.form.submit}
                 </Button>
               </motion.div>
             </form>
@@ -248,9 +252,9 @@ const BookingCTAParallax = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
           >
             <p className="text-muted-foreground">
-              Prefer to speak with us directly?{" "}
+              {content.booking.contact.text}{" "}
               <a href="tel:+1234567890" className="font-semibold text-primary hover:underline">
-                Call +1 (234) 567-890
+                {content.booking.contact.phone}
               </a>
             </p>
           </motion.div>
@@ -260,8 +264,8 @@ const BookingCTAParallax = () => {
       {/* Atmospheric Depth Elements */}
       <motion.div
         className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-primary/10 blur-[100px]"
-        animate={{ 
-          x: [0, 40, -20, 0], 
+        animate={{
+          x: [0, 40, -20, 0],
           y: [0, -30, 20, 0],
           scale: [1, 1.3, 0.9, 1]
         }}
@@ -269,8 +273,8 @@ const BookingCTAParallax = () => {
       />
       <motion.div
         className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-secondary/15 blur-[120px]"
-        animate={{ 
-          x: [0, -50, 30, 0], 
+        animate={{
+          x: [0, -50, 30, 0],
           y: [0, 40, -20, 0],
           scale: [1, 1.2, 1.1, 1]
         }}

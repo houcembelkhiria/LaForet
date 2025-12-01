@@ -1,33 +1,40 @@
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Star } from "lucide-react";
 
-const testimonials = [
-  {
-    name: "Sarah Mitchell",
-    location: "New York, USA",
-    text: "An absolutely magical experience. The blend of luxury and nature created the perfect escape. Every detail was thoughtfully curated, and the staff went above and beyond.",
-    rating: 5,
-  },
-  {
-    name: "James Chen",
-    location: "Singapore",
-    text: "Serenity Lodge exceeded all expectations. The views were breathtaking, the rooms were pristine, and the dining experience was world-class. A true hidden gem.",
-    rating: 5,
-  },
-  {
-    name: "Emma Rodriguez",
-    location: "Barcelona, Spain",
-    text: "The perfect place to disconnect and recharge. The spa treatments were divine, and waking up to mountain views every morning was pure bliss. Cannot recommend enough.",
-    rating: 5,
-  },
-];
-
-const Testimonials = () => {
+const Testimonials = memo(() => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.2,
   });
+
+  const testimonials = useMemo(
+    () => [
+      {
+        id: 1,
+        name: "Sarah Mitchell",
+        location: "New York, USA",
+        text: "An absolutely magical experience. The blend of luxury and nature created the perfect escape. Every detail was thoughtfully curated, and the staff went above and beyond.",
+        rating: 5,
+      },
+      {
+        id: 2,
+        name: "James Chen",
+        location: "Singapore",
+        text: "Serenity Lodge exceeded all expectations. The views were breathtaking, the rooms were pristine, and the dining experience was world-class. A true hidden gem.",
+        rating: 5,
+      },
+      {
+        id: 3,
+        name: "Emma Rodriguez",
+        location: "Barcelona, Spain",
+        text: "The perfect place to disconnect and recharge. The spa treatments were divine, and waking up to mountain views every morning was pure bliss. Cannot recommend enough.",
+        rating: 5,
+      },
+    ],
+    []
+  );
 
   return (
     <section
@@ -57,7 +64,7 @@ const Testimonials = () => {
         <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
-              key={index}
+              key={testimonial.id}
               className="group relative overflow-hidden rounded-3xl bg-white/10 p-8 backdrop-blur-md transition-all duration-500 hover:bg-white/20"
               initial={{ opacity: 0, y: 100 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
@@ -115,6 +122,8 @@ const Testimonials = () => {
       />
     </section>
   );
-};
+});
+
+Testimonials.displayName = "Testimonials";
 
 export default Testimonials;

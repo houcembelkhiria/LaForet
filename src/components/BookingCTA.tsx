@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 
 const BookingCTA = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.3,
   });
 

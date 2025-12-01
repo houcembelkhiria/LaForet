@@ -6,31 +6,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import roomDeluxe from "@/assets/room-deluxe.jpg";
 import roomSuite from "@/assets/room-suite.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const rooms = [
-  {
-    id: 1,
-    slug: "deluxe-forest",
-    name: "Deluxe Forest View",
-    description: "Spacious room with panoramic forest views and modern amenities",
-    image: roomDeluxe,
-    price: "From $350/night",
-    features: ["King Bed", "Forest View", "45 m²", "Modern Bath"],
-  },
-  {
-    id: 2,
-    slug: "mountain-suite",
-    name: "Mountain Suite",
-    description: "Luxurious suite with living area and breathtaking mountain vistas",
-    image: roomSuite,
-    price: "From $550/night",
-    features: ["Living Area", "Mountain View", "75 m²", "Premium Bath"],
-  },
-];
-
 const RoomsParallax = () => {
+  const { t } = useLanguage();
+  const content = t("index");
+
+  const rooms = content?.rooms?.items?.map((room: any) => ({
+    ...room,
+    image: room.id === 1 ? roomDeluxe : roomSuite,
+  })) || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -71,7 +58,7 @@ const RoomsParallax = () => {
       cardsRef.current.forEach((card, index) => {
         if (card) {
           const direction = index % 2 === 0 ? -1 : 1;
-          
+
           gsap.fromTo(
             card,
             {
@@ -115,16 +102,16 @@ const RoomsParallax = () => {
     >
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div 
-          ref={headerRef} 
+        <div
+          ref={headerRef}
           className="mb-16 text-center will-change-transform"
           style={{ transformStyle: "preserve-3d" }}
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Rooms & Suites
+            {content.rooms.subtitle}
           </span>
           <h2 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-            Your Perfect Sanctuary
+            {content.rooms.title}
           </h2>
         </div>
 
@@ -144,6 +131,11 @@ const RoomsParallax = () => {
                     src={room.image}
                     alt={room.name}
                     className="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="auto"
+                    width={800}
+                    height={600}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
                   />
@@ -186,7 +178,7 @@ const RoomsParallax = () => {
                       className="w-full bg-primary text-primary-foreground transition-all duration-500 hover:scale-105"
                       size="lg"
                     >
-                      View Details
+                      {content.rooms.viewDetails}
                     </Button>
                   </Link>
                 </div>

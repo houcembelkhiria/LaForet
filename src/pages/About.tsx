@@ -2,12 +2,16 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutComponent from "@/components/About";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
+  const content = t("about");
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Page Header */}
       <motion.section
         className="relative flex h-[50vh] items-center justify-center bg-gradient-to-b from-secondary/30 to-background"
@@ -22,7 +26,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            About La Foret
+            {content.header.title}
           </motion.h1>
           <motion.p
             className="text-lg text-muted-foreground md:text-xl"
@@ -30,7 +34,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Your sanctuary in the heart of nature
+            {content.header.subtitle}
           </motion.p>
         </div>
       </motion.section>

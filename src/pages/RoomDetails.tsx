@@ -98,9 +98,9 @@ const RoomDetails = () => {
   const { roomId } = useParams<{ roomId: string }>();
   const room = roomId ? roomsData[roomId] : roomsData["deluxe-forest"];
   
-  const [heroRef, heroInView] = useInView({ triggerOnce: false, threshold: 0.2 });
-  const [detailsRef, detailsInView] = useInView({ triggerOnce: false, threshold: 0.2 });
-  const [bookingRef, bookingInView] = useInView({ triggerOnce: false, threshold: 0.2 });
+  const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [detailsRef, detailsInView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [bookingRef, bookingInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   if (!room) {
     return (
@@ -135,6 +135,11 @@ const RoomDetails = () => {
             src={room.image}
             alt={room.name}
             className="h-full w-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         </motion.div>
@@ -276,6 +281,11 @@ const RoomDetails = () => {
                   src={img}
                   alt={`${room.name} view ${index + 1}`}
                   className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="auto"
+                  width={800}
+                  height={600}
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.8 }}
                 />
