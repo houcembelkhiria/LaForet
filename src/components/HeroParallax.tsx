@@ -1,10 +1,15 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import heroImage from "@/assets/hero-hotel.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+// Load outdoor images for hero
+const outdoorImages = import.meta.glob('@/assets/outdoor/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const outdoorImageArray = Object.values(outdoorImages).map((module: any) => module.default);
+const heroImage = outdoorImageArray[0] || ""; // Use first available outdoor image
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +54,7 @@ const HeroParallax = () => {
         rotationX: -8,
         rotationY: -3,
         z: -300,
-        filter: "blur(2px) brightness(0.5)",
+        filter: "blur(2px)",
         ease: "power1.inOut",
         scrollTrigger: {
           trigger: heroRef.current,
@@ -114,7 +119,7 @@ const HeroParallax = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative h-screen w-full overflow-hidden" style={{ transformStyle: "preserve-3d" }}>
+    <section ref={heroRef} className="relative h-[100dvh] w-full overflow-hidden" style={{ transformStyle: "preserve-3d" }}>
       {/* Background Layer - Slowest (Deep) */}
       <div
         ref={bgLayerRef}
@@ -154,14 +159,14 @@ const HeroParallax = () => {
       {/* Foreground Content - Fastest */}
       <div
         ref={contentRef}
-        className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center will-change-transform"
+        className="relative z-20 flex h-full flex-col items-center justify-center px-4 sm:px-6 text-center will-change-transform"
         style={{
           transform: "translateZ(50px)",
           transformStyle: "preserve-3d",
         }}
       >
         <motion.h1
-          className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl lg:text-8xl"
+          className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-7xl lg:text-8xl"
           variants={titleVariants}
           initial="hidden"
           animate="visible"
@@ -212,13 +217,15 @@ const HeroParallax = () => {
           >
             {content.hero.bookNow}
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-secondary bg-secondary/20 text-white backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-secondary hover:text-secondary-foreground"
-          >
-            {content.hero.exploreRooms}
-          </Button>
+          <Link to="/rooms">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-secondary bg-secondary/20 text-white backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:bg-secondary hover:text-secondary-foreground"
+            >
+              {content.hero.exploreRooms}
+            </Button>
+          </Link>
         </motion.div>
       </div>
 

@@ -22,95 +22,37 @@ import {
 } from "lucide-react";
 import roomDeluxe from "@/assets/room-deluxe.jpg";
 import roomSuite from "@/assets/room-suite.jpg";
-
-const roomsData: Record<string, any> = {
-  "deluxe-forest": {
-    id: "deluxe-forest",
-    name: "Deluxe Forest View",
-    tagline: "Immerse yourself in nature's embrace",
-    description:
-      "Experience the perfect blend of comfort and natural beauty in our Deluxe Forest View room. Wake up to panoramic views of lush forests and enjoy modern amenities in an elegantly designed space.",
-    price: 350,
-    image: roomDeluxe,
-    gallery: [roomDeluxe, roomSuite, roomDeluxe],
-    specs: [
-      { icon: Bed, label: "King Bed", value: "1 King" },
-      { icon: Users, label: "Occupancy", value: "2 Adults" },
-      { icon: Maximize, label: "Room Size", value: "45 m²" },
-      { icon: Mountain, label: "View", value: "Forest" },
-    ],
-    amenities: [
-      { icon: Wifi, label: "High-Speed WiFi" },
-      { icon: Coffee, label: "Coffee Maker" },
-      { icon: Wind, label: "Climate Control" },
-      { icon: Tv, label: "55\" Smart TV" },
-      { icon: Bath, label: "Luxury Bathroom" },
-      { icon: Shield, label: "Safe Deposit Box" },
-      { icon: Sparkles, label: "Daily Housekeeping" },
-      { icon: Home, label: "Private Balcony" },
-    ],
-    features: [
-      "Premium Egyptian cotton linens",
-      "Rainfall shower with designer toiletries",
-      "Mini bar and tea/coffee facilities",
-      "Work desk with ergonomic chair",
-      "Blackout curtains for restful sleep",
-      "In-room dining available 24/7",
-    ],
-  },
-  "mountain-suite": {
-    id: "mountain-suite",
-    name: "Mountain Suite",
-    tagline: "Luxury elevated to new heights",
-    description:
-      "Indulge in our spacious Mountain Suite featuring a separate living area, breathtaking mountain vistas, and premium amenities. Perfect for those seeking the ultimate luxury experience.",
-    price: 550,
-    image: roomSuite,
-    gallery: [roomSuite, roomDeluxe, roomSuite],
-    specs: [
-      { icon: Bed, label: "King Bed", value: "1 King" },
-      { icon: Users, label: "Occupancy", value: "2-4 Adults" },
-      { icon: Maximize, label: "Suite Size", value: "75 m²" },
-      { icon: Mountain, label: "View", value: "Mountain" },
-    ],
-    amenities: [
-      { icon: Wifi, label: "High-Speed WiFi" },
-      { icon: Coffee, label: "Espresso Machine" },
-      { icon: Wind, label: "Climate Control" },
-      { icon: Tv, label: "65\" Smart TV" },
-      { icon: Bath, label: "Premium Spa Bath" },
-      { icon: Shield, label: "Safe Deposit Box" },
-      { icon: Sparkles, label: "Twice Daily Housekeeping" },
-      { icon: Home, label: "Private Terrace" },
-    ],
-    features: [
-      "Separate living and sleeping areas",
-      "Premium Italian marble bathroom",
-      "Complimentary champagne on arrival",
-      "Luxury bath products and plush robes",
-      "Dedicated workspace with city views",
-      "Priority room service and concierge",
-    ],
-  },
-};
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const RoomDetails = () => {
   const { roomId } = useParams<{ roomId: string }>();
-  const room = roomId ? roomsData[roomId] : roomsData["deluxe-forest"];
-  
+  const { t } = useLanguage();
+
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [detailsRef, detailsInView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [bookingRef, bookingInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  if (!room) {
+  // Map slugs to images
+  const imageMap: Record<string, any> = {
+    "chambre-standard": roomDeluxe,
+    "suite-junior": roomSuite,
+    "suite-senior": roomSuite,
+    "deluxe-forest": roomDeluxe, // Fallback for old links
+    "mountain-suite": roomSuite, // Fallback for old links
+  };
+
+  const roomData = t(`roomDetails.rooms.${roomId}`);
+  const labels = t("roomDetails.labels");
+
+  if (!roomData || typeof roomData === "string") {
     return (
       <div className="min-h-screen bg-background">
         <Navigation />
         <div className="flex min-h-[60vh] items-center justify-center">
           <div className="text-center">
-            <h1 className="mb-4 text-3xl font-bold">Room Not Found</h1>
+            <h1 className="mb-4 text-3xl font-bold">{t("roomDetails.notFound.title")}</h1>
             <Link to="/rooms">
-              <Button>Back to Rooms</Button>
+              <Button>{t("roomDetails.notFound.backButton")}</Button>
             </Link>
           </div>
         </div>
@@ -118,6 +60,37 @@ const RoomDetails = () => {
       </div>
     );
   }
+
+  // Helper to map amenities to icons based on text content
+  const getAmenityIcon = (label: string) => {
+    const l = label.toLowerCase();
+    if (l.includes("wifi")) return Wifi;
+    if (l.includes("café") || l.includes("coffee") || l.includes("espresso")) return Coffee;
+    if (l.includes("clim") || l.includes("air")) return Wind;
+    if (l.includes("tv")) return Tv;
+    if (l.includes("bain") || l.includes("bath") || l.includes("douche")) return Bath;
+    if (l.includes("coffre") || l.includes("safe")) return Shield;
+    if (l.includes("ménage") || l.includes("housekeeping")) return Sparkles;
+    if (l.includes("balcon") || l.includes("terrasse") || l.includes("balcony")) return Home;
+    return Sparkles;
+  };
+
+  // Construct the room object
+  const room = {
+    ...roomData,
+    image: imageMap[roomId || ""] || roomDeluxe,
+    gallery: [imageMap[roomId || ""] || roomDeluxe, roomDeluxe, roomSuite],
+    specs: [
+      { icon: Bed, ...roomData.specs.bed },
+      { icon: Users, ...roomData.specs.occupancy },
+      { icon: Maximize, ...roomData.specs.size },
+      { icon: Mountain, ...roomData.specs.view },
+    ],
+    amenities: roomData.amenities.map((label: string) => ({
+      icon: getAmenityIcon(label),
+      label,
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -158,7 +131,7 @@ const RoomDetails = () => {
                 {room.name}
               </h1>
               <p className="mb-6 max-w-2xl text-xl text-white/90">
-                From ${room.price}/night
+                {labels.pricePerNight.replace("${price}", room.price)}
               </p>
             </motion.div>
           </div>
@@ -175,7 +148,7 @@ const RoomDetails = () => {
               animate={detailsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="mb-6 text-4xl font-bold">About This Room</h2>
+              <h2 className="mb-6 text-4xl font-bold">{labels.aboutTitle}</h2>
               <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
                 {room.description}
               </p>
@@ -204,7 +177,7 @@ const RoomDetails = () => {
 
               {/* Features List */}
               <div>
-                <h3 className="mb-6 text-2xl font-bold">Room Features</h3>
+                <h3 className="mb-6 text-2xl font-bold">{labels.featuresTitle}</h3>
                 <ul className="space-y-3">
                   {room.features.map((feature: string, index: number) => (
                     <motion.li
@@ -228,7 +201,7 @@ const RoomDetails = () => {
               animate={detailsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="mb-6 text-4xl font-bold">Amenities</h2>
+              <h2 className="mb-6 text-4xl font-bold">{labels.amenitiesTitle}</h2>
               <div className="grid gap-6 sm:grid-cols-2">
                 {room.amenities.map((amenity: any, index: number) => {
                   const Icon = amenity.icon;
@@ -265,7 +238,7 @@ const RoomDetails = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
           >
-            Room Gallery
+            {labels.galleryTitle}
           </motion.h2>
           <div className="grid gap-6 md:grid-cols-3">
             {room.gallery.map((img: string, index: number) => (
@@ -305,9 +278,9 @@ const RoomDetails = () => {
               animate={bookingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="mb-4 text-4xl font-bold">Reserve This Room</h2>
+              <h2 className="mb-4 text-4xl font-bold">{labels.reserveTitle}</h2>
               <p className="text-lg text-muted-foreground">
-                Book your stay and experience luxury at La Foret
+                {labels.reserveSubtitle}
               </p>
             </motion.div>
 
@@ -319,7 +292,7 @@ const RoomDetails = () => {
             >
               <div className="mb-6 flex items-center justify-between rounded-2xl bg-primary/10 p-6">
                 <div>
-                  <p className="text-sm text-muted-foreground">Price per night</p>
+                  <p className="text-sm text-muted-foreground">{labels.priceLabel}</p>
                   <p className="text-3xl font-bold text-primary">${room.price}</p>
                 </div>
               </div>
@@ -327,7 +300,7 @@ const RoomDetails = () => {
               <form className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <Label htmlFor="checkin">Check-in Date</Label>
+                    <Label htmlFor="checkin">{labels.form.checkin}</Label>
                     <Input
                       id="checkin"
                       type="date"
@@ -335,7 +308,7 @@ const RoomDetails = () => {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="checkout">Check-out Date</Label>
+                    <Label htmlFor="checkout">{labels.form.checkout}</Label>
                     <Input
                       id="checkout"
                       type="date"
@@ -345,7 +318,7 @@ const RoomDetails = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="guests">Number of Guests</Label>
+                  <Label htmlFor="guests">{labels.form.guests}</Label>
                   <Input
                     id="guests"
                     type="number"
@@ -357,21 +330,21 @@ const RoomDetails = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="name">{labels.form.name}</Label>
                   <Input
                     id="name"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder={labels.form.namePlaceholder}
                     className="mt-2 h-12 rounded-2xl"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">{labels.form.email}</Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder={labels.form.emailPlaceholder}
                     className="mt-2 h-12 rounded-2xl"
                   />
                 </div>
@@ -381,7 +354,7 @@ const RoomDetails = () => {
                   size="lg"
                   className="w-full bg-primary text-lg text-primary-foreground transition-all duration-500 hover:scale-105"
                 >
-                  Book Now - ${room.price}/night
+                  {labels.bookNow.replace("${price}", room.price)}
                 </Button>
               </form>
             </motion.div>

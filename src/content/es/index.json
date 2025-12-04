@@ -1,137 +1,150 @@
 {
     "hero": {
-        "title": "La Foret: A Stay Beyond Ordinary",
-        "subtitle": "Discover timeless comfort surrounded by nature",
-        "bookNow": "Book Now",
-        "exploreRooms": "Explore Rooms"
+        "title": "La Foret: Una Estancia Más Allá de lo Ordinario",
+        "subtitle": "Descubre confort atemporal rodeado de naturaleza",
+        "bookNow": "Reservar Ahora",
+        "exploreRooms": "Explorar Habitaciones"
     },
     "about": {
-        "welcome": "Welcome to La Foret",
-        "title": "Where Luxury Meets Nature",
-        "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
-        "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
+        "welcome": "Bienvenido a La Foret",
+        "title": "Donde el Lujo Encuentra la Naturaleza",
+        "description1": "Ubicado en el corazón de un entorno natural intacto, La Foret ofrece una escapada inigualable de lo ordinario. Nuestro hotel boutique combina a la perfección el lujo moderno con la belleza natural, creando una experiencia que rejuvenece cuerpo y alma.",
+        "description2": "Con impresionantes vistas a la montaña, servicios de clase mundial y atención personalizada, cada momento en La Foret está diseñado para superar tus expectativas.",
         "stats": {
             "experience": {
                 "value": "20+",
-                "label": "Years Experience"
+                "label": "Años de Experiencia"
             },
             "rooms": {
                 "value": "45",
-                "label": "Luxury Rooms"
+                "label": "Habitaciones de Lujo"
             },
             "satisfaction": {
                 "value": "98%",
-                "label": "Guest Satisfaction"
+                "label": "Satisfacción de los Huéspedes"
             }
         }
     },
     "rooms": {
-        "subtitle": "Rooms & Suites",
-        "title": "Your Perfect Sanctuary",
-        "viewDetails": "View Details",
+        "subtitle": "Habitaciones y Suites",
+        "title": "Tu Santuario Perfecto",
+        "viewDetails": "Ver Detalles",
         "items": [
             {
                 "id": 1,
-                "slug": "deluxe-forest",
-                "name": "Deluxe Forest View",
-                "description": "Spacious room with panoramic forest views and modern amenities",
-                "price": "From $350/night",
+                "slug": "chambre-standard",
+                "name": "Habitación Estándar",
+                "description": "Habitación espaciosa con vistas panorámicas al bosque y comodidades modernas",
+                "price": "Desde 350TND/noche",
                 "features": [
-                    "King Bed",
-                    "Forest View",
-                    "45 m²",
-                    "Modern Bath"
+                    "Cama King",
+                    "Vista al Bosque",
+                    "30 m²",
+                    "Baño Moderno"
                 ]
             },
             {
                 "id": 2,
-                "slug": "mountain-suite",
-                "name": "Mountain Suite",
-                "description": "Luxurious suite with living area and breathtaking mountain vistas",
-                "price": "From $550/night",
+                "slug": "suite-junior",
+                "name": "Junior Suite",
+                "description": "Suite lujosa con sala de estar y vistas impresionantes a la montaña",
+                "price": "Desde 550TND/noche",
                 "features": [
-                    "Living Area",
-                    "Mountain View",
-                    "75 m²",
-                    "Premium Bath"
+                    "Sala de Estar",
+                    "Vista a la Montaña",
+                    "45 m²",
+                    "Jacuzzi Privado"
+                ]
+            },
+            {
+                "id": 3,
+                "slug": "suite-senior",
+                "name": "Senior Suite",
+                "description": "La experiencia de lujo definitiva con jacuzzi privado y vistas panorámicas",
+                "price": "Desde 750TND/noche",
+                "features": [
+                    "Gran Salón",
+                    "Vista Panorámica",
+                    "60 m²",
+                    "Jacuzzi en el Balcón"
                 ]
             }
         ]
     },
     "experiences": {
-        "subtitle": "Curated Experiences",
-        "title": "Discover Your Journey",
+        "subtitle": "Experiencias Curadas",
+        "title": "Descubre Tu Viaje",
         "items": [
             {
-                "title": "Wellness & Spa",
-                "description": "Rejuvenate your senses with our world-class spa treatments and wellness programs"
+                "title": "Bienestar y Spa",
+                "description": "Rejuvenece tus sentidos con nuestros tratamientos de spa y programas de bienestar de clase mundial"
             },
             {
-                "title": "Fine Dining",
-                "description": "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients"
+                "title": "Alta Cocina",
+                "description": "Disfruta de una cocina exquisita elaborada por nuestros chefs galardonados usando ingredientes locales"
             },
             {
-                "title": "Nature Activities",
-                "description": "Explore pristine trails, meditation spots, and breathtaking viewpoints"
+                "title": "Actividades en la Naturaleza",
+                "description": "Explora senderos vírgenes, zonas de meditación y miradores impresionantes"
             }
         ]
     },
     "testimonials": {
-        "subtitle": "Guest Stories",
-        "title": "What Our Guests Say",
+        "subtitle": "Historias de Huéspedes",
+        "title": "Lo Que Dicen Nuestros Huéspedes",
         "items": [
             {
                 "name": "Sarah Mitchell",
-                "location": "New York, USA",
-                "text": "An absolutely magical experience. The blend of luxury and nature created the perfect escape. Every detail was thoughtfully curated, and the staff went above and beyond.",
+                "location": "Nueva York, EE. UU.",
+                "text": "Una experiencia absolutamente mágica. La combinación de lujo y naturaleza creó la escapada perfecta. Cada detalle fue cuidadosamente pensado y el personal superó todas nuestras expectativas.",
                 "rating": 5
             },
             {
                 "name": "James Chen",
-                "location": "Singapore",
-                "text": "Serenity Lodge exceeded all expectations. The views were breathtaking, the rooms were pristine, and the dining experience was world-class. A true hidden gem.",
+                "location": "Singapur",
+                "text": "Serenity Lodge superó todas las expectativas. Las vistas eran impresionantes, las habitaciones impecables y la experiencia culinaria de clase mundial. Un verdadero tesoro escondido.",
                 "rating": 5
             },
             {
                 "name": "Emma Rodriguez",
-                "location": "Barcelona, Spain",
-                "text": "The perfect place to disconnect and recharge. The spa treatments were divine, and waking up to mountain views every morning was pure bliss. Cannot recommend enough.",
+                "location": "Barcelona, España",
+                "text": "El lugar perfecto para desconectar y recargar energías. Los tratamientos de spa eran divinos y despertar cada mañana con vistas a la montaña era pura felicidad. No puedo recomendarlo lo suficiente.",
                 "rating": 5
             }
         ]
     },
     "booking": {
-        "subtitle": "Reserve Your Experience",
-        "title": "Book Your Stay at La Foret",
-        "description": "Begin your journey to tranquility. Our team will contact you to finalize your reservation.",
+        "subtitle": "Reserva Tu Experiencia",
+        "title": "Reserva Tu Estancia en La Foret",
+        "description": "Comienza tu viaje hacia la tranquilidad. Nuestro equipo se pondrá en contacto contigo para finalizar tu reserva.",
         "form": {
             "name": {
-                "label": "Full Name",
+                "label": "Nombre Completo",
                 "placeholder": "John Doe"
             },
             "email": {
-                "label": "Email",
+                "label": "Correo Electrónico",
                 "placeholder": "john@example.com"
             },
             "checkin": {
-                "label": "Check-in Date"
+                "label": "Fecha de Entrada"
             },
             "checkout": {
-                "label": "Check-out Date"
+                "label": "Fecha de Salida"
             },
             "guests": {
-                "label": "Number of Guests",
+                "label": "Número de Huéspedes",
                 "placeholder": "2"
             },
             "message": {
-                "label": "Special Requests (Optional)",
-                "placeholder": "Let us know if you have any special requirements..."
+                "label": "Solicitudes Especiales (Opcional)",
+                "placeholder": "Háganos saber si tiene algún requisito especial..."
             },
-            "submit": "Reserve Your Stay"
+            "submit": "Reservar Tu Estancia"
         },
         "contact": {
-            "text": "Prefer to speak with us directly?",
-            "phone": "Call +1 (234) 567-890"
+            "text": "¿Prefieres hablar con nosotros directamente?",
+            "phone": "Llama al +1 (234) 567-890"
         }
     }
 }

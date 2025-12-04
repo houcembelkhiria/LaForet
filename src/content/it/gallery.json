@@ -7,37 +7,37 @@
         {
             "id": 1,
             "title": "La Foret Exterior",
-            "category": "Hotel"
+            "category": "Esterno"
         },
         {
             "id": 2,
             "title": "Architecture",
-            "category": "Hotel"
+            "category": "Esterno"
         },
         {
             "id": 3,
             "title": "Deluxe Forest View",
-            "category": "Rooms"
+            "category": "Camere"
         },
         {
             "id": 4,
             "title": "Mountain Suite",
-            "category": "Rooms"
+            "category": "Camere"
         },
         {
             "id": 5,
             "title": "Spa Experience",
-            "category": "Experiences"
+            "category": "Interno"
         },
         {
             "id": 6,
             "title": "Fine Dining",
-            "category": "Experiences"
+            "category": "Interno"
         },
         {
             "id": 7,
             "title": "Nature Trails",
-            "category": "Experiences"
+            "category": "Esterno"
         }
     ]
 }

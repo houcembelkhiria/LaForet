@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import roomDeluxe from "@/assets/room-deluxe.jpg";
-import roomSuite from "@/assets/room-suite.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Dynamically load room images
+const roomImages = import.meta.glob('@/assets/indoor/rooms/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const roomImageArray = Object.values(roomImages).map((module: any) => module.default);
 
 const Rooms = memo(() => {
   const [ref, inView] = useInView({
@@ -18,9 +19,9 @@ const Rooms = memo(() => {
   const content = t("rooms");
 
   const rooms = useMemo(
-    () => content?.content?.rooms?.map((room: any) => ({
+    () => content?.content?.rooms?.map((room: any, index: number) => ({
       ...room,
-      image: room.id === 1 ? roomDeluxe : roomSuite,
+      image: roomImageArray[index % roomImageArray.length], // Cycle through available images
     })) || [],
     [content]
   );

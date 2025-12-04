@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Sparkles, UtensilsCrossed, Mountain } from "lucide-react";
-import spaImage from "@/assets/experience-spa.jpg";
-import diningImage from "@/assets/experience-dining.jpg";
-import natureImage from "@/assets/experience-nature.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+// Load experience images
+const diningImages = import.meta.glob('@/assets/indoor/dining/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const utilitiesImages = import.meta.glob('@/assets/utilities/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const outdoorImages = import.meta.glob('@/assets/outdoor/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+
+const diningImageArray = Object.values(diningImages).map((module: any) => module.default);
+const utilitiesImageArray = Object.values(utilitiesImages).map((module: any) => module.default);
+const outdoorImageArray = Object.values(outdoorImages).map((module: any) => module.default);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,10 +20,16 @@ const ExperiencesParallax = () => {
   const { t } = useLanguage();
   const content = t("index");
 
+  const getImageForExperience = (index: number) => {
+    if (index === 0) return utilitiesImageArray[0] || ""; // Spa/Wellness (Utilities)
+    if (index === 1) return diningImageArray[0] || ""; // Dining
+    return outdoorImageArray[0] || ""; // Nature
+  };
+
   const experiences = content?.experiences?.items?.map((item: any, index: number) => ({
     ...item,
     icon: index === 0 ? Sparkles : index === 1 ? UtensilsCrossed : Mountain,
-    image: index === 0 ? spaImage : index === 1 ? diningImage : natureImage,
+    image: getImageForExperience(index),
   })) || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);

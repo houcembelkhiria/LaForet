@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { CONTACT_INFO } from "@/config/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -253,8 +254,8 @@ const BookingCTAParallax = () => {
           >
             <p className="text-muted-foreground">
               {content.booking.contact.text}{" "}
-              <a href="tel:+1234567890" className="font-semibold text-primary hover:underline">
-                {content.booking.contact.phone}
+              <a href={CONTACT_INFO.phoneHref} className="font-semibold text-primary hover:underline">
+                {CONTACT_INFO.phone}
               </a>
             </p>
           </motion.div>

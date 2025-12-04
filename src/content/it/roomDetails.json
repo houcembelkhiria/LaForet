@@ -1,112 +1,185 @@
 {
     "notFound": {
-        "title": "Room Not Found",
-        "backButton": "Back to Rooms"
+        "title": "Camera Non Trovata",
+        "backButton": "Torna alle Camere"
     },
     "rooms": {
-        "deluxe-forest": {
-            "name": "Deluxe Forest View",
-            "tagline": "Immerse yourself in nature's embrace",
-            "description": "Experience the perfect blend of comfort and natural beauty in our Deluxe Forest View room. Wake up to panoramic views of lush forests and enjoy modern amenities in an elegantly designed space.",
+        "chambre-standard": {
+            "name": "Camera Standard",
+            "tagline": "Comfort e Natura",
+            "description": "Camera spaziosa con vista panoramica sulla foresta e servizi moderni. Ideale per coppie o viaggiatori singoli in cerca di tranquillità.",
             "price": 350,
             "specs": {
                 "bed": {
-                    "label": "King Bed",
-                    "value": "1 King"
+                    "label": "Letto",
+                    "value": "1 Letto King"
                 },
                 "occupancy": {
-                    "label": "Occupancy",
-                    "value": "2 Adults"
+                    "label": "Occupazione",
+                    "value": "2 Adulti"
                 },
                 "size": {
-                    "label": "Room Size",
-                    "value": "45 m²"
+                    "label": "Dimensione",
+                    "value": "30 m²"
                 },
                 "view": {
-                    "label": "View",
-                    "value": "Forest"
+                    "label": "Vista",
+                    "value": "Foresta"
                 }
             },
             "amenities": [
-                "High-Speed WiFi",
-                "Coffee Maker",
-                "Climate Control",
-                "55\" Smart TV",
-                "Luxury Bathroom",
-                "Safe Deposit Box",
-                "Daily Housekeeping",
-                "Private Balcony"
+                "WiFi Gratuito",
+                "Macchina del Caffè",
+                "Aria Condizionata",
+                "TV a Schermo Piatto",
+                "Bagno Privato",
+                "Cassaforte",
+                "Pulizia Giornaliera",
+                "Balcone Privato",
+                "Asciugamani",
+                "Set di Cortesia Gratuiti",
+                "Asciugacapelli",
+                "Biancheria da Letto",
+                "Armadio",
+                "Scrivania",
+                "Riscaldamento"
             ],
             "features": [
-                "Premium Egyptian cotton linens",
-                "Rainfall shower with designer toiletries",
-                "Mini bar and tea/coffee facilities",
-                "Work desk with ergonomic chair",
-                "Blackout curtains for restful sleep",
-                "In-room dining available 24/7"
+                "Biancheria premium",
+                "Doccia walk-in",
+                "Mini bar e bollitore elettrico",
+                "Scrivania con sedia ergonomica",
+                "Tende oscuranti per un sonno riposante",
+                "Servizio in camera 24/7",
+                "Parcheggio gratuito",
+                "Camere non fumatori"
             ]
         },
-        "mountain-suite": {
-            "name": "Mountain Suite",
-            "tagline": "Luxury elevated to new heights",
-            "description": "Indulge in our spacious Mountain Suite featuring a separate living area, breathtaking mountain vistas, and premium amenities. Perfect for those seeking the ultimate luxury experience.",
+        "suite-junior": {
+            "name": "Junior Suite",
+            "tagline": "Lusso e Spazio",
+            "description": "Suite lussuosa con zona giorno e vista mozzafiato sulle montagne. Perfetta per chi cerca più spazio e comfort.",
             "price": 550,
             "specs": {
                 "bed": {
-                    "label": "King Bed",
-                    "value": "1 King"
+                    "label": "Letto",
+                    "value": "1 Letto King"
                 },
                 "occupancy": {
-                    "label": "Occupancy",
-                    "value": "2-4 Adults"
+                    "label": "Occupazione",
+                    "value": "2-3 Adulti"
                 },
                 "size": {
-                    "label": "Suite Size",
-                    "value": "75 m²"
+                    "label": "Dimensione",
+                    "value": "45 m²"
                 },
                 "view": {
-                    "label": "View",
-                    "value": "Mountain"
+                    "label": "Vista",
+                    "value": "Montagna"
                 }
             },
             "amenities": [
-                "High-Speed WiFi",
-                "Espresso Machine",
-                "Climate Control",
-                "65\" Smart TV",
-                "Premium Spa Bath",
-                "Safe Deposit Box",
-                "Twice Daily Housekeeping",
-                "Private Terrace"
+                "WiFi Gratuito",
+                "Macchina Espresso",
+                "Aria Condizionata",
+                "Smart TV 55\"",
+                "Jacuzzi Privata",
+                "Cassaforte",
+                "Pulizia Bi-giornaliera",
+                "Terrazza Privata",
+                "Bagno in Marmo",
+                "Prodotti da Bagno di Lusso",
+                "Accappatoi",
+                "Asciugamani Premium",
+                "Cabina Armadio",
+                "Zona Pranzo",
+                "Servizio Sveglia",
+                "Reception 24 ore"
             ],
             "features": [
-                "Separate living and sleeping areas",
-                "Premium Italian marble bathroom",
-                "Complimentary champagne on arrival",
-                "Luxury bath products and plush robes",
-                "Dedicated workspace with city views",
-                "Priority room service and concierge"
+                "Zona giorno separata",
+                "Bagno in marmo italiano",
+                "Prodotti bagno lusso e accappatoi morbidi",
+                "Spazio lavoro dedicato con vista",
+                "Servizio in camera e concierge prioritari",
+                "Parcheggio gratuito",
+                "Accesso al bar dell'hotel",
+                "Accesso alla Spa"
+            ]
+        },
+        "suite-senior": {
+            "name": "Senior Suite",
+            "tagline": "L'Apice del Lusso",
+            "description": "L'esperienza di lusso definitiva con jacuzzi privata sul balcone e vista panoramica sulle montagne. Un rifugio esclusivo per gli ospiti più esigenti.",
+            "price": 750,
+            "specs": {
+                "bed": {
+                    "label": "Letto",
+                    "value": "1 Letto Super King"
+                },
+                "occupancy": {
+                    "label": "Occupazione",
+                    "value": "2-4 Adulti"
+                },
+                "size": {
+                    "label": "Dimensione",
+                    "value": "60 m²"
+                },
+                "view": {
+                    "label": "Vista",
+                    "value": "Panoramica"
+                }
+            },
+            "amenities": [
+                "WiFi Gratuito",
+                "Macchina Espresso Premium",
+                "Aria Condizionata",
+                "Smart TV 65\"",
+                "Jacuzzi Balcone",
+                "Cassaforte",
+                "Servizio Maggiordomo",
+                "Grande Terrazza",
+                "Bagno Spa",
+                "Prodotti da Bagno Premium",
+                "Accappatoi di Lusso",
+                "Cabina Armadio",
+                "Ampio Soggiorno",
+                "Zona Pranzo",
+                "Servizio Sveglia",
+                "Reception 24 ore",
+                "Stazione Ricarica Veicoli Elettrici"
+            ],
+            "features": [
+                "Ampio soggiorno con divano",
+                "Bagno spa con vasca",
+                "Champagne all'arrivo",
+                "Prodotti bagno premium e accappatoi di lusso",
+                "Vista mozzafiato sulle montagne",
+                "Servizio prioritario e concierge dedicato",
+                "Parcheggio privato gratuito",
+                "Accesso completo a Spa e Piscina",
+                "Colazione inclusa"
             ]
         }
     },
     "labels": {
-        "pricePerNight": "From ${price}/night",
-        "aboutTitle": "About This Room",
-        "featuresTitle": "Room Features",
-        "amenitiesTitle": "Amenities",
-        "galleryTitle": "Room Gallery",
-        "reserveTitle": "Reserve This Room",
-        "reserveSubtitle": "Book your stay and experience luxury at La Foret",
-        "priceLabel": "Price per night",
-        "bookNow": "Book Now - ${price}/night",
+        "pricePerNight": "Da ${price} TND/notte",
+        "aboutTitle": "Informazioni sulla Camera",
+        "featuresTitle": "Caratteristiche Camera",
+        "amenitiesTitle": "Servizi",
+        "galleryTitle": "Galleria Camera",
+        "reserveTitle": "Prenota Questa Camera",
+        "reserveSubtitle": "Prenota il tuo soggiorno e vivi il lusso a La Foret",
+        "priceLabel": "Prezzo per notte",
+        "bookNow": "Prenota Ora - ${price} TND/notte",
         "form": {
-            "checkin": "Check-in Date",
-            "checkout": "Check-out Date",
-            "guests": "Number of Guests",
-            "name": "Full Name",
-            "namePlaceholder": "John Doe",
+            "checkin": "Data Arrivo",
+            "checkout": "Data Partenza",
+            "guests": "Numero Ospiti",
+            "name": "Nome Completo",
+            "namePlaceholder": "Mario Rossi",
             "email": "Email",
-            "emailPlaceholder": "john@example.com"
+            "emailPlaceholder": "mario@example.com"
         }
     }
 }

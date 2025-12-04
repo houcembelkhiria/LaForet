@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutComponent from "@/components/About";
+import Location from "@/components/Location";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -40,6 +41,7 @@ const About = () => {
       </motion.section>
 
       <AboutComponent />
+      <Location />
       <Footer />
     </div>
   );

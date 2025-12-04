@@ -1,25 +1,238 @@
 {
     "header": {
-        "title": "About La Foret",
-        "subtitle": "Your sanctuary in the heart of nature"
+        "title": "À propos de La Forêt",
+        "subtitle": "Votre sanctuaire au cœur de la nature"
     },
     "content": {
-        "welcome": "Welcome to La Foret",
-        "title": "Where Luxury Meets Nature",
-        "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
-        "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
+        "welcome": "Bienvenue à La Forêt",
+        "title": "Où le luxe rencontre la nature",
+        "description1": "Entièrement rénové, l'hôtel La Forêt Ain Draham, établissement 4 étoiles situé à Ain Draham, gouvernorat de Jendouba, en Tunisie, a rouvert ses portes après dix ans de fermeture.",
+        "description2": "Avec une vue imprenable sur les montagnes, des équipements de classe mondiale et un service personnalisé, chaque moment à La Forêt est conçu pour dépasser vos attentes.",
         "stats": {
-            "experience": {
-                "value": "20+",
-                "label": "Years Experience"
-            },
             "rooms": {
-                "value": "45",
-                "label": "Luxury Rooms"
+                "value": "63",
+                "label": "Chambres de luxe"
             },
             "satisfaction": {
                 "value": "98%",
-                "label": "Guest Satisfaction"
+                "label": "Satisfaction client"
+            }
+        },
+        "facilities": {
+            "title": "Équipements de l'Hôtel",
+            "subtitle": "Tout ce dont vous avez besoin pour un séjour parfait",
+            "popular": {
+                "title": "Équipements les plus populaires",
+                "items": [
+                    "Piscine",
+                    "WiFi gratuit",
+                    "Parking gratuit",
+                    "Chambres non-fumeurs",
+                    "Spa",
+                    "Service en chambre",
+                    "Bar",
+                    "Petit-déjeuner"
+                ]
+            },
+            "categories": [
+                {
+                    "title": "Salle de bain",
+                    "items": [
+                        "Salle de bain privée",
+                        "Papier toilette",
+                        "Serviettes",
+                        "Toilettes",
+                        "Articles de toilette gratuits",
+                        "Sèche-cheveux",
+                        "Douche"
+                    ]
+                },
+                {
+                    "title": "Chambre",
+                    "items": [
+                        "Linge de lit",
+                        "Armoire ou placard",
+                        "Dressing"
+                    ]
+                },
+                {
+                    "title": "Extérieur",
+                    "items": [
+                        "Balcon",
+                        "Terrasse",
+                        "Jardin"
+                    ]
+                },
+                {
+                    "title": "Cuisine",
+                    "items": [
+                        "Bouilloire électrique"
+                    ]
+                },
+                {
+                    "title": "Équipements de la chambre",
+                    "items": [
+                        "Portant",
+                        "Coin repas",
+                        "Bureau"
+                    ]
+                },
+                {
+                    "title": "Média et technologie",
+                    "items": [
+                        "TV à écran plat",
+                        "Télévision"
+                    ]
+                },
+                {
+                    "title": "Nourriture et boissons",
+                    "items": [
+                        "Bar"
+                    ]
+                },
+                {
+                    "title": "Internet",
+                    "items": [
+                        "Le WiFi est disponible dans tout l'établissement gratuitement"
+                    ]
+                },
+                {
+                    "title": "Parking",
+                    "items": [
+                        "Un parking privé gratuit est disponible sur place (sans réservation)",
+                        "Borne de recharge pour véhicules électriques"
+                    ]
+                },
+                {
+                    "title": "Services",
+                    "items": [
+                        "Service de réveil",
+                        "Réception ouverte 24h/24",
+                        "Service en chambre"
+                    ]
+                },
+                {
+                    "title": "Sûreté et sécurité",
+                    "items": [
+                        "Coffre-fort"
+                    ]
+                },
+                {
+                    "title": "Général",
+                    "items": [
+                        "Climatisation",
+                        "Établissement entièrement non-fumeurs",
+                        "Chauffage",
+                        "Chambres non-fumeurs"
+                    ]
+                },
+                {
+                    "title": "Bien-être",
+                    "items": [
+                        "Piscine",
+                        "Spa"
+                    ]
+                },
+                {
+                    "title": "Langues parlées",
+                    "items": [
+                        "Anglais",
+                        "Espagnol",
+                        "Français",
+                        "Italien"
+                    ]
+                }
+            ]
+        },
+        "policies": {
+            "title": "Politiques de l'Hôtel",
+            "subtitle": "Informations importantes pour votre séjour",
+            "items": [
+                {
+                    "title": "Heure d'arrivée / départ",
+                    "description": "L'arrivée à l'hôtel est possible à partir de 14h tandis que le départ doit se faire avant midi."
+                },
+                {
+                    "title": "Facturation",
+                    "description": "La facturation sera faite par l'Hôtel au nom du Client et non au nom de l'Agence Reservy.com."
+                },
+                {
+                    "title": "Offres spéciales",
+                    "description": "Dans le cas où les tarifs baissent suite à une promotion, il est strictement interdit d'annuler une réservation existante pour la racheter au nouveau prix (même période, même hôtel)."
+                }
+            ]
+        },
+        "activities": {
+            "title": "Activités et Loisirs",
+            "subtitle": "Découvrez les expériences uniques de La Forêt",
+            "leisure": {
+                "title": "Activités de loisirs",
+                "description": "Les activités de loisirs comprennent l'équitation, les randonnées, la chasse, les visites culturelles aux sites archéologiques voisins ou aux montagnes.",
+                "items": [
+                    "Équitation",
+                    "Randonnées",
+                    "Chasse",
+                    "Visites culturelles",
+                    "Sites archéologiques",
+                    "Excursions en montagne"
+                ]
+            },
+            "dining": {
+                "title": "Espaces de restauration",
+                "description": "Les espaces de restauration incluent un restaurant à la carte et un lobby bar.",
+                "items": [
+                    "Restaurant à la carte",
+                    "Lobby bar",
+                    "Service en chambre 24/7"
+                ]
+            }
+        },
+        "location": {
+            "title": "Emplacement",
+            "subtitle": "Trouvez-nous au cœur de la nature",
+            "address": {
+                "street": "RN17",
+                "phone": "0021655429235",
+                "city": "Ain Draham",
+                "region": "Gouvernorat de Jendouba",
+                "postalCode": "8130",
+                "country": "Tunisie",
+                "fullAddress": "RN17, Ain Draham, Gouvernorat de Jendouba, 8130, Tunisie"
+            },
+            "coordinates": {
+                "lat": 36.7833,
+                "lng": 8.6833
+            },
+            "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.8!2d8.6833!3d36.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQ2JzU5LjkiTiA4wrA0MCc1OS45IkU!5e0!3m2!1sen!2stn!4v1234567890",
+            "nearby": {
+                "title": "À proximité",
+                "attractions": [
+                    {
+                        "name": "Port de plaisance de Tabarka",
+                        "distance": "34.7 km",
+                        "duration": "41 min en voiture"
+                    },
+                    {
+                        "name": "Port de Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "41 min en voiture"
+                    },
+                    {
+                        "name": "Site archéologique de Bulla Regia",
+                        "distance": "36.9 km",
+                        "duration": "42 min en voiture"
+                    },
+                    {
+                        "name": "Plage de Tabarka",
+                        "distance": "36.2 km",
+                        "duration": "42 min en voiture"
+                    },
+                    {
+                        "name": "Fort de Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "42 min en voiture"
+                    }
+                ]
             }
         }
     }

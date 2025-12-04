@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { CONTACT_INFO } from "@/config/constants";
 
 const BookingCTA = () => {
   const [ref, inView] = useInView({
@@ -143,8 +144,8 @@ const BookingCTA = () => {
           >
             <p className="text-muted-foreground">
               Prefer to speak with us directly?{" "}
-              <a href="tel:+1234567890" className="font-semibold text-primary hover:underline">
-                Call +1 (234) 567-890
+              <a href={CONTACT_INFO.phoneHref} className="font-semibold text-primary hover:underline">
+                Call {CONTACT_INFO.phone}
               </a>
             </p>
           </motion.div>

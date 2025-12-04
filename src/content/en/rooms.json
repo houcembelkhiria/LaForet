@@ -4,34 +4,47 @@
         "subtitle": "Discover your perfect sanctuary"
     },
     "content": {
-        "subtitle": "Rooms & Suites",
-        "title": "Your Perfect Sanctuary",
+        "subtitle": "Accommodation",
+        "title": "Our Rooms and Suites",
         "viewDetails": "View Details",
         "rooms": [
             {
                 "id": 1,
-                "slug": "deluxe-forest",
-                "name": "Deluxe Forest View",
+                "slug": "chambre-standard",
+                "name": "Standard Room",
                 "description": "Spacious room with panoramic forest views and modern amenities",
-                "price": "From $350/night",
+                "price": "From 350TND/night",
                 "features": [
                     "King Bed",
                     "Forest View",
-                    "45 m²",
+                    "30 m²",
                     "Modern Bath"
                 ]
             },
             {
                 "id": 2,
-                "slug": "mountain-suite",
-                "name": "Mountain Suite",
+                "slug": "suite-junior",
+                "name": "Junior Suite",
                 "description": "Luxurious suite with living area and breathtaking mountain vistas",
-                "price": "From $550/night",
+                "price": "From 550TND/night",
                 "features": [
                     "Living Area",
                     "Mountain View",
-                    "75 m²",
-                    "Premium Bath"
+                    "45 m²",
+                    "Private Jacuzzi"
+                ]
+            },
+            {
+                "id": 3,
+                "slug": "suite-senior",
+                "name": "Senior Suite",
+                "description": "The ultimate luxury experience with private jacuzzi and panoramic views",
+                "price": "From 750TND/night",
+                "features": [
+                    "Large Living Room",
+                    "Panoramic View",
+                    "60 m²",
+                    "Balcony Jacuzzi"
                 ]
             }
         ]

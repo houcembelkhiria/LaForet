@@ -2,10 +2,15 @@ import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Sparkles, UtensilsCrossed, Mountain } from "lucide-react";
-import spaImage from "@/assets/experience-spa.jpg";
-import diningImage from "@/assets/experience-dining.jpg";
-import natureImage from "@/assets/experience-nature.jpg";
 
+// Dynamically load images for experiences
+const diningImages = import.meta.glob('@/assets/indoor/dining/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const utilitiesImages = import.meta.glob('@/assets/utilities/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const outdoorImages = import.meta.glob('@/assets/outdoor/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+
+const diningImageArray = Object.values(diningImages).map((module: any) => module.default);
+const utilitiesImageArray = Object.values(utilitiesImages).map((module: any) => module.default);
+const outdoorImageArray = Object.values(outdoorImages).map((module: any) => module.default);
 
 const Experiences = memo(() => {
   const [ref, inView] = useInView({
@@ -20,21 +25,21 @@ const Experiences = memo(() => {
         icon: Sparkles,
         title: "Wellness & Spa",
         description: "Rejuvenate your senses with our world-class spa treatments and wellness programs",
-        image: spaImage,
+        image: utilitiesImageArray[0] || "",
       },
       {
         id: 2,
         icon: UtensilsCrossed,
         title: "Fine Dining",
         description: "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients",
-        image: diningImage,
+        image: diningImageArray[0] || "",
       },
       {
         id: 3,
         icon: Mountain,
         title: "Nature Activities",
         description: "Explore pristine trails, meditation spots, and breathtaking viewpoints",
-        image: natureImage,
+        image: outdoorImageArray[0] || "",
       },
     ],
     []

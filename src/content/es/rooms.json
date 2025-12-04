@@ -1,37 +1,50 @@
 {
     "header": {
-        "title": "Rooms & Suites",
-        "subtitle": "Discover your perfect sanctuary"
+        "title": "Habitaciones y Suites",
+        "subtitle": "Descubre tu santuario perfecto"
     },
     "content": {
-        "subtitle": "Rooms & Suites",
-        "title": "Your Perfect Sanctuary",
-        "viewDetails": "View Details",
+        "subtitle": "Alojamiento",
+        "title": "Nuestras Habitaciones y Suites",
+        "viewDetails": "Ver Detalles",
         "rooms": [
             {
                 "id": 1,
-                "slug": "deluxe-forest",
-                "name": "Deluxe Forest View",
-                "description": "Spacious room with panoramic forest views and modern amenities",
-                "price": "From $350/night",
+                "slug": "chambre-standard",
+                "name": "Habitación Estándar",
+                "description": "Habitación espaciosa con vistas panorámicas al bosque y comodidades modernas",
+                "price": "Desde 350TND/noche",
                 "features": [
-                    "King Bed",
-                    "Forest View",
-                    "45 m²",
-                    "Modern Bath"
+                    "Cama King",
+                    "Vista Bosque",
+                    "30 m²",
+                    "Baño Moderno"
                 ]
             },
             {
                 "id": 2,
-                "slug": "mountain-suite",
-                "name": "Mountain Suite",
-                "description": "Luxurious suite with living area and breathtaking mountain vistas",
-                "price": "From $550/night",
+                "slug": "suite-junior",
+                "name": "Junior Suite",
+                "description": "Suite lujosa con sala de estar y vistas impresionantes a la montaña",
+                "price": "Desde 550TND/noche",
                 "features": [
-                    "Living Area",
-                    "Mountain View",
-                    "75 m²",
-                    "Premium Bath"
+                    "Sala de Estar",
+                    "Vista Montaña",
+                    "45 m²",
+                    "Jacuzzi Privado"
+                ]
+            },
+            {
+                "id": 3,
+                "slug": "suite-senior",
+                "name": "Senior Suite",
+                "description": "La experiencia de lujo definitiva con jacuzzi privado y vistas panorámicas",
+                "price": "Desde 750TND/noche",
+                "features": [
+                    "Gran Salón",
+                    "Vista Panorámica",
+                    "60 m²",
+                    "Jacuzzi Balcón"
                 ]
             }
         ]

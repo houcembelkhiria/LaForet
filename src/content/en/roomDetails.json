@@ -4,23 +4,23 @@
         "backButton": "Back to Rooms"
     },
     "rooms": {
-        "deluxe-forest": {
-            "name": "Deluxe Forest View",
-            "tagline": "Immerse yourself in nature's embrace",
-            "description": "Experience the perfect blend of comfort and natural beauty in our Deluxe Forest View room. Wake up to panoramic views of lush forests and enjoy modern amenities in an elegantly designed space.",
+        "chambre-standard": {
+            "name": "Standard Room",
+            "tagline": "Comfort and Nature",
+            "description": "Spacious room with panoramic forest views and modern amenities. Ideal for couples or solo travelers seeking tranquility.",
             "price": 350,
             "specs": {
                 "bed": {
-                    "label": "King Bed",
-                    "value": "1 King"
+                    "label": "Bed",
+                    "value": "1 King Bed"
                 },
                 "occupancy": {
                     "label": "Occupancy",
                     "value": "2 Adults"
                 },
                 "size": {
-                    "label": "Room Size",
-                    "value": "45 m²"
+                    "label": "Size",
+                    "value": "30 m²"
                 },
                 "view": {
                     "label": "View",
@@ -28,41 +28,50 @@
                 }
             },
             "amenities": [
-                "High-Speed WiFi",
+                "Free WiFi",
                 "Coffee Maker",
-                "Climate Control",
-                "55\" Smart TV",
-                "Luxury Bathroom",
-                "Safe Deposit Box",
+                "Air Conditioning",
+                "Flat-screen TV",
+                "Private Bathroom",
+                "Safe",
                 "Daily Housekeeping",
-                "Private Balcony"
+                "Private Balcony",
+                "Towels",
+                "Free Toiletries",
+                "Hairdryer",
+                "Linens",
+                "Wardrobe",
+                "Desk",
+                "Heating"
             ],
             "features": [
-                "Premium Egyptian cotton linens",
-                "Rainfall shower with designer toiletries",
-                "Mini bar and tea/coffee facilities",
+                "Premium bedding",
+                "Walk-in shower",
+                "Mini bar and electric kettle",
                 "Work desk with ergonomic chair",
                 "Blackout curtains for restful sleep",
-                "In-room dining available 24/7"
+                "24/7 Room service",
+                "Free parking",
+                "Non-smoking rooms"
             ]
         },
-        "mountain-suite": {
-            "name": "Mountain Suite",
-            "tagline": "Luxury elevated to new heights",
-            "description": "Indulge in our spacious Mountain Suite featuring a separate living area, breathtaking mountain vistas, and premium amenities. Perfect for those seeking the ultimate luxury experience.",
+        "suite-junior": {
+            "name": "Junior Suite",
+            "tagline": "Luxury and Space",
+            "description": "Luxurious suite with living area and breathtaking mountain vistas. Perfect for those seeking more space and comfort.",
             "price": 550,
             "specs": {
                 "bed": {
-                    "label": "King Bed",
-                    "value": "1 King"
+                    "label": "Bed",
+                    "value": "1 King Bed"
                 },
                 "occupancy": {
                     "label": "Occupancy",
-                    "value": "2-4 Adults"
+                    "value": "2-3 Adults"
                 },
                 "size": {
-                    "label": "Suite Size",
-                    "value": "75 m²"
+                    "label": "Size",
+                    "value": "45 m²"
                 },
                 "view": {
                     "label": "View",
@@ -70,27 +79,91 @@
                 }
             },
             "amenities": [
-                "High-Speed WiFi",
+                "Free WiFi",
                 "Espresso Machine",
-                "Climate Control",
-                "65\" Smart TV",
-                "Premium Spa Bath",
-                "Safe Deposit Box",
+                "Air Conditioning",
+                "55\" Flat-screen TV",
+                "Private Jacuzzi",
+                "Safe",
                 "Twice Daily Housekeeping",
-                "Private Terrace"
+                "Private Terrace",
+                "Marble Bathroom",
+                "Luxury Toiletries",
+                "Bathrobes",
+                "Premium Towels",
+                "Walk-in Closet",
+                "Dining Area",
+                "Wake-up Service",
+                "24-hour Front Desk"
             ],
             "features": [
-                "Separate living and sleeping areas",
-                "Premium Italian marble bathroom",
-                "Complimentary champagne on arrival",
+                "Separate living area",
+                "Italian marble bathroom",
                 "Luxury bath products and plush robes",
-                "Dedicated workspace with city views",
-                "Priority room service and concierge"
+                "Dedicated workspace with views",
+                "Priority room service and concierge",
+                "Free parking",
+                "Hotel bar access",
+                "Spa access"
+            ]
+        },
+        "suite-senior": {
+            "name": "Senior Suite",
+            "tagline": "The Pinnacle of Luxury",
+            "description": "The ultimate luxury experience with private jacuzzi on the balcony and panoramic mountain views. An exclusive retreat for the most discerning guests.",
+            "price": 750,
+            "specs": {
+                "bed": {
+                    "label": "Bed",
+                    "value": "1 Super King Bed"
+                },
+                "occupancy": {
+                    "label": "Occupancy",
+                    "value": "2-4 Adults"
+                },
+                "size": {
+                    "label": "Size",
+                    "value": "60 m²"
+                },
+                "view": {
+                    "label": "View",
+                    "value": "Panoramic"
+                }
+            },
+            "amenities": [
+                "Free WiFi",
+                "Premium Espresso Machine",
+                "Air Conditioning",
+                "65\" Flat-screen TV",
+                "Balcony Jacuzzi",
+                "Safe",
+                "Butler Service",
+                "Large Terrace",
+                "Spa Bathroom",
+                "Premium Toiletries",
+                "Luxury Bathrobes",
+                "Walk-in Closet",
+                "Large Living Room",
+                "Dining Area",
+                "Wake-up Service",
+                "24-hour Front Desk",
+                "Electric Vehicle Charging Station"
+            ],
+            "features": [
+                "Large living room with sofa",
+                "Spa bathroom with bathtub",
+                "Champagne on arrival",
+                "Premium bath products and luxury robes",
+                "Breathtaking mountain views",
+                "Priority service and dedicated concierge",
+                "Free private parking",
+                "Full Spa and Swimming Pool access",
+                "Breakfast included"
             ]
         }
     },
     "labels": {
-        "pricePerNight": "From ${price}/night",
+        "pricePerNight": "From ${price} TND/night",
         "aboutTitle": "About This Room",
         "featuresTitle": "Room Features",
         "amenitiesTitle": "Amenities",
@@ -98,7 +171,7 @@
         "reserveTitle": "Reserve This Room",
         "reserveSubtitle": "Book your stay and experience luxury at La Foret",
         "priceLabel": "Price per night",
-        "bookNow": "Book Now - ${price}/night",
+        "bookNow": "Book Now - ${price} TND/night",
         "form": {
             "checkin": "Check-in Date",
             "checkout": "Check-out Date",

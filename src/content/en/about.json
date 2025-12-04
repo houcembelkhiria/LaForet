@@ -9,17 +9,231 @@
         "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
         "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
         "stats": {
-            "experience": {
-                "value": "20+",
-                "label": "Years Experience"
-            },
+
             "rooms": {
-                "value": "45",
+                "value": "63",
                 "label": "Luxury Rooms"
             },
             "satisfaction": {
                 "value": "98%",
                 "label": "Guest Satisfaction"
+            }
+        },
+        "facilities": {
+            "title": "Hotel Facilities",
+            "subtitle": "Everything you need for a perfect stay",
+            "popular": {
+                "title": "Most Popular Facilities",
+                "items": [
+                    "Swimming pool",
+                    "Free Wifi",
+                    "Free parking",
+                    "Non-smoking rooms",
+                    "Spa",
+                    "Room service",
+                    "Bar",
+                    "Breakfast"
+                ]
+            },
+            "categories": [
+                {
+                    "title": "Bathroom",
+                    "items": [
+                        "Private bathroom",
+                        "Toilet paper",
+                        "Towels",
+                        "Toilet",
+                        "Free toiletries",
+                        "Hairdryer",
+                        "Shower"
+                    ]
+                },
+                {
+                    "title": "Bedroom",
+                    "items": [
+                        "Linens",
+                        "Wardrobe or closet",
+                        "Walk-in closet"
+                    ]
+                },
+                {
+                    "title": "Outdoors",
+                    "items": [
+                        "Balcony",
+                        "Terrace",
+                        "Garden"
+                    ]
+                },
+                {
+                    "title": "Kitchen",
+                    "items": [
+                        "Electric kettle"
+                    ]
+                },
+                {
+                    "title": "Room Amenities",
+                    "items": [
+                        "Clothes rack",
+                        "Dining area",
+                        "Desk"
+                    ]
+                },
+                {
+                    "title": "Media & Technology",
+                    "items": [
+                        "Flat-screen TV",
+                        "TV"
+                    ]
+                },
+                {
+                    "title": "Food & Drink",
+                    "items": [
+                        "Bar"
+                    ]
+                },
+                {
+                    "title": "Internet",
+                    "items": [
+                        "Wifi is available in all areas and is free of charge"
+                    ]
+                },
+                {
+                    "title": "Parking",
+                    "items": [
+                        "Free private parking is available on site (reservation is not needed)",
+                        "Electric vehicle charging station"
+                    ]
+                },
+                {
+                    "title": "Services",
+                    "items": [
+                        "Wake-up service",
+                        "24-hour front desk",
+                        "Room service"
+                    ]
+                },
+                {
+                    "title": "Safety & Security",
+                    "items": [
+                        "Safe"
+                    ]
+                },
+                {
+                    "title": "General",
+                    "items": [
+                        "Air conditioning",
+                        "Smoke-free property",
+                        "Heating",
+                        "Non-smoking rooms"
+                    ]
+                },
+                {
+                    "title": "Wellness",
+                    "items": [
+                        "Swimming pool",
+                        "Spa"
+                    ]
+                },
+                {
+                    "title": "Languages Spoken",
+                    "items": [
+                        "English",
+                        "Spanish",
+                        "French",
+                        "Italian"
+                    ]
+                }
+            ]
+        },
+        "policies": {
+            "title": "Hotel Policies",
+            "subtitle": "Important information for your stay",
+            "items": [
+                {
+                    "title": "Check-in / Check-out",
+                    "description": "Check-in at the hotel is available from 2:00 PM while check-out must be done before noon."
+                },
+                {
+                    "title": "Billing",
+                    "description": "Billing will be done by the Hotel in the Client's name and not in the name of Reservy.com Agency."
+                },
+                {
+                    "title": "Special Offers",
+                    "description": "In the event that rates drop following a promotion, it is strictly forbidden to cancel an existing reservation to repurchase it at the new price (same period, same hotel)."
+                }
+            ]
+        },
+        "activities": {
+            "title": "Activities & Leisure",
+            "subtitle": "Discover unique experiences at La Foret",
+            "leisure": {
+                "title": "Leisure Activities",
+                "description": "Leisure activities include horseback riding, hiking, hunting, cultural visits to nearby archaeological sites or mountains.",
+                "items": [
+                    "Horseback riding",
+                    "Hiking",
+                    "Hunting",
+                    "Cultural visits",
+                    "Archaeological sites",
+                    "Mountain excursions"
+                ]
+            },
+            "dining": {
+                "title": "Dining Spaces",
+                "description": "Dining spaces include an à la carte restaurant and a lobby bar.",
+                "items": [
+                    "À la carte restaurant",
+                    "Lobby bar",
+                    "24/7 room service"
+                ]
+            }
+        },
+        "location": {
+            "title": "Location",
+            "subtitle": "Find us in the heart of nature",
+            "address": {
+                "street": "RN17",
+                "phone": "0021655429235",
+                "city": "Ain Draham",
+                "region": "Jendouba Governorate",
+                "postalCode": "8130",
+                "country": "Tunisia",
+                "fullAddress": "RN17, Ain Draham, Jendouba Governorate, 8130, Tunisia"
+            },
+            "coordinates": {
+                "lat": 36.7833,
+                "lng": 8.6833
+            },
+            "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.8!2d8.6833!3d36.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQ2JzU5LjkiTiA4wrA0MCc1OS45IkU!5e0!3m2!1sen!2stn!4v1234567890",
+            "nearby": {
+                "title": "Nearby",
+                "attractions": [
+                    {
+                        "name": "Tabarka Marina",
+                        "distance": "34.7 km",
+                        "duration": "41 min drive"
+                    },
+                    {
+                        "name": "Port of Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "41 min drive"
+                    },
+                    {
+                        "name": "Bulla Regia Archaeological Site",
+                        "distance": "36.9 km",
+                        "duration": "42 min drive"
+                    },
+                    {
+                        "name": "Tabarka Beach",
+                        "distance": "36.2 km",
+                        "duration": "42 min drive"
+                    },
+                    {
+                        "name": "Fort of Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "42 min drive"
+                    }
+                ]
             }
         }
     }

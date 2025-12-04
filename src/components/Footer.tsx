@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { CONTACT_INFO } from "@/config/constants";
 
 const Footer = memo(() => {
   const [ref, inView] = useInView({
@@ -15,25 +16,25 @@ const Footer = memo(() => {
 
   const socialLinks = useMemo(
     () => [
-      { id: "facebook", icon: Facebook, href: "#", label: content.footer.social.facebook },
-      { id: "instagram", icon: Instagram, href: "#", label: content.footer.social.instagram },
-      { id: "twitter", icon: Twitter, href: "#", label: content.footer.social.twitter },
+      { id: "facebook", icon: Facebook, href: CONTACT_INFO.social.facebook, label: content.footer.social.facebook },
+      { id: "instagram", icon: Instagram, href: CONTACT_INFO.social.instagram, label: content.footer.social.instagram },
+      { id: "twitter", icon: Twitter, href: CONTACT_INFO.social.twitter, label: content.footer.social.twitter },
     ],
-    []
+    [content.footer.social]
   );
 
   const contactInfo = useMemo(
     () => [
-      { id: "address", icon: MapPin, text: content.footer.contact.address },
-      { id: "phone", icon: Phone, text: content.footer.contact.phone },
-      { id: "email", icon: Mail, text: content.footer.contact.email },
+      { id: "address", icon: MapPin, text: CONTACT_INFO.address.full },
+      { id: "phone", icon: Phone, text: CONTACT_INFO.phone },
+      { id: "email", icon: Mail, text: CONTACT_INFO.email },
     ],
     []
   );
 
   const quickLinks = useMemo(
     () => content.footer.quickLinks.links,
-    []
+    [content.footer.quickLinks.links]
   );
 
   return (
@@ -79,9 +80,9 @@ const Footer = memo(() => {
           >
             <h4 className="mb-6 text-xl font-semibold">{content.footer.quickLinks.title}</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
+              {quickLinks.map((link: string, index: number) => (
                 <motion.li
-                  key={link}
+                  key={index}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}

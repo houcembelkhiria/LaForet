@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
-import roomDeluxe from "@/assets/room-deluxe.jpg";
-import roomSuite from "@/assets/room-suite.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+// Load room images
+const roomImages = import.meta.glob('@/assets/indoor/rooms/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const roomImageArray = Object.values(roomImages).map((module: any) => module.default);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,9 +16,10 @@ const RoomsParallax = () => {
   const { t } = useLanguage();
   const content = t("index");
 
-  const rooms = content?.rooms?.items?.map((room: any) => ({
+  const rooms = content?.rooms?.items?.map((room: any, index: number) => ({
     ...room,
-    image: room.id === 1 ? roomDeluxe : roomSuite,
+    // Cycle through available room images
+    image: roomImageArray[index % roomImageArray.length],
   })) || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);

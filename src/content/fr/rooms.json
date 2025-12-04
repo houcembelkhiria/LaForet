@@ -1,37 +1,51 @@
 {
     "header": {
-        "title": "Rooms & Suites",
-        "subtitle": "Discover your perfect sanctuary"
+        "title": "Chambres & Suites",
+        "subtitle": "Découvrez votre sanctuaire parfait"
     },
     "content": {
-        "subtitle": "Rooms & Suites",
-        "title": "Your Perfect Sanctuary",
-        "viewDetails": "View Details",
+        "subtitle": "Hébergement",
+        "title": "Nos Chambres et Suites",
+        "description": "L'hôtel propose 58 chambres standards, trois junior suites et deux suites senior supérieures. Chaque suite dispose d'un jacuzzi privé sur le balcon et d'une vue panoramique sur les montagnes.",
+        "viewDetails": "Voir détails",
         "rooms": [
             {
                 "id": 1,
-                "slug": "deluxe-forest",
-                "name": "Deluxe Forest View",
-                "description": "Spacious room with panoramic forest views and modern amenities",
-                "price": "From $350/night",
+                "slug": "chambre-standard",
+                "name": "Chambre Standard",
+                "description": "Chambre spacieuse avec vue panoramique sur la forêt et équipements modernes",
+                "price": "À partir de 350 TND/nuit",
                 "features": [
-                    "King Bed",
-                    "Forest View",
-                    "45 m²",
-                    "Modern Bath"
+                    "Grand Lit",
+                    "Vue Forêt",
+                    "30 m²",
+                    "Bain Moderne"
                 ]
             },
             {
                 "id": 2,
-                "slug": "mountain-suite",
-                "name": "Mountain Suite",
-                "description": "Luxurious suite with living area and breathtaking mountain vistas",
-                "price": "From $550/night",
+                "slug": "suite-junior",
+                "name": "Suite Junior",
+                "description": "Suite luxueuse avec coin salon et vue imprenable sur la montagne",
+                "price": "À partir de 550 TND/nuit",
                 "features": [
-                    "Living Area",
-                    "Mountain View",
-                    "75 m²",
-                    "Premium Bath"
+                    "Coin Salon",
+                    "Vue Montagne",
+                    "45 m²",
+                    "Jacuzzi Privé"
+                ]
+            },
+            {
+                "id": 3,
+                "slug": "suite-senior",
+                "name": "Suite Senior Supérieure",
+                "description": "L'expérience ultime de luxe avec jacuzzi privé et vue panoramique",
+                "price": "À partir de 750 TND/nuit",
+                "features": [
+                    "Grand Salon",
+                    "Vue Panoramique",
+                    "60 m²",
+                    "Jacuzzi Balcon"
                 ]
             }
         ]

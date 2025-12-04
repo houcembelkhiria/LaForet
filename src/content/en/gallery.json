@@ -7,12 +7,12 @@
         {
             "id": 1,
             "title": "La Foret Exterior",
-            "category": "Hotel"
+            "category": "Outdoor"
         },
         {
             "id": 2,
             "title": "Architecture",
-            "category": "Hotel"
+            "category": "Outdoor"
         },
         {
             "id": 3,
@@ -27,17 +27,17 @@
         {
             "id": 5,
             "title": "Spa Experience",
-            "category": "Experiences"
+            "category": "Indoor"
         },
         {
             "id": 6,
             "title": "Fine Dining",
-            "category": "Experiences"
+            "category": "Indoor"
         },
         {
             "id": 7,
             "title": "Nature Trails",
-            "category": "Experiences"
+            "category": "Outdoor"
         }
     ]
 }

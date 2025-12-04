@@ -1,137 +1,159 @@
 {
     "hero": {
-        "title": "La Foret: A Stay Beyond Ordinary",
-        "subtitle": "Discover timeless comfort surrounded by nature",
-        "bookNow": "Book Now",
-        "exploreRooms": "Explore Rooms"
+        "title": "L'hotel La Foret Ain Draham",
+        "subtitle": "Votre sanctuaire au cœur de la nature",
+        "bookNow": "Réserver",
+        "exploreRooms": "Voir Chambres"
     },
     "about": {
-        "welcome": "Welcome to La Foret",
-        "title": "Where Luxury Meets Nature",
-        "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
-        "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
+        "welcome": "Bienvenue à La Forêt",
+        "title": "Où le luxe rencontre la nature",
+        "description1": "Entièrement rénové, l'hôtel La Forêt Ain Draham, établissement 4 étoiles situé à Ain Draham, gouvernorat de Jendouba, en Tunisie, a rouvert ses portes après dix ans de fermeture.",
+        "description2": "Avec une vue imprenable sur les montagnes, des équipements de classe mondiale et un service personnalisé, chaque moment à La Forêt est conçu pour dépasser vos attentes.",
         "stats": {
             "experience": {
                 "value": "20+",
-                "label": "Years Experience"
+                "label": "Années d'expérience"
             },
             "rooms": {
-                "value": "45",
-                "label": "Luxury Rooms"
+                "value": "63",
+                "label": "Chambres de luxe"
             },
             "satisfaction": {
                 "value": "98%",
-                "label": "Guest Satisfaction"
+                "label": "Satisfaction client"
             }
         }
     },
     "rooms": {
-        "subtitle": "Rooms & Suites",
-        "title": "Your Perfect Sanctuary",
-        "viewDetails": "View Details",
+        "subtitle": "Hébergement",
+        "title": "Nos Chambres et Suites",
+        "description": "L'hôtel propose 58 chambres standards, trois junior suites et deux suites senior supérieures. Chaque suite dispose d'un jacuzzi privé sur le balcon et d'une vue panoramique sur les montagnes.",
+        "viewDetails": "Voir les détails",
         "items": [
             {
                 "id": 1,
-                "slug": "deluxe-forest",
-                "name": "Deluxe Forest View",
-                "description": "Spacious room with panoramic forest views and modern amenities",
-                "price": "From $350/night",
+                "slug": "chambre-standard",
+                "name": "Chambre Standard",
+                "description": "Chambre spacieuse avec vue panoramique sur la forêt et équipements modernes",
+                "price": "À partir de 350 TND/nuit",
                 "features": [
-                    "King Bed",
-                    "Forest View",
-                    "45 m²",
-                    "Modern Bath"
+                    "Grand Lit",
+                    "Vue Forêt",
+                    "30 m²",
+                    "Bain Moderne"
                 ]
             },
             {
                 "id": 2,
-                "slug": "mountain-suite",
-                "name": "Mountain Suite",
-                "description": "Luxurious suite with living area and breathtaking mountain vistas",
-                "price": "From $550/night",
+                "slug": "suite-junior",
+                "name": "Suite Junior",
+                "description": "Suite luxueuse avec coin salon et vue imprenable sur la montagne",
+                "price": "À partir de 550 TND/nuit",
                 "features": [
-                    "Living Area",
-                    "Mountain View",
-                    "75 m²",
-                    "Premium Bath"
+                    "Coin Salon",
+                    "Vue Montagne",
+                    "45 m²",
+                    "Jacuzzi Privé"
+                ]
+            },
+            {
+                "id": 3,
+                "slug": "suite-senior",
+                "name": "Suite Senior Supérieure",
+                "description": "L'expérience ultime de luxe avec jacuzzi privé et vue panoramique",
+                "price": "À partir de 750 TND/nuit",
+                "features": [
+                    "Grand Salon",
+                    "Vue Panoramique",
+                    "60 m²",
+                    "Jacuzzi Balcon"
                 ]
             }
         ]
     },
     "experiences": {
-        "subtitle": "Curated Experiences",
-        "title": "Discover Your Journey",
+        "subtitle": "Nos Services",
+        "title": "Découvrez Nos Expériences",
         "items": [
             {
-                "title": "Wellness & Spa",
-                "description": "Rejuvenate your senses with our world-class spa treatments and wellness programs"
+                "title": "Piscines",
+                "description": "Deux piscines sont disponibles : une piscine extérieure avec vue sur les reliefs boisés et une piscine intérieure chauffée, idéale pour se détendre en toutes saisons."
             },
             {
-                "title": "Fine Dining",
-                "description": "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients"
+                "title": "Spa",
+                "description": "Un centre de spa complet offre une large gamme de soins relaxants, massages et rituels de beauté, le tout réalisé par des professionnels expérimentés."
             },
             {
-                "title": "Nature Activities",
-                "description": "Explore pristine trails, meditation spots, and breathtaking viewpoints"
+                "title": "Restauration",
+                "description": "Les clients peuvent profiter d'une gastronomie raffinée, alliant cuisine locale et internationale, servie dans un restaurant buffet et un restaurant à la carte."
+            },
+            {
+                "title": "Divertissement",
+                "description": "L'expérience est complétée par un bar-lounge offrant une atmosphère chaleureuse et animée chaque soir."
+            },
+            {
+                "title": "Équipements professionnels",
+                "description": "Pour les événements professionnels, l'hôtel dispose d'une salle polyvalente et de deux salles de réunion adaptées aux séminaires et réunions d'affaires."
             }
         ]
     },
     "testimonials": {
-        "subtitle": "Guest Stories",
-        "title": "What Our Guests Say",
+        "subtitle": "Témoignages",
+        "title": "Ce que disent nos clients",
         "items": [
             {
                 "name": "Sarah Mitchell",
                 "location": "New York, USA",
-                "text": "An absolutely magical experience. The blend of luxury and nature created the perfect escape. Every detail was thoughtfully curated, and the staff went above and beyond.",
+                "text": "Une expérience absolument magique. Le mélange de luxe et de nature a créé l'évasion parfaite. Chaque détail a été soigneusement pensé.",
                 "rating": 5
             },
             {
                 "name": "James Chen",
-                "location": "Singapore",
-                "text": "Serenity Lodge exceeded all expectations. The views were breathtaking, the rooms were pristine, and the dining experience was world-class. A true hidden gem.",
+                "location": "Singapour",
+                "text": "Serenity Lodge a dépassé toutes les attentes. Les vues étaient à couper le souffle, les chambres impeccables et la cuisine de classe mondiale.",
                 "rating": 5
             },
             {
                 "name": "Emma Rodriguez",
-                "location": "Barcelona, Spain",
-                "text": "The perfect place to disconnect and recharge. The spa treatments were divine, and waking up to mountain views every morning was pure bliss. Cannot recommend enough.",
+                "location": "Barcelone, Espagne",
+                "text": "L'endroit parfait pour se déconnecter et se ressourcer. Les soins au spa étaient divins et se réveiller avec la vue sur la montagne était un pur bonheur.",
                 "rating": 5
             }
         ]
     },
     "booking": {
-        "subtitle": "Reserve Your Experience",
-        "title": "Book Your Stay at La Foret",
-        "description": "Begin your journey to tranquility. Our team will contact you to finalize your reservation.",
+        "subtitle": "Réservez votre séjour",
+        "title": "Réservez votre séjour à La Forêt",
+        "description": "Commencez votre voyage vers la tranquillité. Notre équipe vous contactera pour finaliser votre réservation.",
         "form": {
             "name": {
-                "label": "Full Name",
-                "placeholder": "John Doe"
+                "label": "Nom Complet",
+                "placeholder": "Jean Dupont"
             },
             "email": {
                 "label": "Email",
-                "placeholder": "john@example.com"
+                "placeholder": "jean@example.com"
             },
             "checkin": {
-                "label": "Check-in Date"
+                "label": "Date d'arrivée"
             },
             "checkout": {
-                "label": "Check-out Date"
+                "label": "Date de départ"
             },
             "guests": {
-                "label": "Number of Guests",
+                "label": "Nombre d'invités",
                 "placeholder": "2"
             },
             "message": {
-                "label": "Special Requests (Optional)",
-                "placeholder": "Let us know if you have any special requirements..."
+                "label": "Demandes spéciales (Optionnel)",
+                "placeholder": "Faites-nous savoir si vous avez des besoins particuliers..."
             },
-            "submit": "Reserve Your Stay"
+            "submit": "Réserver"
         },
         "contact": {
-            "text": "Prefer to speak with us directly?",
-            "phone": "Call +1 (234) 567-890"
+            "text": "Préférez-vous nous parler directement ?",
+            "phone": "Appelez +216 XX XXX XXX"
         }
     }
 }

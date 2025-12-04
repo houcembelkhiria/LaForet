@@ -31,7 +31,7 @@ const Navigation = memo(() => {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold tracking-wider">
-            <span className="font-serif text-primary">{content.navigation.brand}</span>
+            <span className="font-sans-serif text-primary">{content.navigation.brand}</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -71,31 +71,49 @@ const Navigation = memo(() => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-t border-border bg-background md:hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 top-20 z-40 bg-background md:hidden overflow-y-auto"
           >
-            <div className="container mx-auto px-6 py-6">
-              <div className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <Link
+            <div className="container mx-auto px-6 py-8">
+              <div className="flex flex-col gap-6">
+                {navLinks.map((link, index) => (
+                  <motion.div
                     key={link.path}
-                    to={link.path}
-                    onClick={closeMenu}
-                    className={`text-lg font-medium transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-foreground"
-                      }`}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    {link.name}
-                  </Link>
+                    <Link
+                      to={link.path}
+                      onClick={closeMenu}
+                      className={`text-2xl font-medium transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-foreground"
+                        }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
-                <Button className="bg-primary text-primary-foreground">
-                  {content.navigation.bookNow}
-                </Button>
+                
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.1 }}
+                  className="flex flex-col gap-4 mt-4"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="text-muted-foreground">Language:</span>
+                    <LanguageToggle />
+                  </div>
+                  <Button className="w-full bg-primary text-primary-foreground text-lg py-6">
+                    {content.navigation.bookNow}
+                  </Button>
+                </motion.div>
               </div>
             </div>
           </motion.div>

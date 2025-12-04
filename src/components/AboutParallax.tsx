@@ -146,10 +146,8 @@ const AboutParallax = () => {
             <div ref={statsRef} className="pt-4 will-change-transform">
               <div className="flex items-center gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-primary">{content.about.stats.experience.value}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {content.about.stats.experience.label}
-                  </div>
+                  <div className="text-4xl font-bold text-primary"></div>
+
                 </div>
                 <div className="h-12 w-px bg-border" />
                 <div>

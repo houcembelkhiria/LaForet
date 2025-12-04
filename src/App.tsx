@@ -14,6 +14,9 @@ const RoomDetails = lazy(() => import("./pages/RoomDetails"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// Disabled ImagePreloader - it was loading all 150+ images immediately causing slowness
+// import ImagePreloader from "@/components/ImagePreloader";
+
 // Optimize QueryClient with performance defaults
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,6 +39,7 @@ const PageLoader = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      {/* <ImagePreloader /> */}
       <Toaster />
       <Sonner />
       <LanguageProvider>

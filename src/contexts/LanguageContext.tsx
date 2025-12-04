@@ -34,7 +34,7 @@ const loadLanguageData = async (lang: Language) => {
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const [language, setLanguageState] = useState<Language>(() => {
         const saved = localStorage.getItem("language");
-        return (saved as Language) || "en";
+        return (saved as Language) || "fr";
     });
 
     const [translations, setTranslations] = useState<any>(null);

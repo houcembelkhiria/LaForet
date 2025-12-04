@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.svg', '**/*.gif'],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

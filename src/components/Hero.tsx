@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-hotel.jpg";
+
+// Use outdoor image for hero
+const outdoorImages = import.meta.glob('@/assets/outdoor/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const heroImage = Object.values(outdoorImages).map((module: any) => module.default)[1] || "";
 
 const Hero = () => {
   const titleVariants = {

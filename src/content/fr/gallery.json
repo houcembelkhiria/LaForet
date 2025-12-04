@@ -1,43 +1,43 @@
 {
     "header": {
-        "title": "Gallery",
-        "subtitle": "Explore the beauty of La Foret"
+        "title": "Galerie",
+        "subtitle": "Explorez la beauté de La Forêt"
     },
     "images": [
         {
             "id": 1,
-            "title": "La Foret Exterior",
-            "category": "Hotel"
+            "title": "Extérieur de La Forêt",
+            "category": "Extérieur"
         },
         {
             "id": 2,
             "title": "Architecture",
-            "category": "Hotel"
+            "category": "Extérieur"
         },
         {
             "id": 3,
-            "title": "Deluxe Forest View",
-            "category": "Rooms"
+            "title": "Chambre Standard",
+            "category": "Chambres"
         },
         {
             "id": 4,
-            "title": "Mountain Suite",
-            "category": "Rooms"
+            "title": "Suite Junior",
+            "category": "Chambres"
         },
         {
             "id": 5,
-            "title": "Spa Experience",
-            "category": "Experiences"
+            "title": "Expérience Spa",
+            "category": "Intérieur"
         },
         {
             "id": 6,
-            "title": "Fine Dining",
-            "category": "Experiences"
+            "title": "Restauration Raffinée",
+            "category": "Intérieur"
         },
         {
             "id": 7,
-            "title": "Nature Trails",
-            "category": "Experiences"
+            "title": "Sentiers de Nature",
+            "category": "Extérieur"
         }
     ]
 }

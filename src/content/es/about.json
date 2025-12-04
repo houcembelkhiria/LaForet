@@ -1,25 +1,238 @@
 {
     "header": {
-        "title": "About La Foret",
-        "subtitle": "Your sanctuary in the heart of nature"
+        "title": "Acerca de La Foret",
+        "subtitle": "Tu santuario en el corazón de la naturaleza"
     },
     "content": {
-        "welcome": "Welcome to La Foret",
-        "title": "Where Luxury Meets Nature",
-        "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
-        "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
+        "welcome": "Bienvenido a La Foret",
+        "title": "Donde el Lujo se Encuentra con la Naturaleza",
+        "description1": "Ubicado en el corazón de una naturaleza prístina, La Foret ofrece un escape incomparable de lo ordinario. Nuestro hotel boutique combina perfectamente el lujo moderno con la belleza natural, creando una experiencia que rejuvenece cuerpo y alma.",
+        "description2": "Con impresionantes vistas a las montañas, servicios de clase mundial y atención personalizada, cada momento en La Foret está diseñado para superar sus expectativas.",
         "stats": {
-            "experience": {
-                "value": "20+",
-                "label": "Years Experience"
-            },
             "rooms": {
-                "value": "45",
-                "label": "Luxury Rooms"
+                "value": "63",
+                "label": "Habitaciones de Lujo"
             },
             "satisfaction": {
                 "value": "98%",
-                "label": "Guest Satisfaction"
+                "label": "Satisfacción de Huéspedes"
+            }
+        },
+        "facilities": {
+            "title": "Instalaciones del Hotel",
+            "subtitle": "Todo lo que necesitas para una estancia perfecta",
+            "popular": {
+                "title": "Instalaciones Más Populares",
+                "items": [
+                    "Piscina",
+                    "WiFi gratis",
+                    "Aparcamiento gratuito",
+                    "Habitaciones para no fumadores",
+                    "Spa",
+                    "Servicio de habitaciones",
+                    "Bar",
+                    "Desayuno"
+                ]
+            },
+            "categories": [
+                {
+                    "title": "Baño",
+                    "items": [
+                        "Baño privado",
+                        "Papel higiénico",
+                        "Toallas",
+                        "Inodoro",
+                        "Artículos de aseo gratuitos",
+                        "Secador de pelo",
+                        "Ducha"
+                    ]
+                },
+                {
+                    "title": "Dormitorio",
+                    "items": [
+                        "Ropa de cama",
+                        "Armario o closet",
+                        "Vestidor"
+                    ]
+                },
+                {
+                    "title": "Exteriores",
+                    "items": [
+                        "Balcón",
+                        "Terraza",
+                        "Jardín"
+                    ]
+                },
+                {
+                    "title": "Cocina",
+                    "items": [
+                        "Hervidor eléctrico"
+                    ]
+                },
+                {
+                    "title": "Comodidades de la Habitación",
+                    "items": [
+                        "Perchero",
+                        "Zona de comedor",
+                        "Escritorio"
+                    ]
+                },
+                {
+                    "title": "Medios y Tecnología",
+                    "items": [
+                        "TV de pantalla plana",
+                        "TV"
+                    ]
+                },
+                {
+                    "title": "Comida y Bebida",
+                    "items": [
+                        "Bar"
+                    ]
+                },
+                {
+                    "title": "Internet",
+                    "items": [
+                        "WiFi disponible en todas las áreas de forma gratuita"
+                    ]
+                },
+                {
+                    "title": "Aparcamiento",
+                    "items": [
+                        "Aparcamiento privado gratuito disponible en el establecimiento (sin reserva)",
+                        "Estación de carga para vehículos eléctricos"
+                    ]
+                },
+                {
+                    "title": "Servicios",
+                    "items": [
+                        "Servicio de despertador",
+                        "Recepción 24 horas",
+                        "Servicio de habitaciones"
+                    ]
+                },
+                {
+                    "title": "Seguridad",
+                    "items": [
+                        "Caja fuerte"
+                    ]
+                },
+                {
+                    "title": "General",
+                    "items": [
+                        "Aire acondicionado",
+                        "Establecimiento completamente libre de humo",
+                        "Calefacción",
+                        "Habitaciones para no fumadores"
+                    ]
+                },
+                {
+                    "title": "Bienestar",
+                    "items": [
+                        "Piscina",
+                        "Spa"
+                    ]
+                },
+                {
+                    "title": "Idiomas Hablados",
+                    "items": [
+                        "Inglés",
+                        "Español",
+                        "Francés",
+                        "Italiano"
+                    ]
+                }
+            ]
+        },
+        "policies": {
+            "title": "Políticas del Hotel",
+            "subtitle": "Información importante para su estancia",
+            "items": [
+                {
+                    "title": "Entrada / Salida",
+                    "description": "El check-in en el hotel está disponible a partir de las 14:00 mientras que el check-out debe realizarse antes del mediodía."
+                },
+                {
+                    "title": "Facturación",
+                    "description": "La facturación será realizada por el Hotel a nombre del Cliente y no a nombre de la Agencia Reservy.com."
+                },
+                {
+                    "title": "Ofertas Especiales",
+                    "description": "En caso de que las tarifas bajen debido a una promoción, está estrictamente prohibido cancelar una reserva existente para volver a comprarla al nuevo precio (mismo período, mismo hotel)."
+                }
+            ]
+        },
+        "activities": {
+            "title": "Actividades y Ocio",
+            "subtitle": "Descubre experiencias únicas en La Foret",
+            "leisure": {
+                "title": "Actividades de ocio",
+                "description": "Las actividades de ocio incluyen equitación, senderismo, caza, visitas culturales a sitios arqueológicos cercanos o montañas.",
+                "items": [
+                    "Equitación",
+                    "Senderismo",
+                    "Caza",
+                    "Visitas culturales",
+                    "Sitios arqueológicos",
+                    "Excursiones de montaña"
+                ]
+            },
+            "dining": {
+                "title": "Espacios de restauración",
+                "description": "Los espacios de restauración incluyen un restaurante a la carta y un lobby bar.",
+                "items": [
+                    "Restaurante a la carta",
+                    "Lobby bar",
+                    "Servicio de habitaciones 24/7"
+                ]
+            }
+        },
+        "location": {
+            "title": "Ubicación",
+            "subtitle": "Encuéntranos en el corazón de la naturaleza",
+            "address": {
+                "street": "RN17",
+                "phone": "0021655429235",
+                "city": "Ain Draham",
+                "region": "Gobernación de Jendouba",
+                "postalCode": "8130",
+                "country": "Túnez",
+                "fullAddress": "RN17, Ain Draham, Gobernación de Jendouba, 8130, Túnez"
+            },
+            "coordinates": {
+                "lat": 36.7833,
+                "lng": 8.6833
+            },
+            "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.8!2d8.6833!3d36.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQ2JzU5LjkiTiA4wrA0MCc1OS45IkU!5e0!3m2!1sen!2stn!4v1234567890",
+            "nearby": {
+                "title": "Cerca",
+                "attractions": [
+                    {
+                        "name": "Puerto deportivo de Tabarka",
+                        "distance": "34.7 km",
+                        "duration": "41 min en coche"
+                    },
+                    {
+                        "name": "Puerto de Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "41 min en coche"
+                    },
+                    {
+                        "name": "Sitio arqueológico de Bulla Regia",
+                        "distance": "36.9 km",
+                        "duration": "42 min en coche"
+                    },
+                    {
+                        "name": "Playa de Tabarka",
+                        "distance": "36.2 km",
+                        "duration": "42 min en coche"
+                    },
+                    {
+                        "name": "Fuerte de Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "42 min en coche"
+                    }
+                ]
             }
         }
     }
