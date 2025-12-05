@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Navigation from "@/components/Navigation";
 import HeroParallax from "@/components/HeroParallax";
 import AboutParallax from "@/components/AboutParallax";
 import RoomsParallax from "@/components/RoomsParallax";
@@ -35,7 +34,6 @@ const Index = () => {
 
   return (
     <div className="relative w-full overflow-x-hidden">
-      <Navigation />
       <HeroParallax />
       <AboutParallax />
       <RoomsParallax />

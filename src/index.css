@@ -3,24 +3,18 @@
 @tailwind utilities;
 
 /* Hardware acceleration for smooth parallax */
+/* Hardware acceleration for smooth parallax */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
 html {
   scroll-behavior: auto;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
 }
 
 body {
   overscroll-behavior: none;
-  transform-style: preserve-3d;
 }
 
 section {

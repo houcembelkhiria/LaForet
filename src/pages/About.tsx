@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AboutComponent from "@/components/About";
 import Location from "@/components/Location";
@@ -13,8 +12,6 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-
       {/* Page Header */}
       <motion.section
         className="relative flex h-[50vh] items-center justify-center bg-gradient-to-b from-secondary/30 to-background"

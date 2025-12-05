@@ -74,7 +74,6 @@ const RoomDetails = () => {
   if (!roomData || typeof roomData === "string") {
     return (
       <div className="min-h-screen bg-background">
-        <Navigation />
         <div className="flex min-h-[60vh] items-center justify-center">
           <div className="text-center">
             <h1 className="mb-4 text-3xl font-bold">{t("roomDetails.notFound.title")}</h1>

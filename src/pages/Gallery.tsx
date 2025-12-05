@@ -1,5 +1,4 @@
 import { useState, useMemo, memo, useEffect } from "react";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -150,8 +149,6 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-
       {/* Page Header */}
       <div className="relative flex h-[50vh] items-center justify-center bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-6 text-center">

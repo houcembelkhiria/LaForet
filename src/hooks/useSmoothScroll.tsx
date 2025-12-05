@@ -7,10 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const useSmoothScroll = () => {
   useEffect(() => {
-    // Add 3D perspective to root
-    document.documentElement.style.perspective = "1000px";
-    document.documentElement.style.perspectiveOrigin = "50% 50%";
-    
     // Initialize Lenis smooth scroll with enhanced settings
     const lenis = new Lenis({
       duration: 1.4,
@@ -34,8 +30,6 @@ export const useSmoothScroll = () => {
 
     // Cleanup
     return () => {
-      document.documentElement.style.perspective = "";
-      document.documentElement.style.perspectiveOrigin = "";
       lenis.destroy();
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000);

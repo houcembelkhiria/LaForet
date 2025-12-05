@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import RoomsComponent from "@/components/Rooms";
 import { motion } from "framer-motion";
@@ -10,8 +9,6 @@ const Rooms = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-
       {/* Page Header */}
       <motion.section
         className="relative flex h-[50vh] items-center justify-center bg-gradient-to-b from-secondary/30 to-background"

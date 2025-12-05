@@ -1,4 +1,4 @@
-import { memo, useState, useMemo, useCallback } from "react";
+import { memo, useState, useMemo, useCallback, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,9 +8,23 @@ import LanguageToggle from "@/components/LanguageToggle";
 
 const Navigation = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { t } = useLanguage();
   const content = t("common");
+
+  const isHome = location.pathname === "/";
+  // Transparent only on Home and when at the top
+  const isTransparent = isHome && !isScrolled;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = useMemo(
     () => content?.navigation?.links || [],
@@ -26,12 +40,19 @@ const Navigation = memo(() => {
   const closeMenu = useCallback(() => setIsOpen(false), []);
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav
+      className={`fixed top-0 z-[9999] w-full transition-all duration-300 ${isTransparent
+          ? "bg-transparent border-b border-transparent py-4"
+          : "bg-background/80 backdrop-blur-lg border-b border-border py-0 shadow-md"
+        }`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold tracking-wider">
-            <span className="font-sans-serif text-primary">{content.navigation.brand}</span>
+            <span className={`font-sans-serif transition-colors ${isTransparent ? "text-white" : "text-primary"}`}>
+              {content.navigation.brand}
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -40,7 +61,11 @@ const Navigation = memo(() => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative text-sm font-medium tracking-wide transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-foreground"
+                className={`relative text-sm font-medium tracking-wide transition-colors ${isActive(link.path)
+                  ? "text-primary"
+                  : isTransparent
+                    ? "text-white/90 hover:text-white"
+                    : "text-foreground hover:text-primary"
                   }`}
               >
                 {link.name}
@@ -63,7 +88,7 @@ const Navigation = memo(() => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden"
+            className={`md:hidden ${isTransparent ? "text-white" : "text-foreground"}`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -78,9 +103,14 @@ const Navigation = memo(() => {
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 top-20 z-40 bg-background md:hidden overflow-y-auto"
+            className="fixed inset-0 top-0 z-40 bg-background md:hidden overflow-y-auto"
           >
             <div className="container mx-auto px-6 py-8">
+              <div className="flex justify-end mb-8">
+                <button onClick={closeMenu} className="text-foreground">
+                  <X size={24} />
+                </button>
+              </div>
               <div className="flex flex-col gap-6">
                 {navLinks.map((link, index) => (
                   <motion.div
@@ -99,7 +129,7 @@ const Navigation = memo(() => {
                     </Link>
                   </motion.div>
                 ))}
-                
+
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
