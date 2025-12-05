@@ -73,24 +73,24 @@
         "title": "Découvrez Nos Expériences",
         "items": [
             {
-                "title": "Piscines",
-                "description": "Deux piscines sont disponibles : une piscine extérieure avec vue sur les reliefs boisés et une piscine intérieure chauffée, idéale pour se détendre en toutes saisons."
-            },
-            {
+                "id": "spa",
                 "title": "Spa",
-                "description": "Un centre de spa complet offre une large gamme de soins relaxants, massages et rituels de beauté, le tout réalisé par des professionnels expérimentés."
+                "description": "Un centre de spa complet offrant une évasion sensorielle unique pour revitaliser votre corps et votre esprit."
             },
             {
-                "title": "Restauration",
-                "description": "Les clients peuvent profiter d'une gastronomie raffinée, alliant cuisine locale et internationale, servie dans un restaurant buffet et un restaurant à la carte."
+                "id": "massage",
+                "title": "Massage",
+                "description": "Une gamme variée de massages relaxants et thérapeutiques réalisés par nos experts pour une détente absolue."
             },
             {
-                "title": "Divertissement",
-                "description": "L'expérience est complétée par un bar-lounge offrant une atmosphère chaleureuse et animée chaque soir."
+                "id": "gym",
+                "title": "Salle de Sport",
+                "description": "Des équipements modernes et une ambiance motivante pour maintenir votre forme physique durant votre séjour."
             },
             {
-                "title": "Équipements professionnels",
-                "description": "Pour les événements professionnels, l'hôtel dispose d'une salle polyvalente et de deux salles de réunion adaptées aux séminaires et réunions d'affaires."
+                "id": "pool",
+                "title": "Piscines",
+                "description": "Nos piscines intérieure et extérieure vous offrent des moments de fraicheur et de relaxation face aux montagnes."
             }
         ]
     },

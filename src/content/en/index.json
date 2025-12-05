@@ -72,16 +72,24 @@
         "title": "Discover Your Journey",
         "items": [
             {
-                "title": "Wellness & Spa",
-                "description": "Rejuvenate your senses with our world-class spa treatments and wellness programs"
+                "id": "spa",
+                "title": "Spa",
+                "description": "A complete spa center offering a unique sensory escape to revitalize your body and mind."
             },
             {
-                "title": "Fine Dining",
-                "description": "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients"
+                "id": "massage",
+                "title": "Massage",
+                "description": "A wide range of relaxing and therapeutic massages performed by our experts for absolute relaxation."
             },
             {
-                "title": "Nature Activities",
-                "description": "Explore pristine trails, meditation spots, and breathtaking viewpoints"
+                "id": "gym",
+                "title": "Gym",
+                "description": "Modern equipment and a motivating atmosphere to maintain your fitness during your stay."
+            },
+            {
+                "id": "pool",
+                "title": "Pools",
+                "description": "Our indoor and outdoor pools offer moments of freshness and relaxation facing the mountains."
             }
         ]
     },

@@ -72,16 +72,24 @@
         "title": "Entdecken Sie Ihre Reise",
         "items": [
             {
-                "title": "Wellness & Spa",
-                "description": "Verjüngen Sie Ihre Sinne mit unseren erstklassigen Spa-Behandlungen und Wellness-Programmen"
+                "id": "spa",
+                "title": "Spa",
+                "description": "Ein komplettes Spa-Zentrum für eine einzigartige sensorische Flucht, um Körper und Geist zu revitalisieren."
             },
             {
-                "title": "Feine Küche",
-                "description": "Genießen Sie exquisite Küche, zubereitet von unseren preisgekrönten Köchen mit lokalen Zutaten"
+                "id": "massage",
+                "title": "Massage",
+                "description": "Eine große Auswahl an entspannenden und therapeutischen Massagen von unseren Experten."
             },
             {
-                "title": "Naturaktivitäten",
-                "description": "Erkunden Sie unberührte Wanderwege, Meditationsplätze und atemberaubende Aussichtspunkte"
+                "id": "gym",
+                "title": "Fitnessstudio",
+                "description": "Moderne Ausstattung und eine motivierende Atmosphäre, um während Ihres Aufenthalts fit zu bleiben."
+            },
+            {
+                "id": "pool",
+                "title": "Pools",
+                "description": "Unsere Innen- und Außenpools bieten Frische und Entspannung vor der Bergkulisse."
             }
         ]
     },

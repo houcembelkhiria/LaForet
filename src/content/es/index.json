@@ -76,16 +76,24 @@
         "title": "Descubre Tu Viaje",
         "items": [
             {
-                "title": "Bienestar y Spa",
-                "description": "Rejuvenece tus sentidos con nuestros tratamientos de spa y programas de bienestar de clase mundial"
+                "id": "spa",
+                "title": "Spa",
+                "description": "Un centro de spa completo que ofrece una escapada sensorial única para revitalizar cuerpo y mente."
             },
             {
-                "title": "Alta Cocina",
-                "description": "Disfruta de una cocina exquisita elaborada por nuestros chefs galardonados usando ingredientes locales"
+                "id": "massage",
+                "title": "Masaje",
+                "description": "Una amplia gama de masajes relajantes y terapéuticos realizados por nuestros expertos."
             },
             {
-                "title": "Actividades en la Naturaleza",
-                "description": "Explora senderos vírgenes, zonas de meditación y miradores impresionantes"
+                "id": "gym",
+                "title": "Gimnasio",
+                "description": "Equipamiento moderno y un ambiente motivador para mantener tu forma física durante tu estancia."
+            },
+            {
+                "id": "pool",
+                "title": "Piscinas",
+                "description": "Nuestras piscinas interior y exterior ofrecen momentos de frescura y relajación frente a las montañas."
             }
         ]
     },

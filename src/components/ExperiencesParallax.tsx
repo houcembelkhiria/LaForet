@@ -1,35 +1,110 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Sparkles, UtensilsCrossed, Mountain } from "lucide-react";
+import { Sparkles, Dumbbell, Waves, Flower2, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import useEmblaCarousel from "embla-carousel-react";
 
 // Load experience images
-const diningImages = import.meta.glob('@/assets/indoor/dining/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
-const utilitiesImages = import.meta.glob('@/assets/utilities/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
-const outdoorImages = import.meta.glob('@/assets/outdoor/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const spaImages = import.meta.glob('@/assets/utilities/spa/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const massageImages = import.meta.glob('@/assets/utilities/massage/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const gymImages = import.meta.glob('@/assets/utilities/gym/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
+const poolImages = import.meta.glob('@/assets/utilities/pool/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
 
-const diningImageArray = Object.values(diningImages).map((module: any) => module.default);
-const utilitiesImageArray = Object.values(utilitiesImages).map((module: any) => module.default);
-const outdoorImageArray = Object.values(outdoorImages).map((module: any) => module.default);
+const spaImageArray = Object.values(spaImages).map((module: any) => module.default);
+const massageImageArray = Object.values(massageImages).map((module: any) => module.default);
+const gymImageArray = Object.values(gymImages).map((module: any) => module.default);
+const poolImageArray = Object.values(poolImages).map((module: any) => module.default);
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ExperienceCarousel = ({ images, title }: { images: string[], title: string }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", () => setSelectedIndex(emblaApi.selectedScrollSnap()));
+  }, [emblaApi]);
+
+  return (
+    <div className="relative h-64 overflow-hidden group/carousel">
+      <div className="overflow-hidden h-full" ref={emblaRef}>
+        <div className="flex h-full">
+          {images.map((img, idx) => (
+            <div key={idx} className="flex-[0_0_100%] min-w-0 relative h-full">
+              <img
+                src={img}
+                alt={`${title} - ${idx + 1}`}
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation Buttons */}
+      <button
+        onClick={(e) => { e.stopPropagation(); scrollPrev(); }}
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity"
+      >
+        <ChevronLeft size={20} />
+      </button>
+      <button
+        onClick={(e) => { e.stopPropagation(); scrollNext(); }}
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity"
+      >
+        <ChevronRight size={20} />
+      </button>
+
+      {/* Dots */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+        {images.map((_, idx) => (
+          <div
+            key={idx}
+            className={`h-1.5 rounded-full transition-all ${idx === selectedIndex ? "w-4 bg-white" : "w-1.5 bg-white/50"
+              }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const ExperiencesParallax = () => {
   const { t } = useLanguage();
   const content = t("index");
 
-  const getImageForExperience = (index: number) => {
-    if (index === 0) return utilitiesImageArray[0] || ""; // Spa/Wellness (Utilities)
-    if (index === 1) return diningImageArray[0] || ""; // Dining
-    return outdoorImageArray[0] || ""; // Nature
+  const getImagesForExperience = (id: string) => {
+    switch (id) {
+      case "spa": return spaImageArray;
+      case "massage": return massageImageArray;
+      case "gym": return gymImageArray;
+      case "pool": return poolImageArray;
+      default: return [];
+    }
   };
 
-  const experiences = content?.experiences?.items?.map((item: any, index: number) => ({
+  const getIconForExperience = (id: string) => {
+    switch (id) {
+      case "spa": return Sparkles;
+      case "massage": return Flower2;
+      case "gym": return Dumbbell;
+      case "pool": return Waves;
+      default: return Sparkles;
+    }
+  };
+
+  const experiences = content?.experiences?.items?.map((item: any) => ({
     ...item,
-    icon: index === 0 ? Sparkles : index === 1 ? UtensilsCrossed : Mountain,
-    image: getImageForExperience(index),
+    icon: getIconForExperience(item.id),
+    images: getImagesForExperience(item.id),
   })) || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -174,25 +249,13 @@ const ExperiencesParallax = () => {
                 style={{ transformStyle: "preserve-3d" }}
               >
                 <motion.div className="group relative overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:shadow-[var(--shadow-luxury)]">
-                  {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
-                    <motion.img
-                      src={experience.image}
-                      alt={experience.title}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      fetchPriority="auto"
-                      width={600}
-                      height={400}
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  {/* Image Carousel & Icon */}
+                  <div className="relative group/image">
+                    <ExperienceCarousel images={experience.images} title={experience.title} />
 
                     {/* Icon */}
                     <motion.div
-                      className="absolute left-6 top-6 rounded-full bg-primary/90 p-4 backdrop-blur-sm"
+                      className="absolute left-6 top-6 rounded-full bg-primary/90 p-4 backdrop-blur-sm z-20 shadow-lg"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >

@@ -3,8 +3,12 @@ import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { reviews } from "@/data/reviews";
 import { useInView } from "react-intersection-observer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Testimonials = memo(() => {
+  const { t } = useLanguage();
+  const content = t("index");
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -19,10 +23,10 @@ const Testimonials = memo(() => {
           transition={{ duration: 0.6 }}
         >
           <span className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Guest Reviews
+            {content?.testimonials?.subtitle || "Guest Reviews"}
           </span>
           <h2 className="mt-4 text-3xl font-bold md:text-4xl lg:text-5xl">
-            What Our Guests Say
+            {content?.testimonials?.title || "What Our Guests Say"}
           </h2>
         </motion.div>
       </div>
