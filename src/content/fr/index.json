@@ -11,10 +11,6 @@
         "description1": "Entièrement rénové, l'hôtel La Forêt Ain Draham, établissement 4 étoiles situé à Ain Draham, gouvernorat de Jendouba, en Tunisie, a rouvert ses portes après dix ans de fermeture.",
         "description2": "Avec une vue imprenable sur les montagnes, des équipements de classe mondiale et un service personnalisé, chaque moment à La Forêt est conçu pour dépasser vos attentes.",
         "stats": {
-            "experience": {
-                "value": "20+",
-                "label": "Années d'expérience"
-            },
             "rooms": {
                 "value": "63",
                 "label": "Chambres de luxe"
@@ -103,21 +99,21 @@
         "title": "Ce que disent nos clients",
         "items": [
             {
-                "name": "Sarah Mitchell",
-                "location": "New York, USA",
-                "text": "Une expérience absolument magique. Le mélange de luxe et de nature a créé l'évasion parfaite. Chaque détail a été soigneusement pensé.",
+                "name": "Wael",
+                "location": "Client vérifié",
+                "text": "The authentic vintage style, the stunning forest view, the facilities. The female receptionist was extremely professional and helpful. Everything was perfect!",
                 "rating": 5
             },
             {
-                "name": "James Chen",
-                "location": "Singapour",
-                "text": "Serenity Lodge a dépassé toutes les attentes. Les vues étaient à couper le souffle, les chambres impeccables et la cuisine de classe mondiale.",
+                "name": "Maroua",
+                "location": "Client vérifié",
+                "text": "The staff are just perfect, very friendly and helpful. Location just amazing, the view is breathtaking! The junior suite is very nice with a Mountain view. I'm in love with this hotel!",
                 "rating": 5
             },
             {
-                "name": "Emma Rodriguez",
-                "location": "Barcelone, Espagne",
-                "text": "L'endroit parfait pour se déconnecter et se ressourcer. Les soins au spa étaient divins et se réveiller avec la vue sur la montagne était un pur bonheur.",
+                "name": "Dridi",
+                "location": "Client vérifié",
+                "text": "Tout la région, l'hôtel, le personnel, la propreté. Une expérience parfaite!",
                 "rating": 5
             }
         ]
@@ -141,6 +137,10 @@
             "checkout": {
                 "label": "Date de départ"
             },
+            "roomType": {
+                "label": "Type de chambre",
+                "placeholder": "Sélectionnez un type de chambre"
+            },
             "guests": {
                 "label": "Nombre d'invités",
                 "placeholder": "2"
@@ -152,8 +152,7 @@
             "submit": "Réserver"
         },
         "contact": {
-            "text": "Préférez-vous nous parler directement ?",
-            "phone": "Appelez +216 XX XXX XXX"
+            "text": "Préférez-vous nous parler directement ?"
         }
     }
 }

@@ -1,0 +1,52 @@
+{
+    "header": {
+        "title": "Zimmer & Suiten",
+        "subtitle": "Entdecken Sie Ihr perfektes Refugium"
+    },
+    "content": {
+        "subtitle": "Unterkunft",
+        "title": "Unsere Zimmer und Suiten",
+        "viewDetails": "Details Ansehen",
+        "rooms": [
+            {
+                "id": 1,
+                "slug": "chambre-standard",
+                "name": "Standardzimmer",
+                "description": "Geräumiges Zimmer mit Panorama-Waldblick und modernen Annehmlichkeiten",
+                "price": "Ab 350TND/Nacht",
+                "features": [
+                    "Kingsize-Bett",
+                    "Waldblick",
+                    "30 m²",
+                    "Modernes Bad"
+                ]
+            },
+            {
+                "id": 2,
+                "slug": "suite-junior",
+                "name": "Junior Suite",
+                "description": "Luxuriöse Suite mit Wohnbereich und atemberaubendem Bergblick",
+                "price": "Ab 550TND/Nacht",
+                "features": [
+                    "Wohnbereich",
+                    "Bergblick",
+                    "45 m²",
+                    "Privater Whirlpool"
+                ]
+            },
+            {
+                "id": 3,
+                "slug": "suite-senior",
+                "name": "Senior Suite",
+                "description": "Das ultimative Luxuserlebnis mit privatem Whirlpool und Panoramablick",
+                "price": "Ab 750TND/Nacht",
+                "features": [
+                    "Großer Wohnbereich",
+                    "Panoramablick",
+                    "60 m²",
+                    "Balkon-Whirlpool"
+                ]
+            }
+        ]
+    }
+}

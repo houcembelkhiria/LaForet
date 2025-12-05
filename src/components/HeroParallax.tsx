@@ -6,10 +6,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Load outdoor images for hero
-const outdoorImages = import.meta.glob('@/assets/outdoor/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
-const outdoorImageArray = Object.values(outdoorImages).map((module: any) => module.default);
-const heroImage = outdoorImageArray[0] || ""; // Use first available outdoor image
+// Import hero image
+import heroImage from "@/assets/hero-hotel.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 

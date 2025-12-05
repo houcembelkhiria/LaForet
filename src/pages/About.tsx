@@ -5,6 +5,8 @@ import Location from "@/components/Location";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+import Testimonials from "@/components/Testimonials";
+
 const About = () => {
   const { t } = useLanguage();
   const content = t("about");
@@ -41,6 +43,7 @@ const About = () => {
       </motion.section>
 
       <AboutComponent />
+      <Testimonials />
       <Location />
       <Footer />
     </div>

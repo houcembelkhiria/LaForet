@@ -1,0 +1,239 @@
+{
+    "header": {
+        "title": "Über La Foret",
+        "subtitle": "Ihr Zufluchtsort im Herzen der Natur"
+    },
+    "content": {
+        "welcome": "Willkommen in La Foret",
+        "title": "Wo Luxus auf Natur trifft",
+        "description1": "Eingebettet im Herzen unberührter Wildnis bietet La Foret eine unvergleichliche Flucht aus dem Alltag. Unser Boutique-Hotel verbindet nahtlos modernen Luxus mit natürlicher Schönheit und schafft ein Erlebnis, das Körper und Seele verjüngt.",
+        "description2": "Mit atemberaubendem Bergblick, erstklassigen Annehmlichkeiten und persönlichem Service ist jeder Moment in La Foret darauf ausgelegt, Ihre Erwartungen zu übertreffen.",
+        "stats": {
+            "rooms": {
+                "value": "63",
+                "label": "Luxuszimmer"
+            },
+            "satisfaction": {
+                "value": "98%",
+                "label": "Gästezufriedenheit"
+            }
+        },
+        "facilities": {
+            "title": "Hoteleinrichtungen",
+            "subtitle": "Alles was Sie für einen perfekten Aufenthalt brauchen",
+            "popular": {
+                "title": "Beliebteste Einrichtungen",
+                "items": [
+                    "Schwimmbad",
+                    "Kostenloses WLAN",
+                    "Kostenloser Parkplatz",
+                    "Nichtraucherzimmer",
+                    "Spa",
+                    "Zimmerservice",
+                    "Bar",
+                    "Frühstück"
+                ]
+            },
+            "categories": [
+                {
+                    "title": "Badezimmer",
+                    "items": [
+                        "Eigenes Badezimmer",
+                        "Toilettenpapier",
+                        "Handtücher",
+                        "Toilette",
+                        "Kostenlose Pflegeprodukte",
+                        "Haartrockner",
+                        "Dusche"
+                    ]
+                },
+                {
+                    "title": "Schlafzimmer",
+                    "items": [
+                        "Bettwäsche",
+                        "Kleiderschrank",
+                        "Begehbarer Kleiderschrank"
+                    ]
+                },
+                {
+                    "title": "Im Freien",
+                    "items": [
+                        "Balkon",
+                        "Terrasse",
+                        "Garten"
+                    ]
+                },
+                {
+                    "title": "Küche",
+                    "items": [
+                        "Wasserkocher"
+                    ]
+                },
+                {
+                    "title": "Zimmerausstattung",
+                    "items": [
+                        "Kleiderständer",
+                        "Essbereich",
+                        "Schreibtisch"
+                    ]
+                },
+                {
+                    "title": "Medien & Technologie",
+                    "items": [
+                        "Flachbild-TV",
+                        "Fernseher"
+                    ]
+                },
+                {
+                    "title": "Essen & Trinken",
+                    "items": [
+                        "Bar"
+                    ]
+                },
+                {
+                    "title": "Internet",
+                    "items": [
+                        "WLAN ist überall verfügbar und kostenlos"
+                    ]
+                },
+                {
+                    "title": "Parkplatz",
+                    "items": [
+                        "Kostenloser Privatparkplatz vor Ort (ohne Reservierung)",
+                        "Ladestation für Elektrofahrzeuge"
+                    ]
+                },
+                {
+                    "title": "Dienstleistungen",
+                    "items": [
+                        "Weckservice",
+                        "24-Stunden-Rezeption",
+                        "Zimmerservice"
+                    ]
+                },
+                {
+                    "title": "Sicherheit",
+                    "items": [
+                        "Safe"
+                    ]
+                },
+                {
+                    "title": "Allgemein",
+                    "items": [
+                        "Klimaanlage",
+                        "Rauchfreies Anwesen",
+                        "Heizung",
+                        "Nichtraucherzimmer"
+                    ]
+                },
+                {
+                    "title": "Wellness",
+                    "items": [
+                        "Schwimmbad",
+                        "Spa"
+                    ]
+                },
+                {
+                    "title": "Gesprochene Sprachen",
+                    "items": [
+                        "Englisch",
+                        "Spanisch",
+                        "Französisch",
+                        "Italienisch",
+                        "Deutsch"
+                    ]
+                }
+            ]
+        },
+        "policies": {
+            "title": "Hotelrichtlinien",
+            "subtitle": "Wichtige Informationen für Ihren Aufenthalt",
+            "items": [
+                {
+                    "title": "Check-in / Check-out",
+                    "description": "Der Check-in im Hotel ist ab 14:00 Uhr möglich, der Check-out muss vor 12:00 Uhr erfolgen."
+                },
+                {
+                    "title": "Abrechnung",
+                    "description": "Die Abrechnung erfolgt durch das Hotel auf den Namen des Kunden und nicht auf den Namen der Agentur Reservy.com."
+                },
+                {
+                    "title": "Sonderangebote",
+                    "description": "Falls die Preise nach einer Werbeaktion sinken, ist es strengstens untersagt, eine bestehende Buchung zu stornieren, um sie zum neuen Preis erneut zu buchen (gleicher Zeitraum, gleiches Hotel)."
+                }
+            ]
+        },
+        "activities": {
+            "title": "Aktivitäten & Freizeit",
+            "subtitle": "Entdecken Sie einzigartige Erlebnisse in La Foret",
+            "leisure": {
+                "title": "Freizeitaktivitäten",
+                "description": "Zu den Freizeitaktivitäten gehören Reiten, Wandern, Jagd, kulturelle Besuche zu nahe gelegenen archäologischen Stätten oder Bergen.",
+                "items": [
+                    "Reiten",
+                    "Wandern",
+                    "Jagd",
+                    "Kulturelle Besuche",
+                    "Archäologische Stätten",
+                    "Bergausflüge"
+                ]
+            },
+            "dining": {
+                "title": "Gastronomiebereiche",
+                "description": "Zu den Gastronomiebereichen gehören ein À-la-carte-Restaurant und eine Lobby-Bar.",
+                "items": [
+                    "À-la-carte-Restaurant",
+                    "Lobby-Bar",
+                    "24/7 Zimmerservice"
+                ]
+            }
+        },
+        "location": {
+            "title": "Standort",
+            "subtitle": "Finden Sie uns im Herzen der Natur",
+            "address": {
+                "street": "RN17",
+                "city": "Ain Draham",
+                "region": "Gouvernorat Jendouba",
+                "postalCode": "8130",
+                "country": "Tunesien",
+                "fullAddress": "RN17, Ain Draham, Gouvernorat Jendouba, 8130, Tunesien"
+            },
+            "coordinates": {
+                "lat": 36.7833,
+                "lng": 8.6833
+            },
+            "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3207.8!2d8.6833!3d36.7833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDQ2JzU5LjkiTiA4wrA0MCc1OS45IkU!5e0!3m2!1sen!2stn!4v1234567890",
+            "nearby": {
+                "title": "In der Nähe",
+                "attractions": [
+                    {
+                        "name": "Yachthafen Tabarka",
+                        "distance": "34.7 km",
+                        "duration": "41 Min Fahrt"
+                    },
+                    {
+                        "name": "Hafen von Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "41 Min Fahrt"
+                    },
+                    {
+                        "name": "Archäologische Stätte Bulla Regia",
+                        "distance": "36.9 km",
+                        "duration": "42 Min Fahrt"
+                    },
+                    {
+                        "name": "Strand von Tabarka",
+                        "distance": "36.2 km",
+                        "duration": "42 Min Fahrt"
+                    },
+                    {
+                        "name": "Festung von Tabarka",
+                        "distance": "35.8 km",
+                        "duration": "42 Min Fahrt"
+                    }
+                ]
+            }
+        }
+    }
+}

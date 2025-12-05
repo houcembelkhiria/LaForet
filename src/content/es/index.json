@@ -94,21 +94,21 @@
         "title": "Lo Que Dicen Nuestros Huéspedes",
         "items": [
             {
-                "name": "Sarah Mitchell",
-                "location": "Nueva York, EE. UU.",
-                "text": "Una experiencia absolutamente mágica. La combinación de lujo y naturaleza creó la escapada perfecta. Cada detalle fue cuidadosamente pensado y el personal superó todas nuestras expectativas.",
+                "name": "Wael",
+                "location": "Huésped Verificado",
+                "text": "El auténtico estilo vintage, la impresionante vista al bosque, las instalaciones. La recepcionista fue extremadamente profesional y servicial. ¡Todo fue perfecto!",
                 "rating": 5
             },
             {
-                "name": "James Chen",
-                "location": "Singapur",
-                "text": "Serenity Lodge superó todas las expectativas. Las vistas eran impresionantes, las habitaciones impecables y la experiencia culinaria de clase mundial. Un verdadero tesoro escondido.",
+                "name": "Maroua",
+                "location": "Huésped Verificado",
+                "text": "El personal es simplemente perfecto, muy amable y servicial. ¡La ubicación es increíble, la vista es impresionante! La junior suite es muy bonita con vista a la montaña. ¡Me enamoré de este hotel!",
                 "rating": 5
             },
             {
-                "name": "Emma Rodriguez",
-                "location": "Barcelona, España",
-                "text": "El lugar perfecto para desconectar y recargar energías. Los tratamientos de spa eran divinos y despertar cada mañana con vistas a la montaña era pura felicidad. No puedo recomendarlo lo suficiente.",
+                "name": "Dridi",
+                "location": "Huésped Verificado",
+                "text": "Toda la región, el hotel, el personal, la limpieza. ¡Una experiencia perfecta!",
                 "rating": 5
             }
         ]
@@ -132,6 +132,10 @@
             "checkout": {
                 "label": "Fecha de Salida"
             },
+            "roomType": {
+                "label": "Tipo de habitación",
+                "placeholder": "Seleccione un tipo de habitación"
+            },
             "guests": {
                 "label": "Número de Huéspedes",
                 "placeholder": "2"
@@ -143,8 +147,7 @@
             "submit": "Reservar Tu Estancia"
         },
         "contact": {
-            "text": "¿Prefieres hablar con nosotros directamente?",
-            "phone": "Llama al +1 (234) 567-890"
+            "text": "¿Prefieres hablar con nosotros directamente?"
         }
     }
 }

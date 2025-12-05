@@ -12,7 +12,7 @@
         "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
         "stats": {
             "rooms": {
-                "value": "45",
+                "value": "63",
                 "label": "Luxury Rooms"
             },
             "satisfaction": {
@@ -90,21 +90,21 @@
         "title": "What Our Guests Say",
         "items": [
             {
-                "name": "Sarah Mitchell",
-                "location": "New York, USA",
-                "text": "An absolutely magical experience. The blend of luxury and nature created the perfect escape. Every detail was thoughtfully curated, and the staff went above and beyond.",
+                "name": "Wael",
+                "location": "Verified Guest",
+                "text": "The authentic vintage style, the stunning forest view, the facilities. The female receptionist was extremely professional and helpful. Everything was perfect!",
                 "rating": 5
             },
             {
-                "name": "James Chen",
-                "location": "Singapore",
-                "text": "Serenity Lodge exceeded all expectations. The views were breathtaking, the rooms were pristine, and the dining experience was world-class. A true hidden gem.",
+                "name": "Maroua",
+                "location": "Verified Guest",
+                "text": "The staff are just perfect, very friendly and helpful. Location just amazing, the view is breathtaking! The junior suite is very nice with a Mountain view. I'm in love with this hotel!",
                 "rating": 5
             },
             {
-                "name": "Emma Rodriguez",
-                "location": "Barcelona, Spain",
-                "text": "The perfect place to disconnect and recharge. The spa treatments were divine, and waking up to mountain views every morning was pure bliss. Cannot recommend enough.",
+                "name": "Dridi",
+                "location": "Verified Guest",
+                "text": "The whole region, the hotel, the staff, the cleanliness. A perfect experience!",
                 "rating": 5
             }
         ]
@@ -128,6 +128,10 @@
             "checkout": {
                 "label": "Check-out Date"
             },
+            "roomType": {
+                "label": "Room Type",
+                "placeholder": "Select a room type"
+            },
             "guests": {
                 "label": "Number of Guests",
                 "placeholder": "2"
@@ -139,8 +143,7 @@
             "submit": "Reserve Your Stay"
         },
         "contact": {
-            "text": "Prefer to speak with us directly?",
-            "phone": "Call +1 (234) 567-890"
+            "text": "Prefer to speak with us directly?"
         }
     }
 }

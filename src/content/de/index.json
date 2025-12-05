@@ -1,0 +1,149 @@
+{
+    "hero": {
+        "title": "La Foret: Ein Aufenthalt jenseits des Gewöhnlichen",
+        "subtitle": "Entdecken Sie zeitlosen Komfort umgeben von Natur",
+        "bookNow": "Jetzt Buchen",
+        "exploreRooms": "Zimmer Entdecken"
+    },
+    "about": {
+        "welcome": "Willkommen in La Foret",
+        "title": "Wo Luxus auf Natur trifft",
+        "description1": "Eingebettet im Herzen unberührter Wildnis bietet La Foret eine unvergleichliche Flucht aus dem Alltag. Unser Boutique-Hotel verbindet nahtlos modernen Luxus mit natürlicher Schönheit und schafft ein Erlebnis, das Körper und Seele verjüngt.",
+        "description2": "Mit atemberaubendem Bergblick, erstklassigen Annehmlichkeiten und persönlichem Service ist jeder Moment in La Foret darauf ausgelegt, Ihre Erwartungen zu übertreffen.",
+        "stats": {
+            "rooms": {
+                "value": "63",
+                "label": "Luxuszimmer"
+            },
+            "satisfaction": {
+                "value": "98%",
+                "label": "Gästezufriedenheit"
+            }
+        }
+    },
+    "rooms": {
+        "subtitle": "Zimmer & Suiten",
+        "title": "Ihr Perfektes Refugium",
+        "viewDetails": "Details Ansehen",
+        "items": [
+            {
+                "id": 1,
+                "slug": "chambre-standard",
+                "name": "Standardzimmer",
+                "description": "Geräumiges Zimmer mit Panorama-Waldblick und modernen Annehmlichkeiten",
+                "price": "Ab 350TND/Nacht",
+                "features": [
+                    "Kingsize-Bett",
+                    "Waldblick",
+                    "30 m²",
+                    "Modernes Bad"
+                ]
+            },
+            {
+                "id": 2,
+                "slug": "suite-junior",
+                "name": "Junior Suite",
+                "description": "Luxuriöse Suite mit Wohnbereich und atemberaubendem Bergblick",
+                "price": "Ab 550TND/Nacht",
+                "features": [
+                    "Wohnbereich",
+                    "Bergblick",
+                    "45 m²",
+                    "Privater Whirlpool"
+                ]
+            },
+            {
+                "id": 3,
+                "slug": "suite-senior",
+                "name": "Senior Suite",
+                "description": "Das ultimative Luxuserlebnis mit privatem Whirlpool und Panoramablick",
+                "price": "Ab 750TND/Nacht",
+                "features": [
+                    "Großer Wohnbereich",
+                    "Panoramablick",
+                    "60 m²",
+                    "Balkon-Whirlpool"
+                ]
+            }
+        ]
+    },
+    "experiences": {
+        "subtitle": "Kuratierte Erlebnisse",
+        "title": "Entdecken Sie Ihre Reise",
+        "items": [
+            {
+                "title": "Wellness & Spa",
+                "description": "Verjüngen Sie Ihre Sinne mit unseren erstklassigen Spa-Behandlungen und Wellness-Programmen"
+            },
+            {
+                "title": "Feine Küche",
+                "description": "Genießen Sie exquisite Küche, zubereitet von unseren preisgekrönten Köchen mit lokalen Zutaten"
+            },
+            {
+                "title": "Naturaktivitäten",
+                "description": "Erkunden Sie unberührte Wanderwege, Meditationsplätze und atemberaubende Aussichtspunkte"
+            }
+        ]
+    },
+    "testimonials": {
+        "subtitle": "Gästegeschichten",
+        "title": "Was Unsere Gäste Sagen",
+        "items": [
+            {
+                "name": "Wael",
+                "location": "Verifizierter Gast",
+                "text": "Der authentische Vintage-Stil, der atemberaubende Waldblick, die Einrichtungen. Die Rezeptionistin war äußerst professionell und hilfsbereit. Alles war perfekt!",
+                "rating": 5
+            },
+            {
+                "name": "Maroua",
+                "location": "Verifizierter Gast",
+                "text": "Das Personal ist einfach perfekt, sehr freundlich und hilfsbereit. Die Lage ist einfach wunderbar, der Ausblick ist atemberaubend! Die Junior Suite ist sehr schön mit Bergblick. Ich habe mich in dieses Hotel verliebt!",
+                "rating": 5
+            },
+            {
+                "name": "Dridi",
+                "location": "Verifizierter Gast",
+                "text": "Die ganze Region, das Hotel, das Personal, die Sauberkeit. Ein perfektes Erlebnis!",
+                "rating": 5
+            }
+        ]
+    },
+    "booking": {
+        "subtitle": "Reservieren Sie Ihr Erlebnis",
+        "title": "Buchen Sie Ihren Aufenthalt in La Foret",
+        "description": "Beginnen Sie Ihre Reise zur Ruhe. Unser Team wird Sie kontaktieren, um Ihre Reservierung abzuschließen.",
+        "form": {
+            "name": {
+                "label": "Vollständiger Name",
+                "placeholder": "Max Mustermann"
+            },
+            "email": {
+                "label": "E-Mail",
+                "placeholder": "max@beispiel.de"
+            },
+            "checkin": {
+                "label": "Anreisedatum"
+            },
+            "checkout": {
+                "label": "Abreisedatum"
+            },
+            "roomType": {
+                "label": "Zimmertyp",
+                "placeholder": "Wählen Sie einen Zimmertyp"
+            },
+            "guests": {
+                "label": "Anzahl der Gäste",
+                "placeholder": "2"
+            },
+            "message": {
+                "label": "Besondere Wünsche (Optional)",
+                "placeholder": "Teilen Sie uns mit, wenn Sie besondere Anforderungen haben..."
+            },
+            "submit": "Aufenthalt Reservieren"
+        },
+        "contact": {
+            "text": "Möchten Sie lieber direkt mit uns sprechen?"
+        }
+    }
+}

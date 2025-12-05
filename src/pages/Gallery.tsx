@@ -1,4 +1,4 @@
-import { useState, useMemo, memo } from "react";
+import { useState, useMemo, memo, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 // Dynamic imports using import.meta.glob (Lazy by default)
 const indoorGlob = import.meta.glob('@/assets/indoor/*.{jpg,jpeg,png,JPG,JPEG}');
-const conferencesGlob = import.meta.glob('@/assets/indoor/conferencs/*.{jpg,jpeg,png,JPG,JPEG}');
+const conferencesGlob = import.meta.glob('@/assets/indoor/conferences/*.{jpg,jpeg,png,JPG,JPEG}');
 const diningGlob = import.meta.glob('@/assets/indoor/dining/*.{jpg,jpeg,png,JPG,JPEG}');
 const roomsGlob = import.meta.glob('@/assets/indoor/rooms/*.{jpg,jpeg,png,JPG,JPEG}');
 const outdoorGlob = import.meta.glob('@/assets/outdoor/*.{jpg,jpeg,png,JPG,JPEG}');

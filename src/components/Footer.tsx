@@ -2,6 +2,7 @@ import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CONTACT_INFO } from "@/config/constants";
 
@@ -80,19 +81,19 @@ const Footer = memo(() => {
           >
             <h4 className="mb-6 text-xl font-semibold">{content.footer.quickLinks.title}</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link: string, index: number) => (
+              {quickLinks.map((link: { name: string; path: string }, index: number) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                   transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
                 >
-                  <a
-                    href="#"
+                  <Link
+                    to={link.path}
                     className="text-background/80 transition-colors duration-300 hover:text-primary"
                   >
-                    {link}
-                  </a>
+                    {link.name}
+                  </Link>
                 </motion.li>
               ))}
             </ul>

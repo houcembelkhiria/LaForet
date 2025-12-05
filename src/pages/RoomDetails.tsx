@@ -20,9 +20,45 @@ import {
   Sparkles,
   Home,
 } from "lucide-react";
-import roomDeluxe from "@/assets/room-deluxe.jpg";
-import roomSuite from "@/assets/room-suite.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+// Load room images dynamically
+const roomHeroImages = import.meta.glob('@/assets/indoor/rooms/room-*.jpg', { eager: true });
+const standardRoomImages = import.meta.glob('@/assets/indoor/rooms/standard/*.jpg', { eager: true });
+const suiteJuniorImages = import.meta.glob('@/assets/indoor/rooms/suite-junior/*.jpg', { eager: true });
+const suiteSeniorImages = import.meta.glob('@/assets/indoor/rooms/suite-senior/*.jpg', { eager: true });
+
+// Helper to extract image URLs from glob result
+const extractImages = (glob: Record<string, any>): string[] => {
+  return Object.values(glob).map((module: any) => module.default);
+};
+
+// Get hero image by room slug
+const getHeroImage = (slug: string): string => {
+  const heroMap: Record<string, string> = {
+    'chambre-standard': 'room-standard-hero',
+    'suite-junior': 'room-junior-hero',
+    'suite-senior': 'room-senior-hero',
+  };
+
+  const heroName = heroMap[slug];
+  const entry = Object.entries(roomHeroImages).find(([path]) => path.includes(heroName));
+  return entry ? (entry[1] as any).default : '';
+};
+
+// Get gallery images by room slug
+const getGalleryImages = (slug: string): string[] => {
+  switch (slug) {
+    case 'chambre-standard':
+      return extractImages(standardRoomImages);
+    case 'suite-junior':
+      return extractImages(suiteJuniorImages);
+    case 'suite-senior':
+      return extractImages(suiteSeniorImages);
+    default:
+      return extractImages(standardRoomImages);
+  }
+};
 
 const RoomDetails = () => {
   const { roomId } = useParams<{ roomId: string }>();
@@ -31,15 +67,6 @@ const RoomDetails = () => {
   const [heroRef, heroInView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [detailsRef, detailsInView] = useInView({ triggerOnce: true, threshold: 0.2 });
   const [bookingRef, bookingInView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
-  // Map slugs to images
-  const imageMap: Record<string, any> = {
-    "chambre-standard": roomDeluxe,
-    "suite-junior": roomSuite,
-    "suite-senior": roomSuite,
-    "deluxe-forest": roomDeluxe, // Fallback for old links
-    "mountain-suite": roomSuite, // Fallback for old links
-  };
 
   const roomData = t(`roomDetails.rooms.${roomId}`);
   const labels = t("roomDetails.labels");
@@ -75,11 +102,15 @@ const RoomDetails = () => {
     return Sparkles;
   };
 
+  // Get room-specific images
+  const heroImage = getHeroImage(roomId || '');
+  const galleryImages = getGalleryImages(roomId || '').slice(0, 6); // Limit to 6 gallery images
+
   // Construct the room object
   const room = {
     ...roomData,
-    image: imageMap[roomId || ""] || roomDeluxe,
-    gallery: [imageMap[roomId || ""] || roomDeluxe, roomDeluxe, roomSuite],
+    image: heroImage,
+    gallery: galleryImages.length > 0 ? galleryImages : [heroImage],
     specs: [
       { icon: Bed, ...roomData.specs.bed },
       { icon: Users, ...roomData.specs.occupancy },

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,21 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CONTACT_INFO } from "@/config/constants";
+import { ChevronDown, Check } from "lucide-react";
+
+// Load room hero images
+const roomHeroImages = import.meta.glob('@/assets/indoor/rooms/room-*.jpg', { eager: true });
+
+const getRoomImage = (slug: string): string => {
+  const imageMap: Record<string, string> = {
+    'chambre-standard': 'room-standard-hero',
+    'suite-junior': 'room-junior-hero',
+    'suite-senior': 'room-senior-hero',
+  };
+  const imageName = imageMap[slug] || 'room-standard-hero';
+  const entry = Object.entries(roomHeroImages).find(([path]) => path.includes(imageName));
+  return entry ? (entry[1] as any).default : '';
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,9 +30,14 @@ const BookingCTAParallax = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const [selectedRoom, setSelectedRoom] = useState<string>("");
+  const [isRoomDropdownOpen, setIsRoomDropdownOpen] = useState(false);
 
   const { t } = useLanguage();
   const content = t("index");
+
+  // Get rooms from content
+  const rooms = content?.rooms?.items || [];
 
   const formFields = [
     { id: "name", label: content?.booking?.form?.name?.label || "Full Name", type: "text", placeholder: content?.booking?.form?.name?.placeholder || "John Doe" },
@@ -179,6 +199,98 @@ const BookingCTAParallax = () => {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Room Type Selector */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.35,
+                  ease: [0.77, 0, 0.175, 1],
+                }}
+                className="relative"
+                style={{ zIndex: isRoomDropdownOpen ? 100 : 1 }}
+              >
+                <Label htmlFor="roomType" className="text-base">
+                  {content?.booking?.form?.roomType?.label || "Room Type"}
+                </Label>
+                <div className="relative mt-2">
+                  <button
+                    type="button"
+                    onClick={() => setIsRoomDropdownOpen(!isRoomDropdownOpen)}
+                    className="flex h-auto min-h-[4rem] w-full items-center justify-between rounded-2xl border-2 border-input bg-background px-4 py-3 text-left transition-all duration-300 hover:border-primary/50 focus:border-primary focus:outline-none"
+                  >
+                    {selectedRoom ? (
+                      <div className="flex items-center gap-4">
+                        <img
+                          src={getRoomImage(selectedRoom)}
+                          alt=""
+                          className="h-12 w-20 rounded-lg object-cover"
+                        />
+                        <div>
+                          <p className="font-medium">
+                            {rooms.find((r: any) => r.slug === selectedRoom)?.name}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {rooms.find((r: any) => r.slug === selectedRoom)?.price}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <span className="text-muted-foreground">
+                        {content?.booking?.form?.roomType?.placeholder || "Select a room type"}
+                      </span>
+                    )}
+                    <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isRoomDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+
+                  <AnimatePresence>
+                    {isRoomDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute left-0 right-0 top-full mt-2 max-h-[400px] overflow-y-auto rounded-2xl border-2 border-input bg-card shadow-2xl"
+                        style={{ zIndex: 9999 }}
+                      >
+                        {rooms.map((room: any) => (
+                          <button
+                            key={room.slug}
+                            type="button"
+                            onClick={() => {
+                              setSelectedRoom(room.slug);
+                              setIsRoomDropdownOpen(false);
+                            }}
+                            className={`flex w-full items-center gap-4 p-4 text-left transition-all duration-200 hover:bg-accent ${selectedRoom === room.slug ? 'bg-accent/50' : ''
+                              }`}
+                          >
+                            <img
+                              src={getRoomImage(room.slug)}
+                              alt={room.name}
+                              className="h-16 w-24 rounded-xl object-cover shadow-md"
+                            />
+                            <div className="flex-1">
+                              <p className="font-semibold">{room.name}</p>
+                              <p className="text-sm text-muted-foreground line-clamp-1">
+                                {room.description}
+                              </p>
+                              <p className="mt-1 text-sm font-medium text-primary">
+                                {room.price}
+                              </p>
+                            </div>
+                            {selectedRoom === room.slug && (
+                              <Check className="h-5 w-5 text-primary" />
+                            )}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: -30 }}

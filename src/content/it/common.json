@@ -32,19 +32,26 @@
         "quickLinks": {
             "title": "Link Rapidi",
             "links": [
-                "Camere",
-                "Esperienze",
-                "Ristorante",
-                "Spa",
-                "Galleria",
-                "Chi Siamo"
+                {
+                    "name": "Home",
+                    "path": "/"
+                },
+                {
+                    "name": "Camere",
+                    "path": "/rooms"
+                },
+                {
+                    "name": "Galleria",
+                    "path": "/gallery"
+                },
+                {
+                    "name": "Chi Siamo",
+                    "path": "/about"
+                }
             ]
         },
         "contact": {
-            "title": "Contattaci",
-            "address": "RN17, Ain Draham, Governatorato di Jendouba, 8130, Tunisia",
-            "phone": "+216 55 429 235",
-            "email": "hello@laforet.com"
+            "title": "Contattaci"
         },
         "copyright": "© {year} La Foret. Tutti i diritti riservati. Realizzato con passione per l'ospitalità di lusso."
     },

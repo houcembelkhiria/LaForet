@@ -1,51 +1,50 @@
 {
     "hero": {
-        "title": "La Foret: A Stay Beyond Ordinary",
-        "subtitle": "Discover timeless comfort surrounded by nature",
-        "bookNow": "Book Now",
-        "exploreRooms": "Explore Rooms"
+        "title": "La Foret: Un Soggiorno Oltre l'Ordine",
+        "subtitle": "Scopri un comfort senza tempo circondato dalla natura",
+        "bookNow": "Prenota Ora",
+        "exploreRooms": "Esplora le Camere"
     },
     "about": {
-        "welcome": "Welcome to La Foret",
-        "title": "Where Luxury Meets Nature",
-        "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
-        "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
+        "welcome": "Benvenuti a La Foret",
+        "title": "Dove il Lusso Incontra la Natura",
+        "description1": "Nascosto nel cuore di una natura incontaminata, La Foret offre una fuga senza pari dall'ordinario. Il nostro boutique hotel fonde armoniosamente lusso moderno e bellezza naturale, creando un'esperienza che rinvigorisce corpo e anima.",
+        "description2": "Con panorami montani mozzafiato, servizi di prima classe e un servizio personalizzato, ogni momento a La Foret è concepito per superare le vostre aspettative.",
         "stats": {
             "rooms": {
-                "value": "45",
-                "label": "Luxury Rooms"
+                "value": "63",
+                "label": "Camere di Lusso"
             },
             "satisfaction": {
                 "value": "98%",
-                "label": "Guest Satisfaction"
+                "label": "Soddisfazione Ospiti"
             }
         }
     },
     "rooms": {
-        "subtitle": "Rooms & Suites",
-        "title": "Your Perfect Sanctuary",
-        "viewDetails": "View Details",
+        "subtitle": "Camere & Suite",
+        "title": "Il Tuo Rifugio Perfetto",
+        "viewDetails": "Vedi Dettagli",
         "items": [
             {
                 "id": 1,
                 "slug": "chambre-standard",
                 "name": "Camera Standard",
                 "description": "Camera spaziosa con vista panoramica sulla foresta e servizi moderni",
-                "price": "Da 350TND/notte",
+                "price": "Da 350 TND/notte",
                 "features": [
-                    "Letto King",
+                    "Letto King Size",
                     "Vista Foresta",
                     "30 m²",
                     "Bagno Moderno"
                 ]
             },
-
             {
                 "id": 2,
                 "slug": "suite-junior",
                 "name": "Junior Suite",
                 "description": "Suite lussuosa con zona giorno e vista mozzafiato sulle montagne",
-                "price": "Da 550TND/notte",
+                "price": "Da 550 TND/notte",
                 "features": [
                     "Zona Giorno",
                     "Vista Montagna",
@@ -58,90 +57,93 @@
                 "slug": "suite-senior",
                 "name": "Senior Suite",
                 "description": "L'esperienza di lusso definitiva con jacuzzi privata e vista panoramica",
-                "price": "Da 750TND/notte",
+                "price": "Da 750 TND/notte",
                 "features": [
                     "Ampio Soggiorno",
                     "Vista Panoramica",
                     "60 m²",
-                    "Jacuzzi Balcone"
+                    "Jacuzzi in Balcone"
                 ]
             }
         ]
     },
     "experiences": {
-        "subtitle": "Curated Experiences",
-        "title": "Discover Your Journey",
+        "subtitle": "Esperienze Curate",
+        "title": "Scopri il Tuo Viaggio",
         "items": [
             {
-                "title": "Wellness & Spa",
-                "description": "Rejuvenate your senses with our world-class spa treatments and wellness programs"
+                "title": "Benessere & Spa",
+                "description": "Rinvigorisci i sensi con i nostri trattamenti spa e programmi benessere di livello mondiale"
             },
             {
-                "title": "Fine Dining",
-                "description": "Savor exquisite cuisine crafted by our award-winning chefs using local ingredients"
+                "title": "Alta Cucina",
+                "description": "Assapora una cucina squisita creata dai nostri chef premiati con ingredienti locali"
             },
             {
-                "title": "Nature Activities",
-                "description": "Explore pristine trails, meditation spots, and breathtaking viewpoints"
+                "title": "Attività nella Natura",
+                "description": "Esplora sentieri incontaminati, luoghi di meditazione e punti panoramici mozzafiato"
             }
         ]
     },
     "testimonials": {
-        "subtitle": "Guest Stories",
-        "title": "What Our Guests Say",
+        "subtitle": "Storie degli Ospiti",
+        "title": "Cosa Dicono i Nostri Ospiti",
         "items": [
             {
-                "name": "Sarah Mitchell",
-                "location": "New York, USA",
-                "text": "An absolutely magical experience. The blend of luxury and nature created the perfect escape. Every detail was thoughtfully curated, and the staff went above and beyond.",
+                "name": "Wael",
+                "location": "Ospite Verificato",
+                "text": "Lo stile vintage autentico, la vista mozzafiato sulla foresta, le strutture. La receptionist era estremamente professionale e disponibile. Tutto era perfetto!",
                 "rating": 5
             },
             {
-                "name": "James Chen",
-                "location": "Singapore",
-                "text": "Serenity Lodge exceeded all expectations. The views were breathtaking, the rooms were pristine, and the dining experience was world-class. A true hidden gem.",
+                "name": "Maroua",
+                "location": "Ospite Verificato",
+                "text": "Il personale è semplicemente perfetto, molto cordiale e disponibile. La posizione è fantastica, la vista è mozzafiato! La junior suite è molto bella con vista sulle montagne. Mi sono innamorata di questo hotel!",
                 "rating": 5
             },
             {
-                "name": "Emma Rodriguez",
-                "location": "Barcelona, Spain",
-                "text": "The perfect place to disconnect and recharge. The spa treatments were divine, and waking up to mountain views every morning was pure bliss. Cannot recommend enough.",
+                "name": "Dridi",
+                "location": "Ospite Verificato",
+                "text": "Tutta la regione, l'hotel, il personale, la pulizia. Un'esperienza perfetta!",
                 "rating": 5
             }
         ]
     },
     "booking": {
-        "subtitle": "Reserve Your Experience",
-        "title": "Book Your Stay at La Foret",
-        "description": "Begin your journey to tranquility. Our team will contact you to finalize your reservation.",
+        "subtitle": "Prenota la Tua Esperienza",
+        "title": "Prenota il Tuo Soggiorno a La Foret",
+        "description": "Inizia il tuo viaggio verso la tranquillità. Il nostro team ti contatterà per finalizzare la prenotazione.",
         "form": {
             "name": {
-                "label": "Full Name",
-                "placeholder": "John Doe"
+                "label": "Nome Completo",
+                "placeholder": "Mario Rossi"
             },
             "email": {
                 "label": "Email",
-                "placeholder": "john@example.com"
+                "placeholder": "mario@esempio.com"
             },
             "checkin": {
-                "label": "Check-in Date"
+                "label": "Data di Arrivo"
             },
             "checkout": {
-                "label": "Check-out Date"
+                "label": "Data di Partenza"
+            },
+            "roomType": {
+                "label": "Tipo di camera",
+                "placeholder": "Seleziona un tipo di camera"
             },
             "guests": {
-                "label": "Number of Guests",
+                "label": "Numero di Ospiti",
                 "placeholder": "2"
             },
             "message": {
-                "label": "Special Requests (Optional)",
-                "placeholder": "Let us know if you have any special requirements..."
+                "label": "Richieste Speciali (Opzionale)",
+                "placeholder": "Facci sapere se hai esigenze particolari..."
             },
-            "submit": "Reserve Your Stay"
+            "submit": "Prenota il Tuo Soggiorno"
         },
         "contact": {
-            "text": "Prefer to speak with us directly?",
-            "phone": "Call +1 (234) 567-890"
+            "text": "Preferisci parlare direttamente con noi?"
         }
     }
 }

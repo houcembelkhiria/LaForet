@@ -1,0 +1,63 @@
+{
+    "navigation": {
+        "brand": "La Foret",
+        "links": [
+            {
+                "name": "Startseite",
+                "path": "/"
+            },
+            {
+                "name": "Über Uns",
+                "path": "/about"
+            },
+            {
+                "name": "Zimmer",
+                "path": "/rooms"
+            },
+            {
+                "name": "Galerie",
+                "path": "/gallery"
+            }
+        ],
+        "bookNow": "Jetzt Buchen"
+    },
+    "footer": {
+        "brand": "La Foret",
+        "description": "Ihr Zufluchtsort im Herzen der Natur. Erleben Sie Luxus umgeben von unberührter Wildnis.",
+        "social": {
+            "facebook": "Facebook",
+            "instagram": "Instagram",
+            "twitter": "Twitter"
+        },
+        "quickLinks": {
+            "title": "Schnellzugriff",
+            "links": [
+                {
+                    "name": "Startseite",
+                    "path": "/"
+                },
+                {
+                    "name": "Zimmer",
+                    "path": "/rooms"
+                },
+                {
+                    "name": "Galerie",
+                    "path": "/gallery"
+                },
+                {
+                    "name": "Über Uns",
+                    "path": "/about"
+                }
+            ]
+        },
+        "contact": {
+            "title": "Kontaktieren Sie Uns"
+        },
+        "copyright": "© {year} La Foret. Alle Rechte vorbehalten. Mit Leidenschaft für luxuriöse Gastfreundschaft geschaffen."
+    },
+    "notFound": {
+        "title": "404",
+        "message": "Ups! Seite nicht gefunden",
+        "backHome": "Zurück zur Startseite"
+    }
+}

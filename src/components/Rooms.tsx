@@ -5,9 +5,24 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Dynamically load room images
-const roomImages = import.meta.glob('@/assets/indoor/rooms/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
-const roomImageArray = Object.values(roomImages).map((module: any) => module.default);
+// Load room hero images - these are the main images for each room type
+const roomHeroImages = import.meta.glob('@/assets/indoor/rooms/room-*.jpg', { eager: true });
+
+// Map room slugs to their hero images
+const getHeroImageBySlug = (slug: string): string => {
+  const imageMap: Record<string, string> = {
+    'chambre-standard': 'room-standard-hero',
+    'suite-junior': 'room-junior-hero',
+    'suite-senior': 'room-senior-hero',
+  };
+
+  const imageName = imageMap[slug] || 'room-standard-hero';
+  const imageEntry = Object.entries(roomHeroImages).find(([path]) =>
+    path.includes(imageName)
+  );
+
+  return imageEntry ? (imageEntry[1] as any).default : '';
+};
 
 const Rooms = memo(() => {
   const [ref, inView] = useInView({
@@ -19,9 +34,9 @@ const Rooms = memo(() => {
   const content = t("rooms");
 
   const rooms = useMemo(
-    () => content?.content?.rooms?.map((room: any, index: number) => ({
+    () => content?.content?.rooms?.map((room: any) => ({
       ...room,
-      image: roomImageArray[index % roomImageArray.length], // Cycle through available images
+      image: getHeroImageBySlug(room.slug),
     })) || [],
     [content]
   );

@@ -1,0 +1,185 @@
+{
+    "notFound": {
+        "title": "Zimmer Nicht Gefunden",
+        "backButton": "Zurück zu Zimmern"
+    },
+    "rooms": {
+        "chambre-standard": {
+            "name": "Standardzimmer",
+            "tagline": "Komfort und Natur",
+            "description": "Geräumiges Zimmer mit Panorama-Waldblick und modernen Annehmlichkeiten. Ideal für Paare oder Alleinreisende auf der Suche nach Ruhe.",
+            "price": 350,
+            "specs": {
+                "bed": {
+                    "label": "Bett",
+                    "value": "1 Kingsize-Bett"
+                },
+                "occupancy": {
+                    "label": "Belegung",
+                    "value": "2 Erwachsene"
+                },
+                "size": {
+                    "label": "Größe",
+                    "value": "30 m²"
+                },
+                "view": {
+                    "label": "Aussicht",
+                    "value": "Wald"
+                }
+            },
+            "amenities": [
+                "Kostenloses WLAN",
+                "Kaffeemaschine",
+                "Klimaanlage",
+                "Flachbild-TV",
+                "Eigenes Bad",
+                "Safe",
+                "Tägliche Reinigung",
+                "Privater Balkon",
+                "Handtücher",
+                "Kostenlose Pflegeprodukte",
+                "Haartrockner",
+                "Bettwäsche",
+                "Kleiderschrank",
+                "Schreibtisch",
+                "Heizung"
+            ],
+            "features": [
+                "Premium-Bettwäsche",
+                "Begehbare Dusche",
+                "Minibar und Wasserkocher",
+                "Schreibtisch mit ergonomischem Stuhl",
+                "Verdunkelungsvorhänge für erholsamen Schlaf",
+                "24/7 Zimmerservice",
+                "Kostenloser Parkplatz",
+                "Nichtraucherzimmer"
+            ]
+        },
+        "suite-junior": {
+            "name": "Junior Suite",
+            "tagline": "Luxus und Raum",
+            "description": "Luxuriöse Suite mit Wohnbereich und atemberaubendem Bergblick. Perfekt für alle, die mehr Platz und Komfort suchen.",
+            "price": 550,
+            "specs": {
+                "bed": {
+                    "label": "Bett",
+                    "value": "1 Kingsize-Bett"
+                },
+                "occupancy": {
+                    "label": "Belegung",
+                    "value": "2-3 Erwachsene"
+                },
+                "size": {
+                    "label": "Größe",
+                    "value": "45 m²"
+                },
+                "view": {
+                    "label": "Aussicht",
+                    "value": "Berge"
+                }
+            },
+            "amenities": [
+                "Kostenloses WLAN",
+                "Espressomaschine",
+                "Klimaanlage",
+                "55\" Flachbild-TV",
+                "Privater Whirlpool",
+                "Safe",
+                "Zweimal tägliche Reinigung",
+                "Private Terrasse",
+                "Marmorbad",
+                "Luxus-Pflegeprodukte",
+                "Bademäntel",
+                "Premium-Handtücher",
+                "Begehbarer Kleiderschrank",
+                "Essbereich",
+                "Weckservice",
+                "24-Stunden-Rezeption"
+            ],
+            "features": [
+                "Separater Wohnbereich",
+                "Italienisches Marmorbad",
+                "Luxuriöse Badeprodukte und kuschelige Bademäntel",
+                "Arbeitsbereich mit Aussicht",
+                "Prioritäts-Zimmerservice und Concierge",
+                "Kostenloser Parkplatz",
+                "Zugang zur Hotelbar",
+                "Spa-Zugang"
+            ]
+        },
+        "suite-senior": {
+            "name": "Senior Suite",
+            "tagline": "Der Gipfel des Luxus",
+            "description": "Das ultimative Luxuserlebnis mit privatem Whirlpool auf dem Balkon und Panorama-Bergblick. Ein exklusives Refugium für die anspruchsvollsten Gäste.",
+            "price": 750,
+            "specs": {
+                "bed": {
+                    "label": "Bett",
+                    "value": "1 Super-Kingsize-Bett"
+                },
+                "occupancy": {
+                    "label": "Belegung",
+                    "value": "2-4 Erwachsene"
+                },
+                "size": {
+                    "label": "Größe",
+                    "value": "60 m²"
+                },
+                "view": {
+                    "label": "Aussicht",
+                    "value": "Panorama"
+                }
+            },
+            "amenities": [
+                "Kostenloses WLAN",
+                "Premium-Espressomaschine",
+                "Klimaanlage",
+                "65\" Flachbild-TV",
+                "Balkon-Whirlpool",
+                "Safe",
+                "Butler-Service",
+                "Große Terrasse",
+                "Spa-Badezimmer",
+                "Premium-Pflegeprodukte",
+                "Luxus-Bademäntel",
+                "Begehbarer Kleiderschrank",
+                "Großer Wohnbereich",
+                "Essbereich",
+                "Weckservice",
+                "24-Stunden-Rezeption",
+                "Ladestation für Elektrofahrzeuge"
+            ],
+            "features": [
+                "Großer Wohnbereich mit Sofa",
+                "Spa-Badezimmer mit Badewanne",
+                "Champagner bei Ankunft",
+                "Premium-Badeprodukte und Luxus-Bademäntel",
+                "Atemberaubender Bergblick",
+                "Prioritäts-Service und persönlicher Concierge",
+                "Kostenloser Privatparkplatz",
+                "Voller Spa- und Schwimmbad-Zugang",
+                "Frühstück inklusive"
+            ]
+        }
+    },
+    "labels": {
+        "pricePerNight": "Ab ${price} TND/Nacht",
+        "aboutTitle": "Über Dieses Zimmer",
+        "featuresTitle": "Zimmerausstattung",
+        "amenitiesTitle": "Annehmlichkeiten",
+        "galleryTitle": "Zimmer-Galerie",
+        "reserveTitle": "Dieses Zimmer Reservieren",
+        "reserveSubtitle": "Buchen Sie Ihren Aufenthalt und erleben Sie Luxus in La Foret",
+        "priceLabel": "Preis pro Nacht",
+        "bookNow": "Jetzt Buchen - ${price} TND/Nacht",
+        "form": {
+            "checkin": "Anreisedatum",
+            "checkout": "Abreisedatum",
+            "guests": "Anzahl der Gäste",
+            "name": "Vollständiger Name",
+            "namePlaceholder": "Max Mustermann",
+            "email": "E-Mail",
+            "emailPlaceholder": "max@beispiel.de"
+        }
+    }
+}

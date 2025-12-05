@@ -11,9 +11,10 @@ import { Button } from "@/components/ui/button";
 
 const languages = [
     { code: "en" as const, name: "English", flag: "🇬🇧" },
+    { code: "de" as const, name: "Deutsch", flag: "🇩🇪" },
+    { code: "fr" as const, name: "Français", flag: "🇫🇷" },
     { code: "it" as const, name: "Italiano", flag: "🇮🇹" },
     { code: "es" as const, name: "Español", flag: "🇪🇸" },
-    { code: "fr" as const, name: "Français", flag: "🇫🇷" },
 ];
 
 const LanguageToggle = memo(() => {

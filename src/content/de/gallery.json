@@ -1,0 +1,43 @@
+{
+    "header": {
+        "title": "Galerie",
+        "subtitle": "Entdecken Sie die Schönheit von La Foret"
+    },
+    "images": [
+        {
+            "id": 1,
+            "title": "La Foret Außenansicht",
+            "category": "Außen"
+        },
+        {
+            "id": 2,
+            "title": "Architektur",
+            "category": "Außen"
+        },
+        {
+            "id": 3,
+            "title": "Deluxe Waldblick",
+            "category": "Zimmer"
+        },
+        {
+            "id": 4,
+            "title": "Berg-Suite",
+            "category": "Zimmer"
+        },
+        {
+            "id": 5,
+            "title": "Spa-Erlebnis",
+            "category": "Innenbereich"
+        },
+        {
+            "id": 6,
+            "title": "Feine Küche",
+            "category": "Innenbereich"
+        },
+        {
+            "id": 7,
+            "title": "Naturpfade",
+            "category": "Außen"
+        }
+    ]
+}

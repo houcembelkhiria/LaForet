@@ -6,9 +6,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Load room images
-const roomImages = import.meta.glob('@/assets/indoor/rooms/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
-const roomImageArray = Object.values(roomImages).map((module: any) => module.default);
+// Load room hero images
+const roomHeroImages = import.meta.glob('@/assets/indoor/rooms/room-*.jpg', { eager: true });
+
+// Map room slugs to their hero images
+const getHeroImageBySlug = (slug: string): string => {
+  const imageMap: Record<string, string> = {
+    'chambre-standard': 'room-standard-hero',
+    'suite-junior': 'room-junior-hero',
+    'suite-senior': 'room-senior-hero',
+  };
+
+  const imageName = imageMap[slug] || 'room-standard-hero';
+  const imageEntry = Object.entries(roomHeroImages).find(([path]) =>
+    path.includes(imageName)
+  );
+
+  return imageEntry ? (imageEntry[1] as any).default : '';
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,10 +31,9 @@ const RoomsParallax = () => {
   const { t } = useLanguage();
   const content = t("index");
 
-  const rooms = content?.rooms?.items?.map((room: any, index: number) => ({
+  const rooms = content?.rooms?.items?.map((room: any) => ({
     ...room,
-    // Cycle through available room images
-    image: roomImageArray[index % roomImageArray.length],
+    image: getHeroImageBySlug(room.slug),
   })) || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);

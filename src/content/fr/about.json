@@ -137,8 +137,9 @@
                     "title": "Langues parlées",
                     "items": [
                         "Anglais",
-                        "Espagnol",
+                        "Allemand",
                         "Français",
+                        "Espagnol",
                         "Italien"
                     ]
                 }
@@ -192,7 +193,6 @@
             "subtitle": "Trouvez-nous au cœur de la nature",
             "address": {
                 "street": "RN17",
-                "phone": "0021655429235",
                 "city": "Ain Draham",
                 "region": "Gouvernorat de Jendouba",
                 "postalCode": "8130",

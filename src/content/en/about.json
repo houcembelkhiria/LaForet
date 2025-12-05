@@ -9,7 +9,6 @@
         "description1": "Nestled in the heart of pristine wilderness, La Foret offers an unparalleled escape from the ordinary. Our boutique hotel seamlessly blends modern luxury with natural beauty, creating an experience that rejuvenates both body and soul.",
         "description2": "With breathtaking mountain views, world-class amenities, and personalized service, every moment at La Foret is designed to exceed your expectations.",
         "stats": {
-
             "rooms": {
                 "value": "63",
                 "label": "Luxury Rooms"
@@ -138,8 +137,9 @@
                     "title": "Languages Spoken",
                     "items": [
                         "English",
-                        "Spanish",
+                        "German",
                         "French",
+                        "Spanish",
                         "Italian"
                     ]
                 }
@@ -193,7 +193,6 @@
             "subtitle": "Find us in the heart of nature",
             "address": {
                 "street": "RN17",
-                "phone": "0021655429235",
                 "city": "Ain Draham",
                 "region": "Jendouba Governorate",
                 "postalCode": "8130",
