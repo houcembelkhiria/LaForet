@@ -134,6 +134,7 @@ const BookingCTAParallax = () => {
 
   return (
     <section
+      id="booking"
       ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden py-32"
       style={{ transformStyle: "preserve-3d" }}

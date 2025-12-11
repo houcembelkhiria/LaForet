@@ -42,17 +42,19 @@ const Navigation = memo(() => {
   return (
     <nav
       className={`fixed top-0 z-[9999] w-full transition-all duration-300 ${isTransparent
-          ? "bg-transparent border-b border-transparent py-4"
-          : "bg-background/80 backdrop-blur-lg border-b border-border py-0 shadow-md"
+        ? "bg-transparent border-b border-transparent py-4"
+        : "bg-background/80 backdrop-blur-lg border-b border-border py-0 shadow-md"
         }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold tracking-wider">
-            <span className={`font-sans-serif transition-colors ${isTransparent ? "text-white" : "text-primary"}`}>
-              {content.navigation.brand}
-            </span>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/logo.png"
+              alt={content.navigation.brand}
+              className="h-28 w-auto transition-all duration-300"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -80,7 +82,16 @@ const Navigation = memo(() => {
               </Link>
             ))}
             <LanguageToggle />
-            <Button className="bg-primary text-primary-foreground hover:scale-105">
+            <Button
+              className="bg-primary text-primary-foreground hover:scale-105"
+              onClick={() => {
+                if (isHome) {
+                  document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#booking';
+                }
+              }}
+            >
               {content?.navigation?.bookNow}
             </Button>
           </div>
@@ -140,7 +151,19 @@ const Navigation = memo(() => {
                     <span className="text-muted-foreground">Language:</span>
                     <LanguageToggle />
                   </div>
-                  <Button className="w-full bg-primary text-primary-foreground text-lg py-6">
+                  <Button
+                    className="w-full bg-primary text-primary-foreground text-lg py-6"
+                    onClick={() => {
+                      closeMenu();
+                      if (isHome) {
+                        setTimeout(() => {
+                          document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                        }, 300);
+                      } else {
+                        window.location.href = '/#booking';
+                      }
+                    }}
+                  >
                     {content.navigation.bookNow}
                   </Button>
                 </motion.div>
