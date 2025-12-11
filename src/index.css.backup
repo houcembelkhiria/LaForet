@@ -37,18 +37,18 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 30 10% 15%;
 
-    /* Primary color - deep burgundy */
-    --primary: 327 62% 25%;
+    /* Brick Red - Primary luxury accent */
+    --primary: 10 48% 48%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary color - dark forest */
-    --secondary: 132 9% 22%;
-    --secondary-foreground: 0 0% 100%;
+    /* Pastel Pine Green - Secondary natural tone */
+    --secondary: 116 32% 58%;
+    --secondary-foreground: 30 10% 15%;
 
-    --muted: 327 10% 95%;
-    --muted-foreground: 327 8% 45%;
+    --muted: 116 20% 95%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 132 9% 22%;
+    --accent: 10 48% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -56,17 +56,17 @@ All colors MUST be HSL.
 
     --border: 30 15% 88%;
     --input: 30 15% 88%;
-    --ring: 327 62% 25%;
+    --ring: 10 48% 48%;
 
     --radius: 1.5rem;
-
-    /* Custom luxury hotel design tokens - updated for logo colors */
+    
+    /* Custom luxury hotel design tokens */
     --hero-overlay: 30 15% 10%;
-    --section-bg-light: 132 5% 97%;
-    --section-bg-green: 132 9% 22%;
-    --gradient-luxury: linear-gradient(135deg, hsl(327 62% 25% / 0.95), hsl(327 62% 18% / 0.95));
-    --gradient-nature: linear-gradient(180deg, hsl(132 9% 22% / 0.1), hsl(132 9% 22% / 0.3));
-    --shadow-luxury: 0 20px 60px -15px hsl(327 62% 25% / 0.3);
+    --section-bg-light: 116 25% 96%;
+    --section-bg-green: 116 32% 58%;
+    --gradient-luxury: linear-gradient(135deg, hsl(10 48% 48% / 0.95), hsl(10 48% 35% / 0.95));
+    --gradient-nature: linear-gradient(180deg, hsl(116 32% 58% / 0.1), hsl(116 32% 58% / 0.3));
+    --shadow-luxury: 0 20px 60px -15px hsl(10 48% 48% / 0.3);
     --shadow-soft: 0 10px 40px -10px hsl(30 10% 15% / 0.1);
     --transition-smooth: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
     --transition-elegant: all 1.2s cubic-bezier(0.77, 0, 0.175, 1);
@@ -85,7 +85,7 @@ All colors MUST be HSL.
 
     --sidebar-border: 220 13% 91%;
 
-    --sidebar-ring: 145 55% 22%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -98,30 +98,28 @@ All colors MUST be HSL.
     --popover: 30 12% 10%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary color - deep burgundy (lighter for dark mode) */
-    --primary: 327 62% 35%;
+    --primary: 10 48% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary color - dark forest (lighter for dark mode) */
-    --secondary: 132 9% 30%;
+    --secondary: 116 28% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 327 10% 15%;
-    --muted-foreground: 327 8% 65%;
+    --muted: 30 12% 15%;
+    --muted-foreground: 30 8% 65%;
 
-    --accent: 132 9% 30%;
+    --accent: 10 48% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 327 10% 20%;
-    --input: 327 10% 20%;
-    --ring: 327 62% 35%;
-
-    --hero-overlay: 327 15% 5%;
-    --section-bg-light: 327 10% 12%;
-    --section-bg-green: 132 9% 28%;
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 10 48% 55%;
+    
+    --hero-overlay: 30 15% 5%;
+    --section-bg-light: 30 12% 12%;
+    --section-bg-green: 116 28% 20%;
   }
 }
 
@@ -134,12 +132,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-body antialiased;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
 }
@@ -152,12 +145,11 @@ All colors MUST be HSL.
   .animate-marquee {
     animation: marquee 40s linear infinite;
   }
-
+  
   @keyframes marquee {
     from {
       transform: translateX(0);
     }
-
     to {
       transform: translateX(-50%);
     }
