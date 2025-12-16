@@ -48,69 +48,85 @@ const BookingCTAParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background - simplified zoom reveal
+      // Background - zoom and rotate reveal
       gsap.fromTo(
         bgRef.current,
         {
-          scale: 1.15,
-          opacity: 0.6,
+          scale: 1.4,
+          opacity: 0.4,
+          rotationZ: -5,
+          rotationY: -10,
         },
         {
           scale: 1,
           opacity: 1,
-          ease: "power2.out",
+          rotationZ: 0,
+          rotationY: 0,
+          ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: true,
+            scrub: 1,
           },
         }
       );
 
-      // Header - simplified slide from above
+      // Header - slide from above with rotation
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 30,
+          yPercent: 60,
           opacity: 0,
-          scale: 0.95,
+          rotationX: -30,
+          rotationZ: -10,
+          scale: 0.8,
+          z: -150,
         },
         {
           yPercent: 0,
           opacity: 1,
+          rotationX: 0,
+          rotationZ: 0,
           scale: 1,
-          ease: "power3.out",
+          z: 0,
+          ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top center",
-            scrub: true,
+            scrub: 1,
           },
         }
       );
 
-      // Form - simplified emerge from depth
+      // Form - emerge from depth with scale
       gsap.fromTo(
         formRef.current,
         {
-          yPercent: 25,
+          yPercent: 40,
           opacity: 0,
-          scale: 0.95,
+          scale: 0.85,
+          rotationX: 15,
+          rotationY: 10,
+          z: -250,
         },
         {
           yPercent: 0,
           opacity: 1,
           scale: 1,
-          ease: "power3.out",
+          rotationX: 0,
+          rotationY: 0,
+          z: 0,
+          ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: formRef.current,
             start: "top bottom-=100",
             end: "center center",
-            scrub: true,
+            scrub: 1,
           },
         }
       );

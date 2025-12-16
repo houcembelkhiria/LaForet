@@ -113,77 +113,92 @@ const ExperiencesParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background - simplified slide
+      // Background - slide from left with depth
       gsap.fromTo(
         bgRef.current,
         {
-          xPercent: -15,
-          opacity: 0.5,
-          scale: 1.1,
+          xPercent: -30,
+          opacity: 0.3,
+          scale: 1.2,
+          rotationY: -15,
         },
         {
           xPercent: 0,
           opacity: 1,
           scale: 1,
-          ease: "power2.out",
+          rotationY: 0,
+          ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: true,
+            scrub: 1,
           },
         }
       );
 
-      // Header - simplified rotate into view
+      // Header - rotate into view from above
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 25,
+          yPercent: 40,
+          xPercent: -10,
           opacity: 0,
-          scale: 0.95,
+          rotationX: -20,
+          rotationZ: -5,
+          scale: 0.9,
         },
         {
           yPercent: 0,
+          xPercent: 0,
           opacity: 1,
+          rotationX: 0,
+          rotationZ: 0,
           scale: 1,
-          ease: "power3.out",
+          ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top center",
-            scrub: true,
+            scrub: 1,
           },
         }
       );
 
-      // Each card - simplified staggered reveal
+      // Each card - staggered multi-directional reveal
       cardsRef.current.forEach((card, index) => {
         if (card) {
           const direction = index % 3 === 0 ? 1 : index % 3 === 1 ? -1 : 0;
+          const verticalOffset = index % 3 === 2;
 
           gsap.fromTo(
             card,
             {
-              yPercent: 20,
-              xPercent: direction * 20,
+              yPercent: verticalOffset ? 50 : 20,
+              xPercent: direction * 40,
               opacity: 0,
-              scale: 0.95,
+              scale: 0.8,
+              rotationY: direction * 20,
+              rotationX: verticalOffset ? 15 : 5,
+              z: -150,
             },
             {
               yPercent: 0,
               xPercent: 0,
               opacity: 1,
               scale: 1,
-              ease: "power3.out",
+              rotationY: 0,
+              rotationX: 0,
+              z: 0,
+              ease: "none",
               force3D: true,
               scrollTrigger: {
                 trigger: card,
                 start: "top bottom-=50",
                 end: "center center",
-                scrub: true,
+                scrub: 1,
               },
             }
           );

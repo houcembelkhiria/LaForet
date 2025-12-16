@@ -18,77 +18,100 @@ const TestimonialsParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background - simplified fade in
+      // Background - diagonal sweep with atmospheric fade
       gsap.fromTo(
         bgRef.current,
         {
-          xPercent: 20,
+          xPercent: 40,
+          yPercent: -20,
           opacity: 0.5,
-          scale: 1.1,
+          scale: 1.3,
+          rotationY: 10,
+          rotationZ: -3,
         },
         {
           xPercent: 0,
+          yPercent: 0,
           opacity: 1,
           scale: 1,
-          ease: "power2.inOut",
+          rotationY: 0,
+          rotationZ: 0,
+          ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: true,
+            scrub: 1.5,
           },
         }
       );
 
-      // Header - simplified reveal
+      // Header - spiral reveal from depth
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 30,
+          yPercent: 50,
+          xPercent: 20,
           opacity: 0,
-          scale: 0.95,
+          rotationX: 25,
+          rotationY: -15,
+          rotationZ: 8,
+          scale: 0.85,
+          z: -200,
         },
         {
           yPercent: 0,
+          xPercent: 0,
           opacity: 1,
+          rotationX: 0,
+          rotationY: 0,
+          rotationZ: 0,
           scale: 1,
-          ease: "power3.out",
+          z: 0,
+          ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top center",
-            scrub: true,
+            scrub: 1,
           },
         }
       );
 
-      // Cards - simplified cascading entry
+      // Cards - cascading diagonal entry
       cardsRef.current.forEach((card, index) => {
         if (card) {
-          const offsetX = index === 0 ? -20 : index === 1 ? 0 : 20;
+          const offsetX = index === 0 ? -50 : index === 1 ? 0 : 50;
+          const offsetY = index === 1 ? 40 : 20;
 
           gsap.fromTo(
             card,
             {
-              yPercent: 20,
+              yPercent: offsetY + 30,
               xPercent: offsetX,
               opacity: 0,
-              scale: 0.9,
+              scale: 0.75,
+              rotationY: index === 1 ? 0 : (index === 0 ? -25 : 25),
+              rotationX: 20,
+              z: -200 - index * 50,
             },
             {
               yPercent: 0,
               xPercent: 0,
               opacity: 1,
               scale: 1,
-              ease: "power3.out",
+              rotationY: 0,
+              rotationX: 0,
+              z: 0,
+              ease: "none",
               force3D: true,
               scrollTrigger: {
                 trigger: card,
                 start: "top bottom-=80",
                 end: "center center",
-                scrub: true,
+                scrub: 1,
               },
             }
           );

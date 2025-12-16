@@ -45,61 +45,73 @@ const HeroParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background layer - simplified parallax with GPU acceleration
+      // Background layer - cinematic depth pull away with GPU acceleration
       gsap.to(bgLayerRef.current, {
         yPercent: 40,
-        scale: 1.2,
+        scale: 1.3,
+        rotationX: -8,
+        rotationY: -3,
+        z: -300,
         ease: "none",
         force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: true,
+          scrub: 1,
         },
       });
 
-      // Mid layer - simplified overlay fade
+      // Mid layer - diagonal sweep with atmospheric fade
       gsap.to(midLayerRef.current, {
         yPercent: 55,
-        xPercent: -10,
+        xPercent: -15,
         opacity: 0.1,
+        rotationY: 5,
+        rotationZ: -2,
         ease: "none",
         force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: true,
+          scrub: 1,
         },
       });
 
-      // Foreground content - simplified fade out
+      // Foreground content - dramatic camera pull with rotation
       gsap.to(contentRef.current, {
-        yPercent: 60,
+        yPercent: 80,
+        xPercent: 10,
         opacity: 0,
-        scale: 0.9,
+        scale: 0.85,
+        rotationX: 12,
+        rotationY: -5,
+        z: 100,
         ease: "none",
         force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: true,
+          scrub: 0.5,
         },
       });
 
-      // Scroll indicator - simple fade out
+      // Scroll indicator - rapid exit with lateral sweep
       gsap.to(fgLayerRef.current, {
-        yPercent: 100,
+        yPercent: 150,
+        xPercent: -30,
         opacity: 0,
+        scale: 0.7,
+        rotationZ: -10,
         ease: "none",
         force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: true,
+          scrub: 0.3,
         },
       });
     }, heroRef);
