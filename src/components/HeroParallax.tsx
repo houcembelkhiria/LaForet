@@ -45,70 +45,61 @@ const HeroParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background layer - cinematic depth pull away
+      // Background layer - simplified parallax with GPU acceleration
       gsap.to(bgLayerRef.current, {
         yPercent: 40,
-        scale: 1.3,
-        rotationX: -8,
-        rotationY: -3,
-        z: -300,
-        filter: "blur(2px)",
-        ease: "power1.inOut",
+        scale: 1.2,
+        ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: 2,
+          scrub: true,
         },
       });
 
-      // Mid layer - diagonal sweep with atmospheric fade
+      // Mid layer - simplified overlay fade
       gsap.to(midLayerRef.current, {
         yPercent: 55,
-        xPercent: -15,
+        xPercent: -10,
         opacity: 0.1,
-        rotationY: 5,
-        rotationZ: -2,
-        ease: "power1.inOut",
+        ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: 1.5,
+          scrub: true,
         },
       });
 
-      // Foreground content - dramatic camera pull with rotation
+      // Foreground content - simplified fade out
       gsap.to(contentRef.current, {
-        yPercent: 80,
-        xPercent: 10,
+        yPercent: 60,
         opacity: 0,
-        scale: 0.85,
-        rotationX: 12,
-        rotationY: -5,
-        z: 100,
-        ease: "power2.inOut",
+        scale: 0.9,
+        ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: 0.8,
+          scrub: true,
         },
       });
 
-      // Scroll indicator - rapid exit with lateral sweep
+      // Scroll indicator - simple fade out
       gsap.to(fgLayerRef.current, {
-        yPercent: 150,
-        xPercent: -30,
+        yPercent: 100,
         opacity: 0,
-        scale: 0.7,
-        rotationZ: -10,
-        ease: "power3.inOut",
+        ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: heroRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: 0.4,
+          scrub: true,
         },
       });
     }, heroRef);
@@ -132,7 +123,7 @@ const HeroParallax = () => {
           alt="La Foret Hotel"
           className="h-full w-full object-cover"
           style={{
-            filter: "brightness(0.7) blur(0.5px)",
+            filter: "brightness(0.7)",
           }}
           loading="eager"
           fetchPriority="high"

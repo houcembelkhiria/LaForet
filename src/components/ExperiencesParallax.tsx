@@ -113,89 +113,77 @@ const ExperiencesParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background - slide from left with depth
+      // Background - simplified slide
       gsap.fromTo(
         bgRef.current,
         {
-          xPercent: -30,
-          opacity: 0.3,
-          scale: 1.2,
-          rotationY: -15,
+          xPercent: -15,
+          opacity: 0.5,
+          scale: 1.1,
         },
         {
           xPercent: 0,
           opacity: 1,
           scale: 1,
-          rotationY: 0,
           ease: "power2.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: 2,
+            scrub: true,
           },
         }
       );
 
-      // Header - rotate into view from above
+      // Header - simplified rotate into view
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 40,
-          xPercent: -10,
+          yPercent: 25,
           opacity: 0,
-          rotationX: -20,
-          rotationZ: -5,
-          scale: 0.9,
+          scale: 0.95,
         },
         {
           yPercent: 0,
-          xPercent: 0,
           opacity: 1,
-          rotationX: 0,
-          rotationZ: 0,
           scale: 1,
           ease: "power3.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top center",
-            scrub: 1.5,
+            scrub: true,
           },
         }
       );
 
-      // Each card - staggered multi-directional reveal
+      // Each card - simplified staggered reveal
       cardsRef.current.forEach((card, index) => {
         if (card) {
           const direction = index % 3 === 0 ? 1 : index % 3 === 1 ? -1 : 0;
-          const verticalOffset = index % 3 === 2;
 
           gsap.fromTo(
             card,
             {
-              yPercent: verticalOffset ? 50 : 20,
-              xPercent: direction * 40,
+              yPercent: 20,
+              xPercent: direction * 20,
               opacity: 0,
-              scale: 0.8,
-              rotationY: direction * 20,
-              rotationX: verticalOffset ? 15 : 5,
-              z: -150,
+              scale: 0.95,
             },
             {
               yPercent: 0,
               xPercent: 0,
               opacity: 1,
               scale: 1,
-              rotationY: 0,
-              rotationX: 0,
-              z: 0,
               ease: "power3.out",
+              force3D: true,
               scrollTrigger: {
                 trigger: card,
                 start: "top bottom-=50",
                 end: "center center",
-                scrub: 1.8,
+                scrub: true,
               },
             }
           );
@@ -285,16 +273,12 @@ const ExperiencesParallax = () => {
         </div>
       </div>
 
-      {/* Atmospheric Blur Elements */}
-      <motion.div
-        className="absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-secondary/20 blur-[120px]"
-        animate={{ x: [0, 60, 0], y: [0, 40, 0], scale: [1, 1.2, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      {/* Static blur elements instead of animated for performance */}
+      <div
+        className="absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-secondary/15 blur-2xl blur-element"
       />
-      <motion.div
-        className="absolute -right-32 bottom-1/4 h-96 w-96 rounded-full bg-primary/10 blur-[120px]"
-        animate={{ x: [0, -60, 0], y: [0, -40, 0], scale: [1, 1.3, 1] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      <div
+        className="absolute -right-32 bottom-1/4 h-96 w-96 rounded-full bg-primary/10 blur-2xl blur-element"
       />
     </section>
   );

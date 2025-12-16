@@ -41,37 +41,30 @@ const RoomsParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header parallax - dramatic entrance from above with spiral
+      // Header parallax - simplified entrance
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 40,
-          xPercent: -15,
+          yPercent: 25,
           opacity: 0,
-          rotationX: -20,
-          rotationZ: -8,
-          scale: 0.9,
-          z: -150,
+          scale: 0.95,
         },
         {
           yPercent: 0,
-          xPercent: 0,
           opacity: 1,
-          rotationX: 0,
-          rotationZ: 0,
           scale: 1,
-          z: 0,
           ease: "power3.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top center",
-            scrub: 1.8,
+            scrub: true,
           },
         }
       );
 
-      // Each card - alternating directional reveals with depth
+      // Each card - simplified alternating reveals
       cardsRef.current.forEach((card, index) => {
         if (card) {
           const direction = index % 2 === 0 ? -1 : 1;
@@ -79,28 +72,23 @@ const RoomsParallax = () => {
           gsap.fromTo(
             card,
             {
-              yPercent: 30 + index * 8,
-              xPercent: direction * 35,
+              yPercent: 20,
+              xPercent: direction * 15,
               opacity: 0,
-              scale: 0.8,
-              rotationY: direction * 25,
-              rotationX: 12,
-              z: -180,
+              scale: 0.95,
             },
             {
               yPercent: 0,
               xPercent: 0,
               opacity: 1,
               scale: 1,
-              rotationY: 0,
-              rotationX: 0,
-              z: 0,
               ease: "power3.out",
+              force3D: true,
               scrollTrigger: {
                 trigger: card,
                 start: "top bottom-=120",
                 end: "center center",
-                scrub: 2,
+                scrub: true,
               },
             }
           );

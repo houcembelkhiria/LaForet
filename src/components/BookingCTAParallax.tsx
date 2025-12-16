@@ -48,82 +48,69 @@ const BookingCTAParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background - zoom and rotate reveal
+      // Background - simplified zoom reveal
       gsap.fromTo(
         bgRef.current,
         {
-          scale: 1.4,
-          opacity: 0.4,
-          rotationZ: -5,
-          rotationY: -10,
+          scale: 1.15,
+          opacity: 0.6,
         },
         {
           scale: 1,
           opacity: 1,
-          rotationZ: 0,
-          rotationY: 0,
           ease: "power2.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: 2,
+            scrub: true,
           },
         }
       );
 
-      // Header - slide from above with rotation
+      // Header - simplified slide from above
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 60,
+          yPercent: 30,
           opacity: 0,
-          rotationX: -30,
-          rotationZ: -10,
-          scale: 0.8,
-          z: -150,
+          scale: 0.95,
         },
         {
           yPercent: 0,
           opacity: 1,
-          rotationX: 0,
-          rotationZ: 0,
           scale: 1,
-          z: 0,
           ease: "power3.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top center",
-            scrub: 1.5,
+            scrub: true,
           },
         }
       );
 
-      // Form - emerge from depth with scale
+      // Form - simplified emerge from depth
       gsap.fromTo(
         formRef.current,
         {
-          yPercent: 40,
+          yPercent: 25,
           opacity: 0,
-          scale: 0.85,
-          rotationX: 15,
-          rotationY: 10,
-          z: -250,
+          scale: 0.95,
         },
         {
           yPercent: 0,
           opacity: 1,
           scale: 1,
-          rotationX: 0,
-          rotationY: 0,
-          z: 0,
           ease: "power3.out",
+          force3D: true,
           scrollTrigger: {
             trigger: formRef.current,
             start: "top bottom-=100",
             end: "center center",
-            scrub: 1.8,
+            scrub: true,
           },
         }
       );
@@ -375,24 +362,12 @@ const BookingCTAParallax = () => {
         </div>
       </div>
 
-      {/* Atmospheric Depth Elements */}
-      <motion.div
-        className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-primary/10 blur-[100px]"
-        animate={{
-          x: [0, 40, -20, 0],
-          y: [0, -30, 20, 0],
-          scale: [1, 1.3, 0.9, 1]
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+      {/* Static blur elements for performance */}
+      <div
+        className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-primary/10 blur-2xl blur-element"
       />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-secondary/15 blur-[120px]"
-        animate={{
-          x: [0, -50, 30, 0],
-          y: [0, 40, -20, 0],
-          scale: [1, 1.2, 1.1, 1]
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      <div
+        className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-secondary/10 blur-2xl blur-element"
       />
     </section>
   );

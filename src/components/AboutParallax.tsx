@@ -18,86 +18,73 @@ const AboutParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Image parallax - rotate and slide from right with depth
+      // Image parallax - simplified slide and fade
       gsap.fromTo(
         imageRef.current,
         {
-          yPercent: 30,
-          xPercent: 25,
-          rotationY: -15,
-          rotationX: 10,
+          yPercent: 20,
+          xPercent: 15,
           opacity: 0,
-          scale: 0.85,
-          z: -200,
+          scale: 0.95,
         },
         {
-          yPercent: -10,
+          yPercent: -5,
           xPercent: 0,
-          rotationY: 0,
-          rotationX: 0,
           opacity: 1,
           scale: 1,
-          z: 0,
           ease: "power2.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: 2,
+            scrub: true,
           },
         }
       );
 
-      // Text content - slide from left with rotation
+      // Text content - simplified slide from left
       gsap.fromTo(
         textRef.current,
         {
-          yPercent: 20,
-          xPercent: -30,
+          yPercent: 15,
+          xPercent: -20,
           opacity: 0,
-          rotationX: 8,
-          rotationZ: -5,
-          z: -100,
         },
         {
           yPercent: 0,
           xPercent: 0,
           opacity: 1,
-          rotationX: 0,
-          rotationZ: 0,
-          z: 0,
           ease: "power2.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: 1.6,
+            scrub: true,
           },
         }
       );
 
-      // Stats - emerge from below with pop
+      // Stats - simplified emerge from below
       gsap.fromTo(
         statsRef.current,
         {
-          yPercent: 35,
-          xPercent: -40,
+          yPercent: 25,
           opacity: 0,
-          scale: 0.75,
-          rotationZ: -8,
+          scale: 0.9,
         },
         {
           yPercent: 0,
-          xPercent: 0,
           opacity: 1,
           scale: 1,
-          rotationZ: 0,
           ease: "power3.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: 1.2,
+            scrub: true,
           },
         }
       );
@@ -191,11 +178,9 @@ const AboutParallax = () => {
               />
             </div>
 
-            {/* Decorative Element */}
-            <motion.div
-              className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-3xl bg-secondary/30 blur-3xl"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 4, repeat: Infinity }}
+            {/* Decorative Element - reduced blur for performance */}
+            <div
+              className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-3xl bg-secondary/30 blur-xl blur-element"
             />
           </div>
         </div>

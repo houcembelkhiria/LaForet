@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 /* Hardware acceleration for smooth parallax */
-/* Hardware acceleration for smooth parallax */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,15 +10,51 @@
 
 html {
   scroll-behavior: auto;
+  /* Prevent browser trying to scroll during animations */
+  overflow-x: hidden;
 }
 
 body {
   overscroll-behavior: none;
+  /* GPU acceleration for entire page */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 section {
   transform-style: preserve-3d;
   position: relative;
+  /* GPU acceleration and prevent flickering */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize elements with will-change */
+.will-change-transform {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize blur elements - they cause major performance issues */
+.blur-element {
+  contain: layout style paint;
+  content-visibility: auto;
 }
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 

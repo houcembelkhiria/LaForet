@@ -18,97 +18,77 @@ const TestimonialsParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background - diagonal sweep with atmospheric fade
+      // Background - simplified fade in
       gsap.fromTo(
         bgRef.current,
         {
-          xPercent: 40,
-          yPercent: -20,
+          xPercent: 20,
           opacity: 0.5,
-          scale: 1.3,
-          rotationY: 10,
-          rotationZ: -3,
+          scale: 1.1,
         },
         {
           xPercent: 0,
-          yPercent: 0,
           opacity: 1,
           scale: 1,
-          rotationY: 0,
-          rotationZ: 0,
           ease: "power2.inOut",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "center center",
-            scrub: 2.5,
+            scrub: true,
           },
         }
       );
 
-      // Header - spiral reveal from depth
+      // Header - simplified reveal
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 50,
-          xPercent: 20,
+          yPercent: 30,
           opacity: 0,
-          rotationX: 25,
-          rotationY: -15,
-          rotationZ: 8,
-          scale: 0.85,
-          z: -200,
+          scale: 0.95,
         },
         {
           yPercent: 0,
-          xPercent: 0,
           opacity: 1,
-          rotationX: 0,
-          rotationY: 0,
-          rotationZ: 0,
           scale: 1,
-          z: 0,
           ease: "power3.out",
+          force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "top center",
-            scrub: 1.8,
+            scrub: true,
           },
         }
       );
 
-      // Cards - cascading diagonal entry
+      // Cards - simplified cascading entry
       cardsRef.current.forEach((card, index) => {
         if (card) {
-          const offsetX = index === 0 ? -50 : index === 1 ? 0 : 50;
-          const offsetY = index === 1 ? 40 : 20;
+          const offsetX = index === 0 ? -20 : index === 1 ? 0 : 20;
 
           gsap.fromTo(
             card,
             {
-              yPercent: offsetY + 30,
+              yPercent: 20,
               xPercent: offsetX,
               opacity: 0,
-              scale: 0.75,
-              rotationY: index === 1 ? 0 : (index === 0 ? -25 : 25),
-              rotationX: 20,
-              z: -200 - index * 50,
+              scale: 0.9,
             },
             {
               yPercent: 0,
               xPercent: 0,
               opacity: 1,
               scale: 1,
-              rotationY: 0,
-              rotationX: 0,
-              z: 0,
               ease: "power3.out",
+              force3D: true,
               scrollTrigger: {
                 trigger: card,
                 start: "top bottom-=80",
                 end: "center center",
-                scrub: 2,
+                scrub: true,
               },
             }
           );
@@ -199,16 +179,12 @@ const TestimonialsParallax = () => {
         </div>
       </div>
 
-      {/* Animated Light Rays */}
-      <motion.div
-        className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-transparent via-white/30 to-transparent"
-        animate={{ y: [-200, 200] }}
-        transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+      {/* Static accent lines instead of animated ones for performance */}
+      <div
+        className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-white/20 to-transparent"
       />
-      <motion.div
-        className="absolute right-0 top-0 h-full w-2 bg-gradient-to-b from-transparent via-white/30 to-transparent"
-        animate={{ y: [200, -200] }}
-        transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+      <div
+        className="absolute right-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-white/20 to-transparent"
       />
     </section>
   );
