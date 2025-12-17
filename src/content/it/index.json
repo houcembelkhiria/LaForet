@@ -3,7 +3,16 @@
         "title": "La Foret: Un Soggiorno Oltre l'Ordine",
         "subtitle": "Scopri un comfort senza tempo circondato dalla natura",
         "bookNow": "Prenota Ora",
-        "exploreRooms": "Esplora le Camere"
+        "exploreRooms": "Esplora le Camere",
+        "badge": "Esperienza Alberghiera Premium",
+        "luxuryRetreat": "Rifugio di Lusso",
+        "established": "Dal 2024",
+        "scrollToExplore": "Scorri per Esplorare",
+        "features": {
+            "spa": "Spa e Benessere",
+            "dining": "Alta Cucina",
+            "nature": "Vista sulla Natura"
+        }
     },
     "about": {
         "welcome": "Benvenuti a La Foret",

@@ -41,68 +41,45 @@ const RoomsParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header parallax - dramatic entrance from above with spiral
+      // Header - simple slide up and fade
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 40,
-          xPercent: -15,
+          y: 60,
           opacity: 0,
-          rotationX: -20,
-          rotationZ: -8,
-          scale: 0.9,
-          z: -150,
         },
         {
-          yPercent: 0,
-          xPercent: 0,
+          y: 0,
           opacity: 1,
-          rotationX: 0,
-          rotationZ: 0,
-          scale: 1,
-          z: 0,
           ease: "none",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "top center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
 
-      // Each card - alternating directional reveals with depth
+      // Each card - simple staggered fade up
       cardsRef.current.forEach((card, index) => {
         if (card) {
-          const direction = index % 2 === 0 ? -1 : 1;
-
           gsap.fromTo(
             card,
             {
-              yPercent: 30 + index * 8,
-              xPercent: direction * 35,
+              y: 100,
               opacity: 0,
-              scale: 0.8,
-              rotationY: direction * 25,
-              rotationX: 12,
-              z: -180,
             },
             {
-              yPercent: 0,
-              xPercent: 0,
+              y: 0,
               opacity: 1,
-              scale: 1,
-              rotationY: 0,
-              rotationX: 0,
-              z: 0,
-              ease: "none",
+              duration: 0.8,
+              ease: "power2.out",
               force3D: true,
               scrollTrigger: {
                 trigger: card,
-                start: "top bottom-=120",
-                end: "center center",
-                scrub: 1,
+                start: "top bottom-=50",
+                toggleActions: "play reverse play reverse",
               },
             }
           );
@@ -117,14 +94,12 @@ const RoomsParallax = () => {
     <section
       ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden bg-muted py-32"
-      style={{ transformStyle: "preserve-3d" }}
     >
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div
           ref={headerRef}
-          className="mb-16 text-center will-change-transform"
-          style={{ transformStyle: "preserve-3d" }}
+          className="mb-16 text-center"
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
             {content.rooms.subtitle}
@@ -140,10 +115,12 @@ const RoomsParallax = () => {
             <div
               key={room.id}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="will-change-transform"
-              style={{ transformStyle: "preserve-3d" }}
+              className="opacity-0 will-change-transform"
+              style={{ contain: "content" }}
             >
-              <motion.div className="group relative overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition-shadow duration-500 hover:shadow-[var(--shadow-luxury)]">
+              <div className="group relative overflow-hidden rounded-3xl bg-card shadow-lg transition-shadow duration-300 hover:shadow-xl"
+                style={{ transform: "translateZ(0)" }}
+              >
                 {/* Image */}
                 <div className="relative h-80 overflow-hidden">
                   <motion.img
@@ -158,7 +135,7 @@ const RoomsParallax = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                   {/* Hover Overlay Text */}
                   <motion.div
@@ -201,7 +178,7 @@ const RoomsParallax = () => {
                     </Button>
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             </div>
           ))}
         </div>

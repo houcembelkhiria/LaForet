@@ -3,7 +3,16 @@
         "title": "La Foret: Ein Aufenthalt jenseits des Gewöhnlichen",
         "subtitle": "Entdecken Sie zeitlosen Komfort umgeben von Natur",
         "bookNow": "Jetzt Buchen",
-        "exploreRooms": "Zimmer Entdecken"
+        "exploreRooms": "Zimmer Entdecken",
+        "badge": "Premium Hotelerlebnis",
+        "luxuryRetreat": "Luxus-Rückzugsort",
+        "established": "Seit 2024",
+        "scrollToExplore": "Scrollen zum Erkunden",
+        "features": {
+            "spa": "Spa & Wellness",
+            "dining": "Feine Küche",
+            "nature": "Naturblick"
+        }
     },
     "about": {
         "welcome": "Willkommen in La Foret",

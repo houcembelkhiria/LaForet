@@ -1,93 +1,56 @@
-import { useEffect, useRef, useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Sparkles, Dumbbell, Waves, Flower2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Sparkles, Dumbbell, Waves, Flower2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import useEmblaCarousel from "embla-carousel-react";
 
-// Load experience images
+// Load experience images - just get one image per category
 const spaImages = import.meta.glob('@/assets/utilities/spa/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
 const massageImages = import.meta.glob('@/assets/utilities/massage/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
 const gymImages = import.meta.glob('@/assets/utilities/gym/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
 const poolImages = import.meta.glob('@/assets/utilities/pool/*.{jpg,jpeg,png,JPG,JPEG}', { eager: true });
 
-const spaImageArray = Object.values(spaImages).map((module: any) => module.default);
-const massageImageArray = Object.values(massageImages).map((module: any) => module.default);
-const gymImageArray = Object.values(gymImages).map((module: any) => module.default);
-const poolImageArray = Object.values(poolImages).map((module: any) => module.default);
+// Get just the first image from each category
+const getFirstImage = (images: Record<string, any>) => {
+  const entries = Object.values(images);
+  return entries.length > 0 ? (entries[0] as any).default : '';
+};
+
+const spaImage = getFirstImage(spaImages);
+const massageImage = getFirstImage(massageImages);
+const gymImage = getFirstImage(gymImages);
+const poolImage = getFirstImage(poolImages);
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ExperienceCarousel = ({ images, title }: { images: string[], title: string }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    emblaApi.on("select", () => setSelectedIndex(emblaApi.selectedScrollSnap()));
-  }, [emblaApi]);
-
+// Simple static image instead of carousel
+const ExperienceImage = ({ image, title }: { image: string, title: string }) => {
   return (
-    <div className="relative h-64 overflow-hidden group/carousel">
-      <div className="overflow-hidden h-full" ref={emblaRef}>
-        <div className="flex h-full">
-          {images.map((img, idx) => (
-            <div key={idx} className="flex-[0_0_100%] min-w-0 relative h-full">
-              <img
-                src={img}
-                alt={`${title} - ${idx + 1}`}
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Navigation Buttons */}
-      <button
-        onClick={(e) => { e.stopPropagation(); scrollPrev(); }}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity"
-      >
-        <ChevronLeft size={20} />
-      </button>
-      <button
-        onClick={(e) => { e.stopPropagation(); scrollNext(); }}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-1 rounded-full backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity"
-      >
-        <ChevronRight size={20} />
-      </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
-        {images.map((_, idx) => (
-          <div
-            key={idx}
-            className={`h-1.5 rounded-full transition-all ${idx === selectedIndex ? "w-4 bg-white" : "w-1.5 bg-white/50"
-              }`}
-          />
-        ))}
-      </div>
+    <div className="relative h-64 overflow-hidden">
+      <img
+        src={image}
+        alt={title}
+        className="h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
     </div>
   );
 };
+
 
 const ExperiencesParallax = () => {
   const { t } = useLanguage();
   const content = t("index");
 
-  const getImagesForExperience = (id: string) => {
+  const getImageForExperience = (id: string): string => {
     switch (id) {
-      case "spa": return spaImageArray;
-      case "massage": return massageImageArray;
-      case "gym": return gymImageArray;
-      case "pool": return poolImageArray;
-      default: return [];
+      case "spa": return spaImage;
+      case "massage": return massageImage;
+      case "gym": return gymImage;
+      case "pool": return poolImage;
+      default: return '';
     }
   };
 
@@ -104,7 +67,7 @@ const ExperiencesParallax = () => {
   const experiences = content?.experiences?.items?.map((item: any) => ({
     ...item,
     icon: getIconForExperience(item.id),
-    images: getImagesForExperience(item.id),
+    image: getImageForExperience(item.id),
   })) || [];
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -113,92 +76,67 @@ const ExperiencesParallax = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Background - slide from left with depth
+      // Background - simple fade and scale
       gsap.fromTo(
         bgRef.current,
         {
-          xPercent: -30,
-          opacity: 0.3,
-          scale: 1.2,
-          rotationY: -15,
+          opacity: 0.5,
+          scale: 1.1,
         },
         {
-          xPercent: 0,
           opacity: 1,
           scale: 1,
-          rotationY: 0,
-          ease: "none",
+          duration: 1.5,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "center center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
 
-      // Header - rotate into view from above
+      // Header - simple slide up and fade
       gsap.fromTo(
         headerRef.current,
         {
-          yPercent: 40,
-          xPercent: -10,
+          y: 60,
           opacity: 0,
-          rotationX: -20,
-          rotationZ: -5,
-          scale: 0.9,
         },
         {
-          yPercent: 0,
-          xPercent: 0,
+          y: 0,
           opacity: 1,
-          rotationX: 0,
-          rotationZ: 0,
-          scale: 1,
-          ease: "none",
+          duration: 1,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top bottom",
-            end: "top center",
-            scrub: 1,
+            start: "top bottom+=100",
+            toggleActions: "play reverse play reverse",
           },
         }
       );
 
-      // Each card - staggered multi-directional reveal
+      // Each card - simple staggered fade up
       cardsRef.current.forEach((card, index) => {
         if (card) {
-          const direction = index % 3 === 0 ? 1 : index % 3 === 1 ? -1 : 0;
-          const verticalOffset = index % 3 === 2;
-
           gsap.fromTo(
             card,
             {
-              yPercent: verticalOffset ? 50 : 20,
-              xPercent: direction * 40,
+              y: 80,
               opacity: 0,
-              scale: 0.8,
-              rotationY: direction * 20,
-              rotationX: verticalOffset ? 15 : 5,
-              z: -150,
             },
             {
-              yPercent: 0,
-              xPercent: 0,
+              y: 0,
               opacity: 1,
-              scale: 1,
-              rotationY: 0,
-              rotationX: 0,
-              z: 0,
-              ease: "none",
+              duration: 0.8,
+              ease: "power2.out",
               force3D: true,
               scrollTrigger: {
                 trigger: card,
-                start: "top bottom-=50",
-                end: "center center",
-                scrub: 1,
+                start: "top bottom-=100",
+                toggleActions: "play reverse play reverse",
               },
             }
           );
@@ -213,24 +151,19 @@ const ExperiencesParallax = () => {
     <section
       ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden py-32"
-      style={{ transformStyle: "preserve-3d" }}
     >
-      {/* Animated Background */}
+      {/* Background */}
       <div
         ref={bgRef}
-        className="absolute inset-0 will-change-transform"
-        style={{
-          background: "var(--gradient-nature)",
-          transformStyle: "preserve-3d",
-        }}
+        className="absolute inset-0"
+        style={{ background: "var(--gradient-nature)" }}
       />
 
       <div className="container relative z-10 mx-auto px-6">
         {/* Section Header */}
         <div
           ref={headerRef}
-          className="mb-16 text-center will-change-transform"
-          style={{ transformStyle: "preserve-3d" }}
+          className="mb-16 text-center"
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
             {content.experiences.subtitle}
@@ -248,22 +181,21 @@ const ExperiencesParallax = () => {
               <div
                 key={index}
                 ref={(el) => (cardsRef.current[index] = el)}
-                className="will-change-transform"
-                style={{ transformStyle: "preserve-3d" }}
+                className="opacity-0 will-change-transform"
               >
-                <motion.div className="group relative overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:shadow-[var(--shadow-luxury)]">
-                  {/* Image Carousel & Icon */}
-                  <div className="relative group/image">
-                    <ExperienceCarousel images={experience.images} title={experience.title} />
+                <div className="group relative overflow-hidden rounded-3xl bg-card shadow-[var(--shadow-soft)] transition-shadow duration-500 hover:shadow-[var(--shadow-luxury)]"
+                  style={{ transform: "translateZ(0)" }}
+                >
+                  {/* Static Image & Icon */}
+                  <div className="relative">
+                    <ExperienceImage image={experience.image} title={experience.title} />
 
                     {/* Icon */}
-                    <motion.div
-                      className="absolute left-6 top-6 rounded-full bg-primary/90 p-4 backdrop-blur-sm z-20 shadow-lg"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ duration: 0.3 }}
+                    <div
+                      className="absolute left-6 top-6 rounded-full bg-primary/95 p-4 z-20 shadow-lg transition-transform duration-300 hover:scale-110"
                     >
                       <Icon className="h-6 w-6 text-primary-foreground" />
-                    </motion.div>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -273,28 +205,19 @@ const ExperiencesParallax = () => {
                       {experience.description}
                     </p>
 
-                    {/* Hover Effect Line */}
-                    <motion.div
-                      className="mt-6 h-1 bg-gradient-to-r from-primary to-secondary"
-                      initial={{ width: 0 }}
-                      whileHover={{ width: "100%" }}
-                      transition={{ duration: 0.5 }}
+                    {/* Hover Effect Line - CSS only */}
+                    <div
+                      className="mt-6 h-1 bg-gradient-to-r from-primary to-secondary w-0 group-hover:w-full transition-all duration-500"
                     />
                   </div>
-                </motion.div>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Static blur elements instead of animated for performance */}
-      <div
-        className="absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-secondary/15 blur-2xl blur-element"
-      />
-      <div
-        className="absolute -right-32 bottom-1/4 h-96 w-96 rounded-full bg-primary/10 blur-2xl blur-element"
-      />
+
     </section>
   );
 };

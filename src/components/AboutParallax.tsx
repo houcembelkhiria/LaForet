@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MapPin, Home, ThumbsUp } from "lucide-react";
 import aboutImage from "@/assets/about-hotel.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -38,13 +39,13 @@ const AboutParallax = () => {
           opacity: 1,
           scale: 1,
           z: 0,
-          ease: "none",
+          duration: 1.2,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "center center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -67,13 +68,13 @@ const AboutParallax = () => {
           rotationX: 0,
           rotationZ: 0,
           z: 0,
-          ease: "none",
+          duration: 1,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "center center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -94,13 +95,13 @@ const AboutParallax = () => {
           opacity: 1,
           scale: 1,
           rotationZ: 0,
-          ease: "none",
+          duration: 0.8,
+          ease: "back.out(1.7)",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "center center",
-            scrub: 0.8,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -146,25 +147,22 @@ const AboutParallax = () => {
               {content.about.description2}
             </p>
 
-            <div ref={statsRef} className="pt-4 will-change-transform">
-              <div className="flex items-center gap-8">
-                <div>
-                  <div className="text-4xl font-bold text-primary"></div>
-
+            <div ref={statsRef} className="pt-6">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="stat-card">
+                  <MapPin className="mx-auto h-8 w-8 text-primary mb-2" />
+                  <div className="stat-value">20+</div>
+                  <div className="stat-label">Acres</div>
                 </div>
-                <div className="h-12 w-px bg-border" />
-                <div>
-                  <div className="text-4xl font-bold text-primary">{content.about.stats.rooms.value}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {content.about.stats.rooms.label}
-                  </div>
+                <div className="stat-card">
+                  <Home className="mx-auto h-8 w-8 text-primary mb-2" />
+                  <div className="stat-value">{content.about.stats.rooms.value}</div>
+                  <div className="stat-label">{content.about.stats.rooms.label}</div>
                 </div>
-                <div className="h-12 w-px bg-border" />
-                <div>
-                  <div className="text-4xl font-bold text-primary">{content.about.stats.satisfaction.value}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {content.about.stats.satisfaction.label}
-                  </div>
+                <div className="stat-card">
+                  <ThumbsUp className="mx-auto h-8 w-8 text-primary mb-2" />
+                  <div className="stat-value">{content.about.stats.satisfaction.value}</div>
+                  <div className="stat-label">{content.about.stats.satisfaction.label}</div>
                 </div>
               </div>
             </div>
@@ -177,27 +175,20 @@ const AboutParallax = () => {
           >
             <div
               ref={imageRef}
-              className="overflow-hidden rounded-3xl shadow-[var(--shadow-soft)] will-change-transform"
-              style={{ transformStyle: "preserve-3d" }}
+              className="overflow-hidden rounded-3xl shadow-[var(--shadow-soft)] img-zoom-container"
             >
-              <motion.img
+              <img
                 src={aboutImage}
                 alt="La Foret Architecture"
                 className="h-full w-full object-cover"
                 loading="lazy"
                 decoding="async"
-                fetchPriority="auto"
                 width={800}
                 height={600}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
               />
             </div>
 
-            {/* Decorative Element - reduced blur for performance */}
-            <div
-              className="absolute -bottom-6 -right-6 -z-10 h-64 w-64 rounded-3xl bg-secondary/30 blur-xl blur-element"
-            />
+
           </div>
         </div>
       </div>

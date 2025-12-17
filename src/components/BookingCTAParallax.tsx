@@ -62,13 +62,13 @@ const BookingCTAParallax = () => {
           opacity: 1,
           rotationZ: 0,
           rotationY: 0,
-          ease: "none",
+          duration: 1.5,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "center center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -91,13 +91,13 @@ const BookingCTAParallax = () => {
           rotationZ: 0,
           scale: 1,
           z: 0,
-          ease: "none",
+          duration: 1.2,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "top center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -120,13 +120,13 @@ const BookingCTAParallax = () => {
           rotationX: 0,
           rotationY: 0,
           z: 0,
-          ease: "none",
+          duration: 1,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: formRef.current,
             start: "top bottom-=100",
-            end: "center center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -378,13 +378,7 @@ const BookingCTAParallax = () => {
         </div>
       </div>
 
-      {/* Static blur elements for performance */}
-      <div
-        className="absolute left-1/4 top-1/3 h-64 w-64 rounded-full bg-primary/10 blur-2xl blur-element"
-      />
-      <div
-        className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-secondary/10 blur-2xl blur-element"
-      />
+
     </section>
   );
 };

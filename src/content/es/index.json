@@ -3,7 +3,16 @@
         "title": "La Foret: Una Estancia Más Allá de lo Ordinario",
         "subtitle": "Descubre confort atemporal rodeado de naturaleza",
         "bookNow": "Reservar Ahora",
-        "exploreRooms": "Explorar Habitaciones"
+        "exploreRooms": "Explorar Habitaciones",
+        "badge": "Experiencia Hotelera Premium",
+        "luxuryRetreat": "Refugio de Lujo",
+        "established": "Desde 2024",
+        "scrollToExplore": "Desplaza para Explorar",
+        "features": {
+            "spa": "Spa y Bienestar",
+            "dining": "Alta Gastronomía",
+            "nature": "Vistas a la Naturaleza"
+        }
     },
     "about": {
         "welcome": "Bienvenido a La Foret",

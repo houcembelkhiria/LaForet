@@ -26,6 +26,7 @@ export const useSmoothScroll = () => {
       lenis.raf(time * 1000);
     });
 
+    // Disable lag smoothing to prevent conflicts with Lenis
     gsap.ticker.lagSmoothing(0);
 
     // Cleanup

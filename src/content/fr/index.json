@@ -3,7 +3,16 @@
         "title": "L'hotel La Foret Ain Draham",
         "subtitle": "Votre sanctuaire au cœur de la nature",
         "bookNow": "Réserver",
-        "exploreRooms": "Voir Chambres"
+        "exploreRooms": "Voir Chambres",
+        "badge": "Expérience Hôtelière Premium",
+        "luxuryRetreat": "Retraite de Luxe",
+        "established": "Depuis 2024",
+        "scrollToExplore": "Défiler pour Explorer",
+        "features": {
+            "spa": "Spa & Bien-être",
+            "dining": "Gastronomie",
+            "nature": "Vue sur la Nature"
+        }
     },
     "about": {
         "welcome": "Bienvenue à La Forêt",

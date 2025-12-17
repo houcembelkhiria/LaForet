@@ -36,13 +36,13 @@ const TestimonialsParallax = () => {
           scale: 1,
           rotationY: 0,
           rotationZ: 0,
-          ease: "none",
+          duration: 1.5,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "center center",
-            scrub: 1.5,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -69,13 +69,13 @@ const TestimonialsParallax = () => {
           rotationZ: 0,
           scale: 1,
           z: 0,
-          ease: "none",
+          duration: 1.2,
+          ease: "power2.out",
           force3D: true,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
-            end: "top center",
-            scrub: 1,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
@@ -105,13 +105,13 @@ const TestimonialsParallax = () => {
               rotationY: 0,
               rotationX: 0,
               z: 0,
-              ease: "none",
+              duration: 0.8,
+              ease: "power2.out",
               force3D: true,
               scrollTrigger: {
                 trigger: card,
                 start: "top bottom-=80",
-                end: "center center",
-                scrub: 1,
+                toggleActions: "play reverse play reverse",
               },
             }
           );
@@ -202,13 +202,7 @@ const TestimonialsParallax = () => {
         </div>
       </div>
 
-      {/* Static accent lines instead of animated ones for performance */}
-      <div
-        className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-white/20 to-transparent"
-      />
-      <div
-        className="absolute right-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-white/20 to-transparent"
-      />
+
     </section>
   );
 };
