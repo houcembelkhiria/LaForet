@@ -16,9 +16,6 @@ html {
 
 body {
   overscroll-behavior: none;
-  /* GPU acceleration for entire page */
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 section {

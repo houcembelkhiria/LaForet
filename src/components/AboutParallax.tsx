@@ -148,12 +148,12 @@ const AboutParallax = () => {
             </p>
 
             <div ref={statsRef} className="pt-6">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="stat-card">
+              <div className="grid grid-cols-2 gap-4">
+                {/* <div className="stat-card">
                   <MapPin className="mx-auto h-8 w-8 text-primary mb-2" />
                   <div className="stat-value">20+</div>
                   <div className="stat-label">Acres</div>
-                </div>
+                </div> */}
                 <div className="stat-card">
                   <Home className="mx-auto h-8 w-8 text-primary mb-2" />
                   <div className="stat-value">{content.about.stats.rooms.value}</div>

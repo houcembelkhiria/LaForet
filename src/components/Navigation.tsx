@@ -41,10 +41,11 @@ const Navigation = memo(() => {
 
   return (
     <nav
-      className={`fixed top-0 z-[9999] w-full transition-all duration-300 ${isTransparent
-        ? "bg-transparent border-b border-transparent py-4"
-        : "bg-background/80 backdrop-blur-lg border-b border-border py-0 shadow-md"
-        }`}
+      className={`fixed top-0 z-[9999] w-full ${isTransparent
+        ? "bg-transparent border-b border-transparent"
+        : "bg-background/80 backdrop-blur-md border-b border-border shadow-sm"
+        } py-4`}
+      style={{ transition: "var(--transition-elegant)" }}
     >
       <div className="container mx-auto px-6">
         <div className="flex h-20 items-center justify-between">
